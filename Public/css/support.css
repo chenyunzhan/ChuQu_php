@@ -1,0 +1,582 @@
+
+
+body {background-image: url(http://www.chuqv.com/chuqv/Public/img/support/BACKGROUND.png);}
+#sheader {
+    width: 922px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+
+.main {
+    position: relative;
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+    color: white;
+    overflow: hidden;
+}
+.main-left {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px 0 0 2px;
+}
+.main-left-theme {
+    height: 5px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/mainTheme.png);
+    border-radius: 2px 0 0 0;
+}
+.main-left-bar {
+    height: 40px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+div[class|=main-left-bar-icon] {
+    float: left;
+    width: 10px;
+    height: 13px;
+    margin: 13.5px 15px;
+}
+.main-left-bar-icon-my {background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/main_leftTable_icon_MY.png)}
+.main-left-bar-icon-cost {background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/main_leftTable_icon_COST.png)}
+.main-left-bar-icon-post {background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/main_leftTable_icon_POST.png)}
+.main-left-bar-label {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    padding-left: 15px;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.main-right {
+    position: relative;
+    float: right;
+    width: 764px;
+    height: 100%;
+    border-radius: 0 2px 2px 0;
+}
+.right-bar {
+    position: absolute;
+    width: 764px;
+    height: 460px;
+    right: 0;
+    display: none;
+    border-radius: 0 2px 2px 0;
+}
+.main-right-userInfor {
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 2px 0 0;
+}
+.main-right-userInfor-photo {
+    float: left;
+    width: 76px;
+    height: 76px;
+    border-radius: 100%;
+    margin: 22px 30px 22px 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/userPhoto.png);
+}
+.main-right-userInfor-right {
+    float: left;
+    width: 618px;
+    height: 120px;
+}
+.main-right-userInfor-right-name {
+    margin-top: 30px;
+    margin-bottom: 22px;
+    font-size: 24px;
+}
+.main-right-userInfor-right-detial {
+    font-size: 14px;
+}
+.main-right-userInfor-right-detail-backup {
+    float: left;
+    margin-right: 20px;
+}
+.main-right-userInfor-right-detail-following {
+    float: left;
+    margin-right: 20px;
+}
+.main-right-userInfor-right-detail-follower {
+    float: left;
+}
+
+.main-right-detail {
+    height: 340px;
+    overflow: scroll;
+}
+.main-right-detail-navigation {
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.main-right-detail-list {
+    height: 310px;
+    position: relative;
+}
+.main-right-detail-list-item {
+    position: absolute;
+    width: 764px;
+    height: 310px;
+    overflow: scroll;
+    display: none;
+}
+.main-right-detail-navigation-bar {
+    float: left;
+    height: 30px;
+    width: 130px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.main-right-detail-navigation-line {
+    float: left;
+    width: 2px;
+    height: 20px;
+    margin-top: 5px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/Navigation_line.png);
+}
+.main-right-detail-bar {
+    float: left;
+    width: 350px;
+    overflow: hidden;
+    max-height: 115px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-top: 5px;
+    margin: 20px 0 0 20px;
+    border-radius: 2px;
+}
+.main-right-detail-bar-image {
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.main-right-detail-bar-image-title {
+    width: 270px;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	float: left;
+    font-size: 18px;
+    margin: 44px 0 5px 10px;
+}
+.main-right-detail-bar-image-title:hover {
+    text-overflow:inherit;
+	overflow:visible;
+}
+
+
+div[class|=main-right-detail-bar-image-icon] {
+    float: right;
+    width: 10px;
+    height: 10px;
+    margin: 50.5px 0 9.5px 0;
+}
+.main-right-detail-bar-image-icon-like {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/image_like.png);
+}
+.main-right-detail-bar-image-icon-answer {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/image_answer.png);
+}
+
+.main-right-detail-bar-image-lable {
+    float: right;
+    font-size: 14px;
+    margin: 50px 10px 5px 5px;
+}
+
+.main-right-detail-bar-costBar {
+    height: 25px;
+/*    padding-left: 10px;*/
+    padding: 10px;
+}
+.main-right-detail-bar-costBar-lable {
+    float: right;
+    height: 25px;
+	/* width: 1px; */
+    line-height: 25px;
+    font-size: 14px;
+}
+.main-right-detail-bar-costBar-lableNum {
+    float: right;
+    height: 25px;
+	/* width: 1px; */
+    line-height: 20px;
+    font-size: 18px;
+    color: #F8B551;
+}
+.main-right-detail-bar-costBar-button {
+    float: right;
+    width: 90px;
+    height: 20px;
+    background-color: #F8B551;
+/*    margin: 10px 10px 0 0;*/
+    border-radius: 2px;
+    cursor: pointer;
+}
+.main-right-detail-bar-costBar-button-icon {
+    float: left;
+    width: 13px;
+    height: 13px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/costBar_button_icon.png);
+    margin: 3.5px 5px 3.5px 10px;
+}
+.main-right-detail-bar-costBar-button-lable {
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+}
+.main-right-detail-bar-line {
+    width: 346px;
+    height: 2px;
+    margin: 0 auto;
+/*    background-color: rgba(26, 26, 26, 0.1);*/
+/*    background-color: rgba(255, 255, 255, 0.1);*/
+    background-image: -moz-linear-gradient(top, rgba(26, 26, 26, 0.1), rgba(255, 255, 255, 0.1));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(26, 26, 26, 0.1)), to(rgba(255, 255, 255, 0.1)));
+}
+.main-right-detail-bar-detailBar {
+    height: 20px;
+    margin: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
+}
+div[class|=main-right-detail-bar-detailBar-icon] {
+    float: left;
+    width: 10px;
+    height: 13px;
+    margin: 3.5px 5px 3.5px 10px;
+}
+.main-right-detail-bar-detailBar-icon-PNum {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/icon_PNum.png);
+}
+.main-right-detail-bar-detailBar-icon-Date {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/icon_Date.png);
+}
+.main-right-detail-bar-detailBar-icon-Deal {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/icon_Deal.png);
+}
+div[class|=main-right-detail-bar-detailBar-supportIcon] {
+    float: left;
+    width: 10px;
+    height: 8px;
+    margin: 6px 5px 6px 10px;
+}
+.main-right-detail-bar-detailBar-supportIcon-include {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/include.png);
+}
+.main-right-detail-bar-detailBar-supportIcon-cost {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/cost.png);
+}
+.main-right-detail-bar-detailBar-option {
+    float: left;
+    height: 20px;
+    margin-right: 7px;
+}
+.main-right-detail-bar-detailBar-lable {
+    float: left;
+    padding: 0 5px;
+    line-height: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin-right: 10px;
+    cursor: default;
+}
+.main-right-detail-bar-detailBar-lable-includeBar {
+    width: 60px;
+    float: left;
+    line-height: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+.main-right-detail-bar-detailBar-lable-PNumtext {
+    float: left;
+    margin-right: 15px;
+    
+}
+.main-right-detail-bar-detailBar-lable-input {
+    width: 20px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0;
+    border-style: none;
+    margin: 2px 0;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+.main-right-detail-bar-detailBar-lable-dateSelector {
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    border-style: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+.main-right-detail-bar-detailBar-label-rmb {
+    float: left;
+    line-height: 20px;
+    height: 20px;
+}
+.main-right-detail-bar-detailBar-label-configLable {
+    float: left;
+    line-height: 20px;
+    height: 20px;
+    margin-right: 10px;
+    color: #F8B551;
+    font-size: 18px;
+}
+
+.stackLine {
+    float: left;
+    width: 764px;
+    background-color: aqua;
+}
+
+
+.list-button {
+    float: right;
+    width: 10px;
+    height: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.8);
+    margin: 9px 20px;
+    cursor: pointer;
+}
+.button-mark {
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    background-color: white;
+    margin: 2px;
+    display: none;
+}
+.list-bar-title {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.list-bar-title>.list-bar-label {
+    color: white;
+    font-weight: 900;
+}
+.list-bar-label {
+    float: left;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.list-bar-label_0 {
+    width: 115px;
+}
+.list-bar-label_1 {
+    width: 182px;
+    text-align: center;
+}
+.list-bar-label_2 {
+    width: 86px;
+    text-align: center;
+    margin-left: 22px;
+}
+.list-bar-label_3 {
+    width: 84px;
+    text-align: center;
+}
+.list-bar-label_4 {
+    width: 62px;
+    text-align: center;
+}
+.list-bar-label_5 {
+    width: 80px;
+    text-align: center;
+}
+.list-bar-label_6 {
+/*    text-align: center;*/
+    text-align: right;
+    width: 60px;
+}
+.list-bar-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgba(255, 255, 255, 0.3);
+    transition: all .6s ease;
+}
+.list-bar-item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.right-bar-post-title {
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 24px;
+    text-indent: 20px;
+    line-height: 70px;
+    border-radius: 0 2px 0 0;
+}
+.right-bar-post-costBar {
+    height: 70px;
+    padding-left: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.right-bar-post-costBar-label {
+    float: left;
+    font-size: 18px;
+    line-height: 70px;
+    height: 70px;
+    margin-right: 15px
+}
+.right-bar-post-costBar-cost {
+    float: left;
+    font-size: 18px;
+    padding: 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    margin-top: 22px;
+}
+.right-bar-post-costBar-postButton {
+    float: right;
+    width: 120px;
+    height: 36px;
+    background-color: rgb(97, 173, 52);
+    border-radius: 2px;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    margin: 17px 20px;
+    cursor: pointer;
+}
+
+.right-bar-post-list {
+    height: 320px;
+    overflow: scroll;
+}
+.right-bar-post-list::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+    width: 4px;
+    height: 0;
+}
+.right-bar-post-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+}
+.right-bar-post-list-line {
+    float: left;
+    width: 2px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.right-bar-post-list-left {
+    float: left;
+    width: 377px;
+    min-height: 320px;    
+}
+.right-bar-post-list-right {
+    float: left;
+    width: 377px;
+    min-height: 320px;
+}
+.right-bar-post-list-item {
+    height: 38px;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: rgba(255, 255, 255, 0.3);
+    padding-left: 20px;
+}
+.label_zh {
+    font-size: 18px;
+    margin-right: 4px;
+    line-height: 38px;
+}
+.label_en {
+    font-size: 14px;
+    line-height: 42px;
+}
+.right-bar-post-list-item-label {
+    float: left;
+    height: 38px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.right-bar-post-list-item-button {
+    float: right;
+    width: 24px;
+    height: 24px;
+    margin: 7px 2px;
+    cursor: pointer;
+}
+.button_add {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/button_add.png);
+}
+.button_subtract {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/button_subtract.png);
+}
+.right-bar-post-list-item-box {
+    float: right;
+    height: 22px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    line-height: 24px;
+    margin: 7px 0;
+    padding: 0 2px;
+    overflow: visible;
+}
+.right-bar-post-list-item-box-icon {
+    width: 8px;
+    height: 12px;
+    float: left;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/edit.png);
+    margin: 5px 2px;
+}
+.right-bar-post-list-item-box-input {
+    float: right;
+    background-color: rgba(255, 255, 255, 0);
+    height: 22px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 5px;
+}
+.right-bar-post-list-item-title-add {
+    float: right;
+    width: 24px;
+    height: 24px;
+    margin: 7px 2px;
+    cursor: pointer;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/support/button_add.png);
+}
+#ruler {visibility: hidden;white-space: nowrap;font-size: 16px;} 
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+.main-right-detail-bar-costBar-button-set-lee{
+    float: right;
+    width: 90px;
+    height: 20px;
+    background-color: #F8B551;
+/*    margin: 10px 10px 0 0;*/
+    border-radius: 2px;
+    cursor: pointer;
+}
+.main-right-detail-bar-costBar-button-icon-set-lee{
+    float: left;
+    width: 13px;
+    height: 13px;
+    background-image: url(http://www.chuqv.com/Public/img/schedule/costBar_button_icon_p.png);
+    margin: 3.5px 5px 3.5px 10px;
+}
+.main-right-detail-bar-costBar-button-lable-set-lee{
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+}
+
+
+
+.main-right-detail-bar-costBar-button-set-lee2{
+    float: right;
+    width: 90px;
+    height: 20px;
+    background-color: #F8B551;
+/*    margin: 10px 10px 0 0;*/
+    border-radius: 2px;
+    cursor: pointer;
+}
+.main-right-detail-bar-costBar-button-icon-set-lee2{
+    float: left;
+    width: 13px;
+    height: 13px;
+    background-image: url(http://www.chuqv.com/Public/img/schedule/costBar_button_icon.png);
+    margin: 3.5px 5px 3.5px 10px;
+}
+.main-right-detail-bar-costBar-button-lable-set-lee2{
+    float: left;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+}

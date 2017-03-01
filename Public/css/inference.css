@@ -1,0 +1,1799 @@
+#ruler {visibility: hidden;white-space: nowrap;font-size: 16px;}
+
+body {background-image: url(http://www.chuqv.com/chuqv/Public/img/backgroundimg.png);
+}
+#sheader {
+    width: 922px;;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+
+#main {
+    position: relative;
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+}
+.main-left {
+    float: left;
+    height: 100%;
+    width: 414px;
+    color: white;
+    position: relative;
+    max-width: 414px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.main-left-transportation_button {
+    position: absolute;
+    bottom: 10px;
+    height: 40px;
+    width: 100%;
+    display: none;
+    z-index: 1;
+}
+.main-left-transportation_button-cancel {
+    float: left;
+    width: 126px;
+    height: 40px;
+    background-color: rgba(128, 120, 120, 0.8);
+    margin-left: 28px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.main-left-transportation_button-finish {
+    float: left;
+    width: 223px;
+    height: 40px;
+    background-color: rgba(97, 173, 52, 0.8);
+    margin-left: 12px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+div[class|=left-inference] {
+    position: relative;
+    width: 414px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0 0 0 4px;
+}
+.left-inference {
+    padding-top: 10px;
+    height: 410px;
+    max-height: 410px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.left-inference-transportation {
+    position: relative;
+    height: 100%;
+    margin-top: -420px;
+    margin-left: 414px;
+    max-height: 420px;
+}
+.inference-transportation-section {
+    position: relative;
+    float: left;
+    width: 400px;
+}
+
+.inference-transportation-section-theme {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #5b90e0;
+}
+.inference-transportation-section-option {
+    width: 100%;
+    height: 60px;
+}
+
+div[class|=inference-transportation-section-option-bys] {
+    float: left;
+    width: 25%;
+    height: 60px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+.inference-transportation-section-option-by-plane-logo {
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/plane.png);
+}
+.inference-transportation-section-option-by-train-logo {
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/train.png);
+}
+.inference-transportation-section-option-by-ship-logo {
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/ship.png);
+}
+.inference-transportation-section-option-by-car-logo {
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/subway.png);
+}
+.inference-transportation-section-by-null-l {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    top: 20px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/e1.png);
+}
+
+.inference-transportation-section-information {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+    padding-bottom: 50px;
+    min-height: 350px;
+}
+.inference-transportation-section-information-nav {
+    height: 30px;
+    width: 384px;
+/*    margin: 0 auto 8px auto;*/
+    margin: 0 0 10px 10px;
+}
+div[class|=inference-transportation-section-information-nav-option] {
+    float: left;
+    height: 100%;
+    width: 96px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.inference-transportation-section-information-nav-option-1 {
+    border-radius: 4px 0 0 4px;
+}
+.inference-transportation-section-information-nav-option-4 {
+    border-radius: 0 4px 4px 0;
+}
+
+.inference-transportation-section-information-table {
+    width: 384px;
+    height: 95px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 0 0 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid rgba(97, 173, 52, 0);
+/*    display: none;*/
+}
+.inference-transportation-section-information-table:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.inference-transportation-section-information-table:active {
+    border: 2px solid #61ad34;
+}
+
+.inference-transportation-section-information-table-section {
+    width: 354px;
+    float: left;
+    padding-top: 10px;
+}
+.inference-transportation-section-information-table-section-top {
+    min-height: 25px;
+}
+.inference-transportation-section-information-table-section-top-logo {
+    width: 20px;
+    height: 22px;
+    margin: 0 10px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transset_01.png);
+    float: left;
+}
+.inference-transportation-section-information-table-section-top-text {
+    width: 310px;
+    min-height: 25px;
+    line-height: 25px;
+    float: left;
+    margin-bottom: 8px;
+}
+.inference-transportation-section-information-table-section-top-text-aer {
+    height: 25px;
+    line-height: 25px;
+    float: left;
+}
+.inference-transportation-section-information-table-section-top-text-transform {
+    width: 6px;
+    height: 11px;
+    float: left;
+    margin: 7px 8px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_04.png);
+}
+
+.inference-transportation-section-information-table-section-bottom {
+    height: 18px;
+}
+.inference-transportation-section-information-table-section-bottom-feature {
+    width: 50px;
+    height: 18px;
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    background-color: #61ad34;
+    float: left;
+}
+
+div[class|=inference-transportation-section-information-table-section-bottom-logo] {
+    width: 13px;
+    height: 12px;
+    margin: 3px 5px;
+    float: left;
+}
+.inference-transportation-section-information-table-section-bottom-logo-1 {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transset_02.png);
+}
+.inference-transportation-section-information-table-section-bottom-logo-2 {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transset_03.png);
+}
+.inference-transportation-section-information-table-section-bottom-logo-3 {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transset_04.png);
+}
+.inference-transportation-section-information-table-section-bottom-text {
+    float: left;
+    height: 18px;
+    line-height: 20px;
+    font-size: 14px;
+    margin-right: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.inference-transportation-section-information-table-button {
+    width: 30px;
+    height: 100%;
+    float: left;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.inference-transportation-section-information-table-button-icon {
+    width: 13px;
+    height: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transset_icon.PNG);
+}
+
+.inference-transportation-detail {
+    margin: 0 0 10px 10px;
+    width: 384px;
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+    max-height: 0;
+}
+.inference-transportation-detail-section {
+/*    padding-left: 5px;*/
+}
+.inference-transportation-detail-section-company {
+    height: 30px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.inference-transportation-detail-section-company-name {
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.6);
+    padding: 2px;
+    border-radius: 2px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.inference-transportation-detail-section-company-name:hover {
+    color: white;
+    border-color: white;
+}
+.inference-transportation-detail-section-company-path {
+    float: left;
+    line-height: 30px;
+    margin-left: 10px;
+}
+.inference-transportation-detail-section-pathdetail {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+}
+.inference-transportation-detail-section-pathdetail-start {
+    height: 28px;
+}
+.inference-transportation-detail-section-pathdetail-departure {
+    height: 29px;
+}
+.inference-transportation-detail-section-pathdetail-landing {
+    height: 28px;
+}
+.inference-transportation-detail-section-pathdetail-over {
+    height: 28px;
+}
+.inference-transportation-detail-section-pathdetail-start-icon {
+    float: left;
+    width: 14px;
+    height: 28px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_start.png);
+}
+.inference-transportation-detail-section-pathdetail-departure-icon {
+    float: left;
+    width: 14px;
+    height: 29px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_departure.png);
+}
+.inference-transportation-detail-section-pathdetail-landing-icon {
+    float: left;
+    width: 15px;
+    height: 28px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_landing.png);
+}
+.inference-transportation-detail-section-pathdetail-over-icon {
+    float: left;
+    width: 14px;
+    height: 28px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_over.png);
+}
+
+
+.inference-transportation-detail-section-pathdetail-start-text {
+    float: left;
+    margin-left: 8px;
+    line-height: 28px;
+    width: 352px;
+}
+.inference-transportation-detail-section-pathdetail-departure-text {
+    float: left;
+    margin-left: 8px;
+    line-height: 29px;
+    width: 352px;
+}
+.inference-transportation-detail-section-pathdetail-landing-text {
+    float: left;
+    margin-left: 7px;
+    line-height: 28px;
+    width: 352px;
+}
+.inference-transportation-detail-section-pathdetail-over-text {
+    float: left;
+    line-height: 28px;
+    margin-left: 8px;
+    width: 352px;
+}
+
+.inference-transportation-detail-section-pathdetail-any-text-country {
+    float: left;
+    font-size: 18px;
+}
+.inference-transportation-detail-section-pathdetail-any-text-littlename {
+    float: left;
+    font-size: 14px;
+}
+.inference-transportation-detail-section-pathdetail-any-text-time {
+    float: right;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+
+/*
+.inference-transportation-section-information-table-top {
+    height: 22px;
+    margin-bottom: 10px;
+}
+.inference-transportation-section-information-table-top-logo {
+    float: left;
+    height: 25px;
+    width: 24px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transset_01.png);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.inference-transportation-section-information-table-top-time {
+    float: left;
+    font-size: 18px;
+    height: 18px;
+    margin-top: 6px;
+}
+.inference-transportation-section-information-table-top-date {
+    float: left;
+    font-size: 14px;
+    height: 14px;
+    margin-left: 35px;
+    margin-top: 8px;
+}
+.inference-transportation-section-information-table-top-much {
+    float: right;
+    font-size: 18px;
+    height: 18px;
+    margin-top: 6px;
+    margin-right: 10px;
+}
+.inference-transportation-section-information-table-bottom {
+    height: 14px;
+}
+.inference-transportation-section-information-table-bottom-logo {
+    float: left;
+    height: 14px;
+    width: 20px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_05.png);
+    margin-left: 10px;
+    margin-right: 8px;
+}
+.inference-transportation-section-information-table-bottom-text {
+    float: left;
+    font-size: 14px;
+    height: 14px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.inference-transportation-section-information-table-bottom-spend {
+    float: right;
+    font-size: 14px;
+    height: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 10px;
+}
+*/
+
+.left-inference-spot {
+    position: relative;
+    height: 100%;
+    margin-top: -420px;
+    margin-left: 414px;
+    max-height: 420px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.inference-spot-theme {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #61ad33;
+}
+
+.inference-spot-list-left {
+    float: left;
+    width: 192px;
+    padding-left: 10px;
+    padding-right: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 100%;
+    max-height: 100%;
+    overflow: scroll;
+}
+.inference-spot-list-left-box {
+    width: 192px;
+    max-height: 40px;
+    margin-top: 10px;
+    border-radius: 4px;
+    height: 150px;
+    overflow: hidden;
+}
+.inference-spot-list-left-box-top {
+    height: 40px;
+    border-radius: 4px 4px 0 0;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.inference-spot-list-left-box-middle {
+    padding: 0;
+    width: 188px;
+    height: 70px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    border-style: solid;
+    border-width: 0 2px 0 2px;
+    outline: medium;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.inference-spot-list-left-box-bottom {
+    height: 31px;
+    border-radius: 0 0 4px 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.inference-spot-list-left-box-button {
+    width: 40px;
+    height: 23px;
+    float: right;
+    margin: 4px;
+    line-height: 23px;
+    text-align: center;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.inference-spot-list-left-box-icon-move {
+    float: left;
+    width: 7px;
+    height: 8px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spotMove.png);
+    margin: 16px 10px 16px 5px;
+    cursor: move;
+}
+.inference-spot-list-left-box-title {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+}
+.inference-spot-list-left-box-icon-note {
+    float: right;
+    width: 9px;
+    height: 12px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spotNote.png);
+    margin: 14px 10px 14px 0;
+    cursor: pointer;
+}
+.inference-spot-list-left-box-icon-remove {
+    float: right;
+    width: 9px;
+    height: 12px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spotRemove.png);
+    margin: 14px 10px 14px 0;
+    cursor: pointer;
+}
+
+.inference-spot-list-right {
+    float: left;
+    width: 207px;
+/*    width: 197px;*/
+/*
+    padding-left: 5px;
+    padding-right: 5px;
+*/
+    min-height: 100%;
+    max-height: 100%;
+    overflow: scroll;
+}
+#spot-list-right {
+    padding-bottom: 60px;
+}
+.inference-spot-list-right-search {
+    position: relative;
+    width: 197px;
+    height: 30px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.inference-spot-list-right-search-input {
+    border-width: 0;
+    padding: 0;
+    height: 30px;
+    outline: medium;
+    width: 197px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.inference-spot-list-right-search-button {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    width: 15px;
+    height: 14px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spotSearch.png);
+    cursor: pointer;
+}
+.inference-spot-list-right-config-title {
+    width: 197px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 10px;
+    margin-left: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 30px;
+    text-indent: 8px;
+}
+.inference-spot-list-right-config-list {
+
+}
+.inference-spot-list-right-config-list-val {
+    width: 197px;
+    height: 60px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 3px;
+    border: 2px solid rgba(97, 173, 52, 0);
+    border-width: 2px 2px 0 2px;
+    cursor: pointer;
+}
+.spot-config-enable {
+    border: 2px solid rgba(97, 173, 52, 1);
+    border-radius: 5px;
+}
+.inference-spot-list-right-config-list-val-img {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px 0 0 3px;
+    float: left;
+}
+.inference-spot-list-right-config-list-val-right {
+    float: left;
+    width: 114px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.inference-spot-list-right-config-list-val-name {
+    font-size: 14px;
+    height: 14px;
+    width: 114px;
+    margin: 10px;
+}
+.inference-spot-list-right-config-list-val-note {
+    width: 33px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-left: 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+.inference-spot-list-right-config-list-val-button {
+    float: left;
+    width: 23px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 3px 3px 0;
+}
+.inference-spot-list-right-config-list-val-button-icon {
+    width: 13px;
+    height: 13px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spotSet_chs.png);
+    margin: 23.5px auto;
+}
+
+.inference-spot-list-right-config-list-detail {
+    width: 177px;
+    margin-left: 5px;
+    border-radius: 0 0 3px 3px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 10px;
+    overflow: hidden;
+    max-height: 0px;
+}
+.inference-spot-list-right-config-list-detail-title {
+    height: 24px;
+}
+.inference-spot-list-right-config-list-detail-title-iconLoc {
+    float: left;
+    width: 11px;
+    height: 12px;
+    margin: 6px 10px 0 0;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spotSet_Loc.png);
+}
+.inference-spot-list-right-config-list-detail-title-iconTime {
+    float: left;
+    width: 13px;
+    height: 12px;
+    margin: 6px 10px 0 0;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spot_detail_Time.png);
+}
+.inference-spot-list-right-config-list-detail-title-iconTicket {
+    float: left;
+    width: 13px;
+    height: 10px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spot_detail_Ticket.png);
+    margin: 7px 10px 0 0;
+}
+
+.inference-spot-list-right-config-list-detail-title-note {
+    float: left;
+    height: 24px;
+    line-height: 27px;
+}
+.inference-spot-list-right-config-list-detail-note {
+    min-height: 24px;
+    line-height: 24px;
+}
+
+
+/*
+.left-inference {
+    float: left;
+    position: relative;
+    height: 410px;
+    width: 414px;
+    max-height: 410px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 0 4px;
+    padding-top: 10px;
+}
+*/
+div[class|=left-inference]::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 14px;
+}
+div[class|=left-inference]::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+.main-right {
+    float: left;
+    height: 100%;
+    width: 550px;
+    border-radius: 0 4px 4px 0;
+}
+div[class|=title-main] {
+    line-height: 40px;
+    font-size: 14px;
+}
+.title-name {
+    float: left;
+    margin-left: 20px;
+}
+.title-options-box {
+    position: absolute;
+    z-index: 2;
+    top: 2px;
+    right: 2px;
+    float: right;
+    width: 90px;
+    min-height: 36px;
+    cursor: pointer;
+}
+.title-options-scroll-box {
+    overflow: hidden;
+    max-height: 0;
+}
+div[class|=title-option] {
+    height: 36px;
+    width: 90px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.title-option-button {
+    position: relative;
+    z-index: 2;
+}
+.title-option-text {
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+}
+
+.title-main-left {
+    height: 40px;
+    border-radius: 4px 0 0 0;
+    background-color: rgba(255, 255, 255, .4);
+    position: relative;
+}
+#title-main-left-transportation {
+    height: 40px;
+    display: none;
+}
+#title-main-left-spot,#title-main-left-city_edit{
+    height: 40px;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.title-main-left-icon, .title-main-left-title {
+    float: left;
+}
+.title-main-left-icon {
+    width: 14px;
+    height: 14px;
+    margin: 13px 0 13px 15px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/transportation-icon.png);
+}
+.title-main-left-title {
+    margin-left: 8px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.title-main-right {
+    height: 40px;
+    width: 550px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    border-radius: 0 4px 0 0;
+    background-color: rgba(0, 0, 0, 0.49);
+}
+
+.day-num-box {
+    width: 380px;
+    height: 100px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+.day-num-box-left {
+    float: left;
+    width: 320px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px 0 0 4px;
+    padding: 10px;
+}
+.day-num-box-left-title {
+    font-size: 24px;
+    float: left;
+    font-size: 24px;
+}
+.day-num-box-left-icon {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+/*    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_day1.png);*/
+}
+.day-num-box-left-information-logo {
+    float: left;
+    width: 14px;
+    height: 14px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_02.png);
+    margin-right: 3px;
+}
+.day-num-box-left-information-path {
+    height: 14px;
+}
+.day-num-box-left-information {
+    margin-top: 34px;
+    font-size: 14px;
+}
+.day-num-box-left-information-note {margin-top: 10px;}
+
+.day-num-box-right {
+    float: left;
+    width: 40px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 4px 4px 0;
+}
+.day-num-box-right-icon {
+    width: 14px;
+    height: 14px;
+    margin: 43px auto;
+}
+.day-num-box-right-icon, .day-num-information-transportation-button-icon, .day-num-information-spot-button-icon, .day-num-information-food-button-icon {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_12.png);
+}
+
+.day-num-information {
+    padding-left: 10px;
+    overflow: hidden;
+    height: auto;
+    max-height: 0;
+}
+.day-num-information-transportation {
+    position: relative;
+    height: 95px;
+    width: 380px;
+/*    margin-bottom: 10px;*/
+}
+.day-num-information-transportation-theme {
+    float: left;
+    height: 100%;
+    width: 5px;
+    background-color: #5b90e0;
+    border-radius: 4px 0 0 4px;
+}
+.day-num-information-transportation-section {
+    float: left;
+    height: 95px;
+    width: 327px;
+    padding-left: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.day-num-information-transportation-section-top {
+    min-height: 25px;
+    margin-top: 10px;
+}
+.day-num-information-transportation-section-top-logo {
+    float: left;
+    width: 24px;
+    height: 25px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_03.png);
+    margin-right: 10px;
+}
+.day-num-information-transportation-section-top-title {
+    float: left;
+    width: 293px;
+    min-height: 25px;
+    margin-bottom: 6px;
+}
+.day-num-information-transportation-section-top-title-text {
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    font-size: 18px;
+}
+.day-num-information-transportation-section-top-title-transform {
+    float: left;
+    width: 6px;
+    height: 11px;
+    margin: 7px 8px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_04.png);
+}
+.day-num-information-transportation-section-bottom {
+    margin-bottom: 11px;
+    height: 18px;
+}
+.day-num-information-transportation-section-bottom-feature {
+    float: left;
+    width: 50px;
+    height: 18px;
+    background-color: #61ad34;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 2px;
+}
+div[class|=day-num-information-transportation-section-bottom-icon] {
+    float: left;
+    width: 13px;
+    height: 12px;
+    margin: 3px 5px;
+}
+.day-num-information-transportation-section-bottom-icon-time {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/web_icon_shijian.png);
+}
+.day-num-information-transportation-section-bottom-icon-cash {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/web_icon_jiage.png);
+}
+.day-num-information-transportation-section-bottom-icon-km {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/web_icon_juli.png);
+}
+.day-num-information-transportation-section-bottom-text {
+    float: left;
+    height: 18px;
+    line-height: 20px;
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+
+.day-num-information-transportation-button {
+    float: left;
+    height: 95px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.day-num-information-transportation-button-icon {
+    width: 14px;
+    height: 14px;
+}
+
+
+.day-num-information-transportation-detail {
+    margin-bottom: 10px;
+    width: 380px;
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+    max-height: 0;
+}
+.day-num-information-transportation-detail-theme {
+    float: left;
+    width: 5px;
+    background-color: #5b90e0;
+}
+.day-num-information-transportation-detail-section {
+    padding-left: 5px;
+}
+.day-num-information-transportation-detail-section-company {
+    height: 30px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.day-num-information-transportation-detail-section-company-name {
+    float: left;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.6);
+    padding: 2px;
+    border-radius: 2px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.day-num-information-transportation-detail-section-company-name:hover {
+    color: white;
+    border-color: white;
+}
+.day-num-information-transportation-detail-section-company-path {
+    float: left;
+    line-height: 30px;
+    margin-left: 10px;
+}
+.day-num-information-transportation-detail-section-pathdetail {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 10px;
+}
+.day-num-information-transportation-detail-section-pathdetail-start {
+    height: 28px;
+}
+.day-num-information-transportation-detail-section-pathdetail-departure {
+    height: 29px;
+}
+.day-num-information-transportation-detail-section-pathdetail-landing {
+    height: 28px;
+}
+.day-num-information-transportation-detail-section-pathdetail-over {
+    height: 28px;
+}
+.day-num-information-transportation-detail-section-pathdetail-start-icon {
+    float: left;
+    width: 14px;
+    height: 28px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_start.png);
+}
+.day-num-information-transportation-detail-section-pathdetail-departure-icon {
+    float: left;
+    width: 14px;
+    height: 29px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_departure.png);
+}
+.day-num-information-transportation-detail-section-pathdetail-landing-icon {
+    float: left;
+    width: 15px;
+    height: 28px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_landing.png);
+}
+.day-num-information-transportation-detail-section-pathdetail-over-icon {
+    float: left;
+    width: 14px;
+    height: 28px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/trans_over.png);
+}
+
+.day-num-information-transportation-detail-section-pathdetail-start-text {
+    float: left;
+    margin-left: 8px;
+    line-height: 28px;
+    width: 343px;
+}
+.day-num-information-transportation-detail-section-pathdetail-departure-text {
+    float: left;
+    margin-left: 8px;
+    line-height: 29px;
+    width: 343px;
+}
+.day-num-information-transportation-detail-section-pathdetail-landing-text {
+    float: left;
+    margin-left: 7px;
+    line-height: 28px;
+    width: 343px;
+}
+.day-num-information-transportation-detail-section-pathdetail-over-text {
+    float: left;
+    line-height: 28px;
+    margin-left: 8px;
+    width: 343px;
+}
+
+.day-num-information-transportation-detail-section-pathdetail-any-text-country {
+    float: left;
+    font-size: 18px;
+}
+.day-num-information-transportation-detail-section-pathdetail-any-text-littlename {
+    float: left;
+    font-size: 14px;
+}
+.day-num-information-transportation-detail-section-pathdetail-any-text-time {
+    float: right;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+
+.day-num-information-spot {
+    position: relative;
+    height: auto;
+    width: 380px;
+    margin-bottom: 10px;
+}
+.day-num-information-spot-theme {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #61ad33;
+    border-radius: 4px 0 0 4px;
+}
+.day-num-information-spot-section {
+    width: 335px;
+    height: auto;
+    margin-left: 5px;
+}
+.day-num-information-spot-section-register {
+    height: 37px;
+    padding-top: 13px;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.day-num-information-spot-section-register-note {
+    height: 24px;
+}
+.day-num-information-spot-section-register-note-logo {
+    float: left;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+}
+
+.day-num-information-spot-section-register-note-text {
+    float: left;
+    font-size: 18px;
+    line-height: 24px;
+}
+.day-num-information-spot-section-stackline {
+    height: 1px;
+    background-color: rgba(93, 93, 93, 0.1);
+    box-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    margin-bottom: 1px;
+}
+.day-num-information-spot-section-detail {
+    overflow: hidden;
+    max-height: 0;
+}
+.day-num-information-spot-section-detail-topview {
+    height: 100px;
+}
+.day-num-information-spot-section-detail-topview-photo {
+    float: left;
+    width: 163px;
+    height: 100px;
+}
+.day-num-information-spot-section-detail-topview-photo-img {
+    width: 153px;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 10px 0 0 10px;
+}
+.day-num-information-spot-section-detail-topview-note {
+    float: left;
+    height: 100px;
+    width: 172px;
+}
+.day-num-information-spot-section-detail-topview-note-spotName {
+    font-size: 18px;
+    margin: 15px 0 0 20px;
+}
+.day-num-information-spot-section-detail-topview-note-spotNameEn {
+    font-size: 14px;
+    margin: 5px 0 20px 20px;
+}
+.day-num-information-spot-section-detail-topview-note-spotLoc {}
+.day-num-information-spot-section-detail-topview-note-spotLoc-icon {
+    float: left;
+    width: 10px;
+    height: 13px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spot_detail_Loc.png);
+    margin: 0 5px 0 10px;
+}
+.day-num-information-spot-section-detail-topview-note-spotLoc-text {
+    float: left;
+    font-size: 14px;
+    width: 147px;
+}
+.day-num-information-spot-section-detail-bottomview {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.day-num-information-spot-section-detail-bottomview-title {
+    font-size: 14px;
+    height: 14px;
+    margin-bottom: 10px;
+}
+.day-num-information-spot-section-detail-bottomview-title-iconTime {
+    float: left;
+    width: 13px;
+    height: 12px;
+    margin: 2px 0;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spot_detail_Time.png);
+}
+.day-num-information-spot-section-detail-bottomview-title-iconTicket {
+    float: left;
+    width: 13px;
+    height: 10px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/spot_detail_Ticket.png);
+    margin: 2px 0;
+}
+.day-num-information-spot-section-detail-bottomview-title-text {
+    float: left;
+    height: 14px;
+    margin-left: 5px;
+}
+.day-num-information-spot-section-detail-bottomview-note {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+.day-num-information-spot-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+.day-num-information-spot-button-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.day-num-information-food {
+    position: relative;
+    height: auto;
+    width: 380px;
+    margin-bottom: 10px;
+}
+.day-num-information-food-theme {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background-color: #e0bc5b;
+    border-radius: 4px 0 0 4px;
+}
+.day-num-information-food-section {
+    width: 335px;
+    height: auto;
+    margin-left: 5px;
+}
+.day-num-information-food-section-register {
+    height: 60px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.day-num-information-food-section-register-title {
+    height: 24px;
+}
+.day-num-information-food-section-register-title-logo {
+    float: left;
+    width: 24px;
+    height: 25px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_11.png);
+    margin-right: 10px;
+}
+.day-num-information-food-section-register-title-text {
+    float: left;
+    height: 25px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.day-num-information-food-section-register-note {
+    height: 16px;
+    margin-top: 10px;
+}
+.day-num-information-food-section-register-note-logo {
+    float: left;
+    width: 20px;
+    height: 14px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_05.png);
+    margin-right: 5px;
+    margin-top: 1px;
+}
+.day-num-information-food-section-register-note-time {
+    float: left;
+    width: 17px;
+    height: 16px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_06.png);
+    margin-right: 5px;
+}
+.day-num-information-food-section-register-note-cash {
+    float: left;
+    width: 17px;
+    height: 16px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inference_07.png);
+    margin-right: 5px;
+}
+
+.day-num-information-food-section-register-note-text {
+    float: left;
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    margin-right: 10px;
+}
+
+.day-num-information-food-section-stackline {
+    height: 1px;
+    background-color: rgba(93, 93, 93, 0.1);
+    box-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    margin-bottom: 1px;
+}
+
+.day-num-information-food-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 0 4px 4px 0;
+}
+.day-num-information-food-button-icon {
+    width: 14px;
+    height: 14px;
+}
+
+@keyframes SettingFade {
+    0%{}
+    100%{
+        transform: translateX(-414px);
+    }
+}
+@-webkit-keyframes SettingFade {
+    0%{}
+    100%{
+        transform: translateX(-414px);
+    }
+}
+@-moz-keyframes SettingFade {
+    0%{}
+    100%{
+        transform: translateX(-414px);
+    }
+}
+@-o-keyframes SettingFade {
+    0%{}
+    100%{
+        transform: translateX(-414px);
+    }
+}
+
+@keyframes IndexFade {
+    0%{
+        transform: translateX(-410px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@-webkit-keyframes IndexFade {
+    0%{
+        transform: translateX(-410px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@-moz-keyframes IndexFade {
+    0%{
+        transform: translateX(-410px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@-o-keyframes IndexFade {
+    0%{
+        transform: translateX(-410px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.goon {
+    position: absolute;
+    left: 340px;
+    bottom: 10px;
+    cursor: pointer;
+    width: 280px;
+    height: 40px;
+    background-color: rgba(53, 119, 208, 0.74);
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, .4);
+    transition: all .5s ease;
+}
+.goon:hover {
+    background-color: rgba(31, 98, 189, 0.74);
+}
+
+.title-right-path {
+    text-indent: 12px;
+    color: white;
+}
+/*
+.information-box{
+    position: fixed;
+    z-index: 3;
+    width: 258px;
+    height: 289px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/tankuang.png);
+}
+*/
+.information-box-loc {
+    display: none;
+    float: right;
+    margin-top: -133px;
+    padding-left: 5px;
+}
+div[class|=information-insert] {
+    width: 240px;
+    margin-left: 12px;
+}
+.information-insert-img {
+    height: 133px;
+    border-radius: 4px 4px 0 0;
+    background-color: rgb(111, 84, 185);
+}
+.information-insert-note {
+    color: black;
+    height: 147px;
+    border-radius: 0 0 4px 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.information-insert-note::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+    width: 6px;
+}
+.information-insert-note::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.17);
+    border-radius: 4px;
+}
+#map-canvas {
+    width: 550px;
+    height: 460px;
+    border-radius: 0 4px 4px 0;
+}
+div[id|=inf-insert] {cursor: pointer;}
+
+.left-inference-city-editor {
+  position: relative;
+  height: 100%;
+  margin-top: -420px;
+  margin-left: 414px;
+  max-height: 420px;
+  background-color: rgba(255, 255, 255, 0.2);;
+}
+.city-editor-title {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.city-editor-title-button {
+  float: left;
+  width: 40px;
+  cursor: pointer;
+  background-color:#61AD34;
+}
+.city-editor-title-button-icon {
+  width: 13px;
+  height: 13px;
+  margin: 43.5px 13.5px;
+  background-image: url("http://www.chuqv.com/chuqv/Public/img/inference/transset_icon.PNG");
+}
+.city-editor-title-infor {
+  float: left;
+  padding-left: 11px;
+  width: 340px;
+
+}
+.city-editor-title-infor-label {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.city-editor-title-infor-label-text {
+  float: left;
+  margin-right: 20px;
+}
+.city-editor-title-infor-tag {
+  float: left;
+  padding:  0 5px;
+  margin-top: 10px;
+  margin-right: 5px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 2px;
+  background-color: rgba(255, 218565, 255, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+.city-editor-detail {
+  padding-left: 10px;
+  padding-bottom: 300px;
+}
+.city-editor-detail-item {
+  width: 380px;
+  min-height: 40px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.city-editor-detail-item-icon {
+  float: left;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 0 2px;
+}
+.city-editor-detail-item-icon-month {
+  height: 15px;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  background-color: rgb(241, 81, 81);
+  border-radius: 2px 0 0 0;
+}
+.city-editor-detail-item-icon-day {
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 18px;
+}
+.city-editor-detail-item-tag {
+  float: left;
+  font-size: 16px;
+  margin: 8px 5px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+}
+.city-editor-detail-item-tag > .label {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 5px;
+  background-color: rgba(255, 255, 255, .2);
+  border-radius: 2px;
+}
+.city-editor-detail-item-tag > .options {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all .6s ease;
+  z-index: 30;
+  display: none;
+}
+.options > .option {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 10px;
+  cursor: pointer;
+  word-break: keep-all;
+}
+.options > .option:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.city-editor-detail-item-add {
+  float: right;
+  width: 90px;
+  height: 22px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  margin: 8px 5px;
+  position: relative;
+}
+.city-editor-detail-item-add-icon {
+  float: left;
+  width: 8px;
+  height: 12px;
+  margin: 5px;
+  background-image: url("http://www.chuqv.com/chuqv/Public/img/support/edit.png");
+}
+.city-editor-detail-item-add-input {
+  float: left;
+  width: 72px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 14px;
+  border: none;
+  background-color: rgba(255, 0, 0, 0);
+  outline: none;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+.city-editor-detail-item-add-input::-webkit-input-placeholder { /* WebKit browsers */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-editor-detail-item-add-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-editor-detail-item-add-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-editor-detail-item-add-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: rgba(255, 255, 255, 0.8);;
+}
+
+.city-editor-detail-item-add > .city-search-options {
+  position: absolute;
+  top: 25px;
+  right: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 4px;
+}
+.city-search-options > .search-option {
+  height: 24px;
+  width: 72px;
+  line-height: 24px;
+  padding: 0 10px;
+  cursor: pointer;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.city-search-options > .search-option:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+.city-editor-detail-item-trans_icon {
+  float: left;
+  width: 14px;
+  height: 14px;
+  margin: 13px 0;
+  background-image: url("http://www.chuqv.com/chuqv/Public/img/inference/inference_02.png");
+}
+.main-left-city_editor_button {
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    height: 100px;
+    width: 378px;
+    display: block;
+    opacity: 0;
+    background-color: rgba(255, 225, 225, 0.2);;
+    border-style: solid;
+    border-width: 1px 1px 0 1px;
+    border-radius: 2px;
+    z-index: 1;
+}
+
+
+.main-left-city_editor_button-label {
+  text-align: center;
+  height: 50px;
+  line-height: 40px;
+}
+.main-left-city_editor_button-cancel {
+    float: left;
+    width: 126px;
+    height: 40px;
+    background-color: rgba(128, 120, 120, 0.8);
+    margin-left: 9px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.main-left-city_editor_button-finish {
+    float: left;
+    width: 223px;
+    height: 40px;
+    background-color: rgba(97, 173, 52, 0.8);
+    margin-left: 12px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.clearFloat {clear: both;}
+
+
+
+
+
+
+
+/*
+add 交通详情页出发、到达的交通图标
+
+*/
+#transport-departure-logo-id-1{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/plane_departure.png);
+}
+#transport-departure-logo-id-2{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/train_departure.png);
+}
+#transport-departure-logo-id-3{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/ship_departure.png);
+}
+#transport-departure-logo-id-4{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/bus_departure.png);
+}
+
+
+#transport-landing-logo-id-1{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/plane_landing.png);
+}
+#transport-landing-logo-id-2{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/train_landing.png);
+}
+#transport-landing-logo-id-3{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/ship_landing.png);
+}
+#transport-landing-logo-id-4{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/bus_landing.png);
+}
+
+
+
+
+
+#day-num-transport-departure-logo-id-1{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/plane_departure.png);
+}
+#day-num-transport-departure-logo-id-2{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/train_departure.png);
+}
+#day-num-transport-departure-logo-id-3{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/ship_departure.png);
+}
+#day-num-transport-departure-logo-id-4{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/bus_departure.png);
+}
+
+
+#day-num-transport-landing-logo-id-1{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/plane_landing.png);
+}
+#day-num-transport-landing-logo-id-2{
+	 background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/train_landing.png);
+}
+#day-num-transport-landing-logo-id-3{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/ship_landing.png);
+}
+#day-num-transport-landing-logo-id-4{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/bus_landing.png);
+}
+
+
+#dnitst-logo-1{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inf_plane.png);
+}
+#dnitst-logo-2{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inf_train.png);
+}
+#dnitst-logo-3{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inf_ship.png);
+}
+#dnitst-logo-4{
+	background-image: url(http://www.chuqv.com/chuqv/Public/img/inference/inf_car.png);
+}

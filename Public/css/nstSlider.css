@@ -1,0 +1,175 @@
+.slider-container {
+  width: 300px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.slider-container .back-bar {
+  height: 10px;
+  position: relative;
+}
+.slider-container .back-bar .selected-bar {
+    margin-top: 1px;
+  position: absolute;
+  height: 6px;
+}
+.slider-container .back-bar .pointer {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  cursor: col-resize;
+  opacity: 1;
+  z-index: 2;
+}
+.slider-container .back-bar .pointer.last-active {
+  z-index: 3;
+}
+.slider-container .back-bar .pointer-label {
+  position: absolute;
+  top: -48px;
+  font-size: 18px;
+  white-space: nowrap;
+  line-height: 37px;
+    text-indent: 30px;
+
+}
+.slider-container .back-bar .focused {
+  z-index: 10;
+}
+.slider-container .clickable-dummy {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.slider-container .scale {
+  top:16px;
+    height: 32px;
+    width: 431px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/howlong/biaochi.png);
+  position: relative;
+}
+.slider-container .scale span {
+  position: absolute;
+    top: 5px;
+  height: 5px;
+  border-left: 1px solid rgb(147, 142, 110);
+  font-size: 0;
+    display: none;
+}
+.slider-container .scale ins {
+  font-size: 9px;
+  text-decoration: none;
+  position: absolute;
+  left: 0;
+  top: 5px;
+    color: rgb(147, 142, 110);
+  line-height: 1;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.53);
+    display: none;
+}
+.slider-container.slider-readonly .clickable-dummy,
+.slider-container.slider-readonly .pointer {
+  cursor: auto;
+}
+.theme-green .back-bar {
+  height: 10px;
+    width: 405px;
+    margin-top: 5px;
+    margin-left: 9px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/slider/under_2.png);
+}
+.theme-green .back-bar .selected-bar {
+  border-radius: 2px;
+
+    background:-webkit-gradient(linear, left top, left bottom, from(#4877db), to(#2e5da2), color-stop(0.25, #82a9e3), color-stop(0.5, #4877db));
+    background:-moz-gradient(linear, left top, left bottom, from(#4877db), to(#2e5da2), color-stop(0.25, #82a9e3), color-stop(0.5, #4877db));
+}
+.theme-green .back-bar .pointer {
+  width: 22px;
+  height: 23px;
+  top: -7px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/slider/button.png);
+    
+}
+.theme-green .back-bar .pointer-label {
+  color: azure;
+}
+.theme-green .back-bar .focused {
+/*  color: red;*/
+}
+.theme-green .scale span {
+  border-left: 1px solid rgb(147, 142, 110);
+}
+.theme-green .scale ins {
+  color: rgb(147, 142, 110);
+}
+.theme-blue .back-bar {
+  height: 5px;
+  border-radius: 2px;
+  background-color: #eeeeee;
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
+}
+.theme-blue .back-bar .selected-bar {
+  border-radius: 2px;
+  background-color: #92c1f9;
+  background-image: -moz-linear-gradient(top, #b1d1f9, #64a8f9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b1d1f9), to(#64a8f9));
+  background-image: -webkit-linear-gradient(top, #b1d1f9, #64a8f9);
+  background-image: -o-linear-gradient(top, #b1d1f9, #64a8f9);
+  background-image: linear-gradient(to bottom, #b1d1f9, #64a8f9);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb1d1f9', endColorstr='#ff64a8f9', GradientType=0);
+}
+.theme-blue .back-bar .pointer {
+  width: 14px;
+  height: 14px;
+  top: -5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #AAA;
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#dddddd));
+  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
+}
+.theme-blue .back-bar .pointer-label {
+  color: #999;
+}
+.theme-blue .back-bar .focused {
+  color: #333;
+}
+.theme-blue .scale span {
+  border-left: 1px solid #e5e5e5;
+}
+.theme-blue .scale ins {
+  color: #999;
+}
+
+#pointer-label-left {
+    width: 67px;
+    height: 37px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/slider/box_shao.png);
+    /* margin-left: -34px; */
+    margin-left: -34px;
+}
+#pointer-label-right {
+    width: 68px;
+    height: 37px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/slider/box_duo.png);
+    margin-left: 34px;
+}
+

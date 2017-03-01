@@ -1,0 +1,526 @@
+
+
+body {background-image: url(http://www.chuqv.com/chuqv/Public/img/backgroundimg.png);}
+#sheader {
+    width: 922px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+
+#main {
+    position: relative;
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#main > .left-bar {
+    position: relative;
+    float: left;
+    width: 914px;
+    height: 100%;
+}
+#main > .right-bar {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 100%;
+}
+.left-bar > .left-component {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.left-component > .options-view {
+    height: 380px;
+}
+.options-view > .option-bar {
+    height: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.option-bar .option-next {
+    width: 100px;
+    height: 40px;
+    background-color: rgba(53, 119, 208, 0.74);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.option-bar > .setting-bar {
+    height: 260px;
+    position: relative;
+}
+.setting-bar > .bar-line {
+    overflow: hidden;
+}
+.bar-line > .set-bar-icon {
+    float: left;
+    width: 15px;
+    height: 17px;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/howlong/RILI_icon.png);
+    margin: 13.5px 0 0 20px;
+}
+.bar-line > .set-bar-area {
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin: 16px 0 16px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.area-enable > .enable {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 1);
+}
+.bar-line > .set-bar-label {
+    float: left;
+    font-size: 12px;
+    height: 44px;
+    line-height: 44px;
+    margin-left: 10px;
+}
+.bar-line > .date-time-picker{
+    float: left;
+    width: 100px;
+    height: 24px;
+    padding: 0;
+    margin: 10px;
+    border-width: 0;
+    outline: none;
+    color: white;
+    text-indent: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+.bar-line > .date-time-picker::-webkit-input-placeholder { /* WebKit browsers */
+color: rgba(255, 255, 255, 0.8);;
+}
+.bar-line > .date-time-picker:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: rgba(255, 255, 255, 0.8);;
+}
+.bar-line > .date-time-picker::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: rgba(255, 255, 255, 0.8);;
+}
+.bar-line > .date-time-picker:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: rgba(255, 255, 255, 0.8);;
+}
+
+
+
+
+.options-view > .option-bar-on {
+    height: 298px;
+    border-color: rgba(255, 255, 255, 1);
+}
+.option-bar > .option-title {
+    min-height: 39px;
+    height: 39px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    font-size: 14px;
+    overflow: hidden;
+}
+.option-bar-on .option-title {
+    height: auto;
+    overflow: auto;
+}
+.option-title > .title-item {
+    float: left;
+    line-height: 39px;
+    margin-left: 20px;
+}
+.option-title > .title-label {
+    float: left;
+    line-height: 39px;
+    margin: 0 10px;
+}
+.option-title > .title-tag {
+    float: left;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    line-height: 24px;
+    margin: 7.5px 10px;
+    padding: 0 10px;
+    border-radius: 4px;
+}
+.option-title > .city-selected-box {
+    float: left;
+    display: flex;
+    align-items: center;
+    max-width: 620px;
+    flex-wrap: wrap;
+    opacity: 0;
+}
+.option-bar-on .city-selected-box {
+    opacity: 1;
+}
+.city-selected-box > .city-tag {
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 7.5px 5px;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    display: none;
+}
+.city-selected-box > .city-active {
+    display: block;
+}
+.option-title > .city-search {
+    float: right;
+    width: 120px;
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 12px;
+    height: 24px;
+    margin: 8px 10px;
+    align-items: center;
+    position: relative;
+    opacity: 0;
+}
+.option-bar-on .city-search {
+    opacity: 1;
+}
+.option-title .icon {
+    flex: 0 0 auto;
+}
+.option-title .keyword-input {
+    flex: 0 1 auto;
+}
+.option-title .search-results {
+    left: none;
+    right: 0;
+    z-index: 10;
+}
+.option-bar-on .title-tag {
+    opacity: 0;
+}
+
+.left-component > .options-post {
+    height: 80px;
+}
+.options-post > .post-button {
+    width: 280px;
+    height: 40px;
+    background-color: rgba(53, 119, 208, 0.74);
+    border-radius: 2px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 30px auto 10px auto;
+
+}
+.options-post > .post-button:hover {
+    background-color: rgba(31, 98, 189, 0.74);
+}
+
+
+.option-bar > .city-selector {
+    height: 89px;
+    /*max-width: 100%;*/
+    overflow-x: scroll;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+}
+.city-selector > .selector-item {
+    height: 70px;
+    width: 130px;
+    margin: 0 10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    text-align: center;
+    line-height: 70px;
+    flex: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0);
+    border-radius: 2px;
+}
+.city-selector > .item-active {
+    border-color: rgba(255, 255, 255, 1);
+}
+.option-bar > .city-selector::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+    height: 5px;
+}
+.option-bar > .city-selector::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+}
+
+.option-bar > .selected-list {
+    width: 912px;
+    min-height: 168px;
+    overflow-y: scroll;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+.option-bar > .selected-list::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+    width: 5px;
+}
+.option-bar > .selected-list::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+}
+.selected-list > .selected-item {
+    width: 107px;
+    height: 26px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    margin: 10px;
+    display: flex;
+}
+.selected-item > .item-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    flex: auto;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+
+}
+.selected-item > .item-right {
+    display: flex;
+    font-size: 25px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 26px;
+    flex: 0 0 auto;
+}
+.item-active > .item-right {
+    transform: rotate(45deg);
+}
+
+.option-bar > .plan-item {
+    height: 39px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0 0 1px 0;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.plan-item:last-child {
+    height: 40px;
+    border-style: none;
+}
+.plan-item > .icon {
+    width: 9px;
+    height: 12px;
+    background-image: url("/img/howlong/flag.png");
+    margin-right: 10px;
+}
+.plan-item > .label {
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.plan-item > .city-search {
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    height: 24px;
+    align-items: center;
+    position: relative;
+}
+.city-search > .icon {
+    width: 8px;
+    height: 12px;
+    margin: 0 5px;
+    background-image: url("/img/support/edit.png");
+}
+.city-search > .keyword-input {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    height: 24px;
+    color: white;
+    flex: 1 0 auto;
+}
+.city-search > .keyword-input::-webkit-input-placeholder { /* WebKit browsers */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-search > .keyword-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-search > .keyword-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-search > .keyword-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+color: rgba(255, 255, 255, 0.8);;
+}
+.city-search > .search-results {
+    position: absolute;
+    width: 200px;
+    top: 26px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: scroll;
+    max-height: 0;
+    transition: max-height 0.1s ease;
+}
+.search-active > .search-results {
+    max-height: 168px;
+}
+.search-results > .result {
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.search-results > .result:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.right-bar > .navigator {
+    font-size: 16px;
+    height: 180px;
+    cursor: pointer;
+    padding: 50px 0 0 0;
+    box-shadow: inset 2px 0 2px rgba(0, 0, 0, 0.1);
+}
+.right-bar > .statusOn {
+    border-style: solid;
+    border-width: 0 0 0 2px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.right-bar > .statusOff {
+    box-shadow: inset 2px 0 2px rgba(0, 0, 0, 0.1);
+}
+.navigator > .button-label {
+    padding: 0 17px;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 25px;
+    margin-top: 10px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+.navigator > .icon-plan {
+    width: 18px;
+    height: 19px;
+    margin: 0 auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/howlong/Howlong_icon01.png);
+}
+.navigator > .icon-options {
+    width: 14px;
+    height: 17px;
+    margin: 0 auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/howlong/Howlong_icon02.png);
+}
+
+
+
+#footer {
+    width: 140px;
+    height: 20px;
+    margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.footer-box-outside {width: 20px;height: 20px;border-radius: 10px;float: left;margin-right: 40px;background-color: rgba(255, 255, 255, 0.5);position: relative;}
+#box-o3 {margin-right: 0;}
+.footer-box-inside {width: 10px;height: 10px;border-radius: 5px;margin: 5px;}
+#box-i3 {background-color: rgb(255, 255, 255);}
+.footer-note {
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    font-size: 14px;
+    top: -24px;
+    left: -30px;
+
+}
+.how-long-logo {
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/howlong/logo.png);
+    width: 176px;
+    height: 55px;
+    margin: 47px auto;
+}
+[class|=note] {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+.note-2 {margin: 12px 0 92px 0}
+
+
+
+.goon {
+    position: absolute;
+    left: 310px;
+    bottom: 10px;
+    cursor: pointer;
+    width: 280px;
+    height: 40px;
+    background-color: rgba(53, 119, 208, 0.74);
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, .4);
+    transition: all .5s ease;
+}
+.goon:hover {
+    background-color: rgba(31, 98, 189, 0.74);
+}
+
+.slider-layout {
+    padding-top: 1px;
+    height: 20px;
+    width: 421px;
+    margin: 0 auto;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/slider/under_1.png);
+}

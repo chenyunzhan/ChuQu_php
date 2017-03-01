@@ -1,0 +1,347 @@
+* {
+    font-family: sans-serif;
+    font-weight: 100;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+img{ width: auto; height: auto;max-width: 100%; display: block; }
+nav a {text-decoration: none;}
+body {
+    color: white;
+    height: auto;
+    margin: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+  /*   background-attachment: fixed;
+   background-position: center center;*/
+	background-size:100%;
+    background-repeat: no-repeat;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+/*    display: none;*/
+/*    overflow-x: hidden;*/
+}
+/*
+#blurGlass {
+    display: none;
+}
+*/
+h1 {
+  font-size: 1.5em;
+  margin: 0.67em 0;
+}
+header {
+    width: 964px;
+    height: 60px;
+    margin: 20px auto 0 auto;
+}
+
+ul {
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+li,a {
+    width: 17%;
+    height: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1em;
+    line-height: 4em;
+    transition: all .26s ease;
+    -webkit-transition: all .26s ease;
+    -moz-transition: all .26s ease;
+    -o-transition: all .26s ease;
+
+}
+
+
+#logo {
+    float: left;
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+}
+
+[id^="f"] {
+    width: 10%;
+    color: white;
+}
+
+#search {
+    padding-right: 10px;
+}
+
+#in {
+    float: left;
+    width: 134px;
+    height: 23px;
+    border-style: none;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    outline: medium;
+}
+
+#discover {
+    float: left;
+    border-style: none;
+    width: 24px;
+    height: 23px;
+    padding: 0;
+    background-color: white;
+    background-image: url(http://www.chuqv.com/Public/img/search.png);
+    background-size: 100%;
+}
+
+
+#s {
+    margin-top:18px;
+    background: white;
+    width: 160px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:  4px;
+
+}
+
+#login {
+    padding-right: 10px;
+    height: 50px;
+    padding-top: 10px;
+}
+
+#sign {
+    width: 160px;
+    height: 40px;
+    margin-top: 3px;
+    margin-right: auto;
+    background-image: url(http://www.chuqv.com/Public/img/sign_in.png);
+}
+
+#flash {
+    width:65%;
+    height: 1px;
+    background-color: white;
+    margin-top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all .26s ease;
+    -webkit-transition: all .26s ease;
+    -moz-transition: all .26s ease;
+    -o-transition: all .26s ease;
+}
+
+#loginpage {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.logincanvas {
+    position: relative;
+    height: 245px;
+    width: 440px;
+    margin: 0 auto;
+}
+.logincanvas-logo {
+    width: 233px;
+    height: 75px;
+    margin: 0 auto;
+    padding-top: 62px;
+}
+.logincanvas-note {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logincanvas-logo-img {
+    width: 233px;
+    height: 75px;
+    background-image: url(http://www.chuqv.com/Public/img/PC_login_logo.png);
+}
+.logincanvas-loginbox {
+    height: 50px;
+    position: relative;
+}
+.logincanvas-loginbox-icon {
+    position: absolute;
+    top: -31px;
+    height: 31px;
+    cursor: pointer;
+}
+.userLogin {
+    left: 10px;
+    width: 43px;
+    background-image: url(http://www.chuqv.com/Public/img/login_user.png);
+}
+.agentLogin {
+    left: 54px;
+    width: 43px;
+    background-image: url(http://www.chuqv.com/Public/img/login_agent.png);
+}
+.logincanvas-loginbox-input {
+    float: left;
+    width: 400px;
+    height: 50px;
+    background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e5e5e5));
+
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.logincanvas-loginbox-input > .verify-bar {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    height: 50px;
+    width: 205px;
+    border-radius: 0 0 2px 2px;
+    background-image: -moz-linear-gradient(top, #f8b551, #eba843);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8b551), to(#eba843));
+    z-index: -1;
+}
+.verify-bar > .inner-box {
+    width: 185px;
+    height: 40px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 5px 10px;
+}
+.inner-box > .v-input {
+    float: left;
+    width: 95px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-indent: 10px;
+}
+.inner-box > .v-get {
+    float: left;
+    height: 30px;
+    width: 80px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    background-image: -moz-linear-gradient(top, #f8b551, #eba843);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8b551), to(#eba843));
+
+}
+#logincanvas-loginbox-input-phonenum, #logincanvas-loginbox-input-password {
+    float: left;
+    width: 173px;
+    height: 38px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 14px;
+    margin: 5px 0 5px 10px;
+    margin-top: 5px;
+    padding: 0 0 0 10px;
+    border-radius: 2px;
+    border-color: #e5e5e5;
+    outline: none;
+}
+
+.logincanvas-loginbox-go {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 5px 0;
+    background-image: -moz-linear-gradient(top, #f8b551, #eba843);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f8b551), to(#eba843));
+    font-size: 14px;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.logincanvas-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-image: url(http://www.chuqv.com/Public/img/PC_login.png);
+    cursor: pointer;
+}
+
+.blurGlassOn {
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -ms-filter: blur(3px);
+}
+
+.userBar {
+    width: 118px;
+    margin: 8px 0 0 10px;
+    font-size: 14px;
+    color: white;
+    overflow: hidden;
+    max-height: 30px;
+    transition: max-height .3s ease;
+}
+.userBar:hover {max-height: 60px;background-color: rgba(0, 0, 0, 0.2);
+}
+.userBar-top {
+    padding: 0;
+    height: 30px;
+}
+.userBar-top-photo {
+    float: left;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url(http://www.chuqv.com/Public/img/schedule/title_userPhoto.png);
+    margin: 5px;
+}
+.userBar-any-label {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.userBar-bottom {
+    height: 30px;
+    cursor: pointer;
+}
+.userBar-bottom:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.userBar-bottom-icon {
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-image: url(http://www.chuqv.com/Public/img/schedule/user_sign_out.png);
+    margin: 7px 8px;
+}

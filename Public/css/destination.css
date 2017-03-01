@@ -1,0 +1,364 @@
+
+
+body {background-image: url(http://www.chuqv.com/chuqv/Public/img/backgroundimg.png);
+}
+#sheader {
+    width: 922px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+
+#main {
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+}
+
+.main_table {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#table-left {
+    position: relative;
+    float: left;
+    width: 300px;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 10px 0 10px -10px rgba(0, 0, 0, .3);
+
+}
+#table-right {
+    float: right;
+    width: 664px;
+    border-radius: 0 4px 4px 0;
+}
+
+.table-title {
+    height: 50px;
+    color: white;
+    text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+#table-left-title {
+    width: 90%;
+    font-size: 20px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+
+.registers {
+    width: 50%;
+    height: 70px;
+    margin-bottom: 20px;
+}
+div#table-left>[id|=l] {float: left;}
+div#table-left>[id|=r] {float: right;}
+div#table-left [id|=img] {
+    width: 130px;
+    height: 70px;
+    border-radius: 4px;
+    position: relative;
+}
+
+div#table-left [id|=img] {
+    margin-left: auto;
+    margin-right: auto;
+}
+[id|=imgtag] {
+    width: auto;
+    height: 35px;
+    position: relative;
+    top: 18px;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    line-height: 35px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 1s ease;
+    display: none;
+}
+
+
+.del {
+    width: 30px;
+    height: 30px;
+    background: rgb(210, 30, 35);
+    position: absolute;
+    right: 0;
+    border-radius: 0 4px 0 28px;
+    display: none;
+    cursor: pointer;
+    color: white;
+}
+
+#goon {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: 280px;
+    height: 40px;
+    background-color: rgba(53, 119, 208, 0.74);
+    margin-right: 10px;
+    color: white;
+    line-height: 40px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, .4);
+    transition: all .5s ease;
+}
+#goon:hover {
+    background-color: rgba(31, 98, 189, 0.74);
+}
+
+
+div#table-left [id|=img]:hover {
+}
+#right-desk {
+    position: relative;
+    margin: 0 10px 0 10px;
+    height: 464px;
+    cursor: default;
+    overflow: hidden;
+
+}
+
+.table-right-slide {
+    width: 60px;
+    height: 220px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 121px;
+    margin-bottom: 121px;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(10, 10, 10, 0.2);
+    cursor: pointer;
+}
+
+#table-right-slide2left {
+    float: left;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/left.png);
+    background-size: 60px 220px;
+}
+#table-right-slide2right {
+    float: right;
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/right.png);
+    background-size: 60px 220px;
+}
+
+
+.line-box {
+    float: left;
+    margin: 50px auto;
+    width: 524px;
+    height: 364px;
+}
+#line-box-page-2 {display: none;}
+#line-box-page-3 {display: none;}
+
+#table-right-line {
+    margin: 0 0 0 10px;
+    height: auto;
+}
+
+.line-left {
+    width: 14px;
+    height: 14px;
+    margin: 7px 19px 0 0;
+    float: left;
+}
+#line-left-A {background-image: url(http://www.chuqv.com/chuqv/Public/img/A.png)}
+#line-left-B {background-image: url(http://www.chuqv.com/chuqv/Public/img/B.png)}
+#line-left-D {background-image: url(http://www.chuqv.com/chuqv/Public/img/D.png)}
+#line-left-E {background-image: url(http://www.chuqv.com/chuqv/Public/img/E.png)}
+#line-left-F {background-image: url(http://www.chuqv.com/chuqv/Public/img/F.png)}
+#line-left-H {background-image: url(http://www.chuqv.com/chuqv/Public/img/H.png)}
+#line-left-J {background-image: url(http://www.chuqv.com/chuqv/Public/img/J.png)}
+#line-left-K {background-image: url(http://www.chuqv.com/chuqv/Public/img/K.png)}
+#line-left-L {background-image: url(http://www.chuqv.com/chuqv/Public/img/L.png)}
+#line-left-M {background-image: url(http://www.chuqv.com/chuqv/Public/img/M.png)}
+#line-left-N {background-image: url(http://www.chuqv.com/chuqv/Public/img/N.png)}
+#line-left-P {background-image: url(http://www.chuqv.com/chuqv/Public/img/P.png)}
+#line-left-R {background-image: url(http://www.chuqv.com/chuqv/Public/img/R.png)}
+#line-left-S {background-image: url(http://www.chuqv.com/chuqv/Public/img/S.png)}
+#line-left-T {background-image: url(http://www.chuqv.com/chuqv/Public/img/T.png)}
+#line-left-W {background-image: url(http://www.chuqv.com/chuqv/Public/img/W.png)}
+#line-left-X {background-image: url(http://www.chuqv.com/chuqv/Public/img/X.png)}
+#line-left-Y {background-image: url(http://www.chuqv.com/chuqv/Public/img/Y.png)}
+
+#line-right {
+    float: left;
+    width: 480px;
+    height: auto;
+}
+#line-right-aim {
+    float: left;
+    width: 108px;
+    height: 26px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+#line-right-aim:hover {
+    color: white;
+    border-color: white;
+    box-shadow: 0 0 5px;
+}
+
+
+#aim-left {
+    float: left;
+    width: 81px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.aim-right {
+    float: right;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    line-height: 28px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+[class|=aim-tag] {
+    height: 13px;
+    border-style: none;
+    border-width: 0;
+    background-repeat: no-repeat;
+    margin-top: -42px;
+    margin-left: -1px;
+}
+.aim-tag-hot {background-image: url(http://www.chuqv.com/chuqv/Public/img/hot.png);}
+.aim-tag-new {background-image: url(http://www.chuqv.com/chuqv/Public/img/new.png);}
+
+.aim-del {height: 26px;}
+
+@keyframes aimdelrotate{
+    0% {}
+    100% {
+        color: rgb(252, 65, 69);
+        transform: rotate(45deg);
+    }
+}
+@-webkit-keyframes aimdelrotate{
+    0% {}
+    100% {
+        color: rgb(252, 65, 69);
+        -webkit-transform: rotate(45deg);
+    }
+}
+@-moz-keyframes aimdelrotate{
+    0% {}
+    100% {
+        color: rgb(252, 65, 69);
+        -moz-transform: rotate(45deg);
+    }
+}
+@-o-keyframes aimdelrotate{
+    0% {}
+    100% {
+        color: rgb(252, 65, 69);
+        -o-transform: rotate(45deg);
+    }
+}
+
+@keyframes aimdelunrotate{
+    0% {
+        color: rgb(252, 65, 69);
+        transform: rotate(45deg);
+    }
+    100% {
+        color: white;
+        transform: rotate(0);
+    }
+}
+@-webkit-keyframes aimdelunrotate{
+    0% {
+        color: rgb(252, 65, 69);
+        -webkit-transform: rotate(45deg);
+    }
+    100% {
+        color: white;
+        -webkit-transform: rotate(0);
+    }
+}
+@-moz-keyframes aimdelunrotate{
+    0% {
+        color: rgb(252, 65, 69);
+        -moz-transform: rotate(45deg);
+    }
+    100% {
+        color: white;
+        -moz-transform: rotate(0);
+    }
+}
+@-o-keyframes aimdelunrotate{
+    0% {
+        color: rgb(252, 65, 69);
+        -o-transform: rotate(45deg);
+    }
+    100% {
+        color: white;
+        -o-transform: rotate(0);
+    }
+}
+#right-box-page-switch-box {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+#page-switch-box-center {margin: 0 auto;width: 100px}
+.right-box-page-switch {
+    width: 20px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    float: left;
+    margin-right: 20px;
+    transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -o-transition: all .8s ease;
+}
+#page-switch-1 {background-color: #FFFFFF}
+#page-switch-3 {margin-right: 0;}
+
+#footer {
+    width: 140px;
+    height: 20px;
+    margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.footer-box-outside {width: 20px;height: 20px;border-radius: 10px;float: left;margin-right: 40px;background-color: rgba(255, 255, 255, 0.5);position: relative;}
+#box-o3 {margin-right: 0;}
+.footer-box-inside {width: 10px;height: 10px;border-radius: 5px;margin: 5px;}
+#box-i1 {background-color: rgb(255, 255, 255);}
+.footer-note {
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    font-size: 14px;
+    top: -24px;
+    left: -30px;
+
+}

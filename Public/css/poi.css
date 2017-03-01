@@ -1,0 +1,311 @@
+
+
+body {background-image: url(http://www.chuqv.com/Public/img/poi_backgroundimg.png);
+}
+#sheader {
+    width: 922px;;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+
+#main {
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+    background-image: url(http://www.chuqv.com/Public/img/poi_bg2.png);
+}
+
+.main_table {
+    height: 100%;
+}
+#table-left {
+    position: relative;
+    float: left;
+    width: 300px;
+    border-radius: 4px 0 0 4px;
+    box-shadow: 10px 0 10px -10px rgba(0, 0, 0, .3);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+#table-right {
+    float: right;
+    width: 664px;
+    border-radius: 0 4px 4px 0;
+}
+
+#footer {
+    width: 140px;
+    height: 20px;
+    margin-top: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+.footer-box-outside {width: 20px;height: 20px;border-radius: 10px;float: left;margin-right: 40px;background-color: rgba(255, 255, 255, 0.5);position: relative;}
+#box-o3 {margin-right: 0;}
+.footer-box-inside {width: 10px;height: 10px;border-radius: 5px;margin: 5px;}
+#box-i2 {background-color: rgb(255, 255, 255);}
+.footer-note {
+    position: absolute;
+    width: 80px;
+    text-align: center;
+    font-size: 14px;
+    top: -24px;
+    left: -30px;
+    
+}
+
+.table-left-titles {
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    line-height: 40px;
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, .5);
+}
+#left-title-1 {border-radius: 4px 0 0 0;}
+#left-title-3 {border-radius: 0 0 0 4px;}
+.table-left-wall {
+    position: relative;
+    height: 40px;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    overflow: hidden;
+}
+#left-wall-1 {height: 320px;}
+.poi-box-1 {
+    width: 110px;
+    height: 124px;
+    margin-top: 56px;
+    margin-left: auto;
+    margin-right: auto;
+}
+[class|=poi-box-2] {
+    width: 260px;
+    margin-left: 30px;
+}
+.poi-box-2 {margin-top: 48px;height: 124px;}
+.poi-box-2-2 {margin-top: 24px;height: 172px;}
+
+#table-right-list {
+    float: left;
+    width: 517px;
+    height: 100%;
+    padding-left: 47px;
+    background-color: rgba(255, 255, 255, 0.1);
+/*    box-shadow: 28px 10px 10px -28px rgba(0, 0, 0, 0.3);*/
+}
+#table-right-tag {
+    float: left;
+    width: 100px;
+    height: 100%;
+}
+.right-tags {
+    position: relative;
+    font-size: 18px;
+    color: white;
+    width: 100%;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    cursor: pointer;
+}
+#right-tag-1 {
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+#right-tag-2 {box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1) inset}
+#right-tag-3 {box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1) inset}
+#right-tag-4 {box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1) inset}
+#right-tag-5 {box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1) inset}
+#right-tag-6 {box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1) inset}
+.right-shadow-full {
+    width: 100%;
+    height: 232px;
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.1) inset;
+}
+
+
+.tags-left {
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    position: absolute;
+    top: 17px;
+    left: 23px;
+}
+#tags-left-1 {background-color: #C31717;}
+#tags-left-2 {background-color: #17C3A1;}
+#tags-left-3 {background-color: #27C317;}
+#tags-left-4 {background-color: #C36C17;}
+#tags-left-5 {background-color: #1784C3;}
+#tags-left-6 {background-color: #C117C3;}
+.tags-right {
+    text-align: center;
+    text-indent: 5px;
+    font-size: 10px;
+    line-height: 20px;
+    background-image: url(http://www.chuqv.com/Public/img/poi_shuliangkuang.png);
+    width: 21px;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    display: none;
+}
+
+.tags_line {
+    float: left;
+    width: 100%;
+    height: 2px;
+    background-image: url(http://www.chuqv.com/Public/img/poi_line.png);
+}
+
+
+
+
+
+[class|=poi-box-aim] {
+    position: relative;
+    float: left;
+    width: 108px;
+    height: 26px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0);
+    box-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.3) inset,
+        1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+.poi-box-aim-2 {margin-right: 20px;}
+[class|=poi-aim-left] {
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    position: absolute;
+    top: 10px;
+    left: -15px;
+}
+.poi-aim-left-1 {background-color: #C31717;}
+.poi-aim-left-2 {background-color: #17C3A1;}
+.poi-aim-left-3 {background-color: #27C317;}
+.poi-aim-left-4 {background-color: #C36C17;}
+.poi-aim-left-5 {background-color: #1784C3;}
+.poi-aim-left-6 {background-color: #C117C3;}
+
+
+
+.right-list-page {height: 410px;display: none;margin-top: 50px}
+#list-page-1 {display: block;}
+
+
+
+.list-poi-aim {
+    float: left;
+    width: 108px;
+    height: 26px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -o-transition: all ease .3s;
+}
+.list-poi-aim:hover {
+    color: white;
+    border-color: white;
+    box-shadow: 0 0 5px;
+}
+
+
+.list-poi-aim-left {
+    float: left;
+    width: 81px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    cursor: default;
+}
+.list-poi-aim-right {
+    float: right;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    border-style: solid;
+    border-width: 0 0 0 1px;
+    cursor: pointer;
+}
+
+.aim-right-del {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 25px;
+    transition: all .3s ease;
+}
+/*
+.aim-right-del:hover {
+    transform: rotate(90deg);
+}
+*/
+
+[class|=table-left-wall-note] {
+    float: right;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    height: auto;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.table-left-wall-note-1 {margin-top: auto;}
+.table-left-wall-note-2 {margin-top: 14px;}
+.table-left-wall-note-3 {margin-top: -20px;}
+
+
+.goon {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    width: 280px;
+    height: 40px;
+    background-color: rgba(53, 119, 208, 0.74);
+    color: white;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, .4);
+    transition: all .5s ease;
+}
+.goon:hover {
+    background-color: rgba(31, 98, 189, 0.74);
+}
+
+
+
+
+
+
+
+
+
