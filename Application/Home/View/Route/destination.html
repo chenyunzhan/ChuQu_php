@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/destination.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+		 <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/Loader.css"/>
+		
+        <title>初去-目的地</title>
+    </head>
+    <body id="screen" onload="loading(1)">
+        <div id="blurGlass">
+        <!--引入头部页面-->
+		<include file="./Home/Inclu/header.html"/>
+
+        <div id="sheader">
+            <font size="7">目的地 </font>
+            Destination
+        </div>
+
+        <div id="main">
+            <div class="main_table" id="table-left">
+                <div class="table-title" id="table-left-title">要去的地方</div>
+
+                    <div class="registers" id="l-1"><div id="img-1" onmousemove="displaydel(1)" onmouseout="undisplaydel(1)"><div class="del" id="del-1" onclick="deleteLo(1,1)"></div><div id="imgtag-1"></div><div id="tagwall"></div></div></div>
+                    <div class="registers" id="r-1"><div id="img-2" onmousemove="displaydel(2)" onmouseout="undisplaydel(2)"><div class="del" id="del-2" onclick="deleteLo(1,2)"></div><div id="imgtag-2"></div></div></div>
+                    <div class="registers" id="l-2"><div id="img-3" onmousemove="displaydel(3)" onmouseout="undisplaydel(3)"><div class="del" id="del-3" onclick="deleteLo(1,3)"></div><div id="imgtag-3"></div></div></div>
+                    <div class="registers" id="r-2"><div id="img-4" onmousemove="displaydel(4)" onmouseout="undisplaydel(4)"><div class="del" id="del-4" onclick="deleteLo(1,4)"></div><div id="imgtag-4"></div></div></div>
+                    <div class="registers" id="l-3"><div id="img-5" onmousemove="displaydel(5)" onmouseout="undisplaydel(5)"><div class="del" id="del-5" onclick="deleteLo(1,5)"></div><div id="imgtag-5"></div></div></div>
+                    <div class="registers" id="r-3"><div id="img-6" onmousemove="displaydel(6)" onmouseout="undisplaydel(6)"><div class="del" id="del-6" onclick="deleteLo(1,6)"></div><div id="imgtag-6"></div></div></div>
+                    <div class="registers" id="l-4"><div id="img-7" onmousemove="displaydel(7)" onmouseout="undisplaydel(7)"><div class="del" id="del-7" onclick="deleteLo(1,7)"></div><div id="imgtag-7"></div></div></div>
+                    <div class="registers" id="r-4"><div id="img-8" onmousemove="displaydel(8)" onmouseout="undisplaydel(8)"><div class="del" id="del-8" onclick="deleteLo(1,8)"></div><div id="imgtag-8"></div></div></div>
+                <a href="__ROOT__/index.php/home/route/poi"><div id="goon">下一步</div></a>
+            </div>
+            <div class="main_table" id="table-right">
+                <div id="right-desk">
+                    <div onclick="slide2last()" class="table-right-slide" id="table-right-slide2left">
+
+                    </div>
+                    <div onclick="slide2next()" class="table-right-slide" id="table-right-slide2right">
+
+                    </div>
+                    <div class="line-box" id="line-box-page-1">
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-A"></div>
+                            <div id="line-right" onmousemove="LineLeftTag(a)">
+                                <div id="line-right-aim" id="right-a1" onclick="push('a1')">
+                                    <div id="aim-left">
+                                        奥地利
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-a2" onclick="push('a2')">
+                                    <div id="aim-left">
+                                        安道尔
+                                        <div class="aim-tag-new"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-a3" onclick="push('a3')">
+                                    <div id="aim-left">埃及</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a3">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-a4" onclick="push('a4')">
+                                    <div id="aim-left">阿尔及利亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a4">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-a5" onclick="push('a5')">
+                                    <div id="aim-left">阿尔巴尼亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a5">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-a6" onclick="push('a6')">
+                                    <div id="aim-left">爱沙尼亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a6">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-a7" onclick="push('a7')">
+                                    <div id="aim-left">爱尔兰</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-a7">+</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-B"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-b1" onclick="push('b1')">
+                                    <div id="aim-left">比利时</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-b1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-b2" onclick="push('b2')">
+                                    <div id="aim-left">波兰</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-b2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-b3" onclick="push('b3')">
+                                    <div id="aim-left">保加利亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-b3">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-b4" onclick="push('b4')">
+                                    <div id="aim-left">
+                                        冰岛
+                                        <div class="aim-tag-new"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-b4">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-D"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-d1" onclick="push('d1')">
+                                    <div id="aim-left">
+                                        德国
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-d1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-d2" onclick="push('d2')">
+                                    <div id="aim-left">丹麦</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-d2">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-E"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-e1" onclick="push('e1')">
+                                    <div id="aim-left">
+                                        俄罗斯
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-e1">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-F"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-f1" onclick="push('f1')">
+                                    <div id="aim-left">
+                                        法国
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-f1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-f2" onclick="push('f2')">
+                                    <div id="aim-left">芬兰</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-f2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-f3" onclick="push('f3')">
+                                    <div id="aim-left">
+                                        梵蒂冈
+                                        <div class="aim-tag-new"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-f3">+</div></div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-H"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-h1" onclick="push('h1')">
+                                    <div id="aim-left">荷兰</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-h1">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-J"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-j1" onclick="push('j1')">
+                                    <div id="aim-left">捷克</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-j1">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="line-box" id="line-box-page-2">
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-K"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-k1" onclick="push('k1')">
+                                    <div id="aim-left">
+                                        克罗地亚
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-k1">+</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-L"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-l1" onclick="push('l1')">
+                                    <div id="aim-left">卢森堡</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-l1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-l2" onclick="push('l2')">
+                                    <div id="aim-left">
+                                        罗马尼亚
+                                        <div class="aim-tag-new"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-l2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-l3" onclick="push('l3')">
+                                    <div id="aim-left">列支敦士登</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-l3">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-l4" onclick="push('l4')">
+                                    <div id="aim-left">拉脱维亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-l4">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-M"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-m1" onclick="push('m1')">
+                                    <div id="aim-left">
+                                        摩纳哥
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-m1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-m2" onclick="push('m2')">
+                                    <div id="aim-left">
+                                        摩洛哥
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-m2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-m3" onclick="push('m3')">
+                                    <div id="aim-left">马其顿</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-m3">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-m4" onclick="push('m4')">
+                                    <div id="aim-left">
+                                        马尔他
+                                        <div class="aim-tag-new"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-m4">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-N"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-n1" onclick="push('n1')">
+                                    <div id="aim-left">挪威</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-n1">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-P"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-p1" onclick="push('p1')">
+                                    <div id="aim-left">葡萄牙</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-p1">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-R"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-r1" onclick="push('r1')">
+                                    <div id="aim-left">瑞典</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-r1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-r2" onclick="push('r2')">
+                                    <div id="aim-left">
+                                        瑞士
+                                        <div class="aim-tag-new"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-r2">+</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-S"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-s1" onclick="push('s1')">
+                                    <div id="aim-left">塞尔维亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-s1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-s2" onclick="push('s2')">
+                                    <div id="aim-left">斯诺伐克</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-s2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-s3" onclick="push('s3')">
+                                    <div id="aim-left">斯诺文尼亚</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-s3">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-s4" onclick="push('s4')">
+                                    <div id="aim-left">赛普洛斯</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-s4">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-s5" onclick="push('s5')">
+                                    <div id="aim-left">圣马力诺</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-s5">+</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="line-box" id="line-box-page-3">
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-T"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-t1" onclick="push('t1')">
+                                    <div id="aim-left">土耳其</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-t1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-t2" onclick="push('t2')">
+                                    <div id="aim-left">突尼斯</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-t2">+</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-W"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-w1" onclick="push('w1')">
+                                    <div id="aim-left">乌克兰</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-w1">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-X"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-x1" onclick="push('x1')">
+                                    <div id="aim-left">西班牙</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-x1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-x2" onclick="push('x2')">
+                                    <div id="aim-left">希腊</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-x2">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-x3" onclick="push('x3')">
+                                    <div id="aim-left">匈牙利</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-x3">+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="table-right-line">
+                            <div class="line-left" id="line-left-Y"></div>
+                            <div id="line-right">
+                                <div id="line-right-aim" id="right-y1" onclick="push('y1')">
+                                    <div id="aim-left">
+                                        英国
+                                        <div class="aim-tag-hot"></div>
+                                    </div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-y1">+</div></div>
+                                </div>
+                                <div id="line-right-aim" id="right-y2" onclick="push('y2')">
+                                    <div id="aim-left">意大利</div>
+                                    <div class="aim-right"><div class="aim-del" id="aim-del-y2">+</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div id="right-box-page-switch-box">
+                        <div id="page-switch-box-center">
+                            <div class="right-box-page-switch" id="page-switch-1"></div>
+                            <div class="right-box-page-switch" id="page-switch-2"></div>
+                            <div class="right-box-page-switch" id="page-switch-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer id="footer">
+            <div class="footer-box-outside" id="box-o1">
+                <a href="destination.html">
+                    <div class="footer-box-inside" id="box-i1"></div>
+                </a>
+                <div class="footer-note" id="footer-note-1">选择国家</div>
+            </div>
+            <div class="footer-box-outside" id="box-o2">
+                <a href="poi.html">
+                    <div class="footer-box-inside" id="box-i2"></div>
+                </a>
+                <div class="footer-note" id="footer-note-2"></div>
+            </div>
+            <div class="footer-box-outside" id="box-o3">
+                <a href="howlong.html">
+                    <div class="footer-box-inside" id="box-i3"></div>
+                </a>
+                <div class="footer-note" id="footer-note-3"></div>
+            </div>
+        </footer>
+        </div>
+        <!--引入登录、注册页面-->
+		<include file="./Home/Inclu/log_reg.html"/>
+        <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
+        <script src="{$Think.const.JS_PATH}/des-slide.js"></script>
+		<script src="{$Think.const.JS_PATH}/log_reg.js"></script>
+    </body>
+
+
+</html>

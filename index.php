@@ -21,11 +21,11 @@ define('APP_DEBUG',True);
 define('APP_PATH','./Application/');
 
 
-define('CSS_PATH','./Public/css');
+define('CSS_PATH','/Public/css');
 
-define('IMG_PATH','./Public/img');
+define('IMG_PATH','/Public/img');
 
-define('JS_PATH','./Public/scripts');
+define('JS_PATH','/Public/scripts');
 
 
 
