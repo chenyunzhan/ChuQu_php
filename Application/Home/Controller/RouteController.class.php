@@ -16,4 +16,12 @@ class RouteController extends Controller {
 //        session("route", 1);
     }
 
+
+    public function poi(){
+        $this->display();
+//        session("route", 1);
+    }
+
+
+
 }
