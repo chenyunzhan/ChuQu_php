@@ -118,7 +118,7 @@ li, ul a {
     height: 23px;
     padding: 0;
     background-color: white;
-    background-image: url(/img/search.png);
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/search.png);
     background-size: 100%;
 }
 
@@ -341,7 +341,7 @@ li, ul a {
     height: 20px;
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0.5);
-    background-image: url(/img/schedule/title_userPhoto.png);
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/title_userPhoto.png);
     margin: 5px;
 }
 .userBar-any-label {
@@ -360,6 +360,6 @@ li, ul a {
     float: left;
     width: 16px;
     height: 16px;
-    background-image: url(/img/schedule/user_sign_out.png);
+    background-image: url(http://www.chuqv.com/chuqv/Public/img/schedule/user_sign_out.png);
     margin: 7px 8px;
 }

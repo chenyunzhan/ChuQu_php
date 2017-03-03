@@ -12,7 +12,10 @@ use Think\Controller;
 class OrderController extends Controller
 {
     public function order(){
+
+        $lists = D("city_back")->lists();
+        $this->assign('lists',$lists);//列表
         $this->display();
-//        session("route", 1);
+
     }
 }

@@ -210,7 +210,7 @@ body {background-image: url(http://www.chuqv.com/Public/img/backgroundimg.png);
 			height: 130px;
 			background-color: rgba(0, 0, 0, 0.2);
 			margin: 6px 0 10px 0;
-			background-image: url("/img/ticket/viewofplace.png");
+			background-image: url("/Public/img/viewofplace.png");
 		}
 		.pool-item > .item-label {
 			align-self: flex-start;
@@ -296,7 +296,7 @@ body {background-image: url(http://www.chuqv.com/Public/img/backgroundimg.png);
 			width: 282px;
 			height: 130px;
 			background-color: rgba(0, 0, 0, .3);
-			background-image: url("/img/ticket/wall.png");
+			background-image: url("/Public/img/wall.png");
 			margin-bottom: 10px;
 		}
 		.split > .title {
