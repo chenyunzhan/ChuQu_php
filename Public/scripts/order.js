@@ -13,6 +13,7 @@ function loading(w) {
     isTittle1=w;
 	NavItemSelectorDefaultPos = (2-w)*96+15;
     material();
+	addActionToOptionBox();
 }
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
 //  >   FUNCTION NAME   :   fleft, fright, fback;
@@ -68,8 +69,15 @@ function Loginturnoff() {
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
 
 //	Handle selector status toggle
+
+
+/*
 $(".optionBox > .button").each((i,e) => {
+
+
 	$(e).click(()=>{
+
+
 		let optionKey = $(e).prev().text();	//Get the string of the option which was selected
 		let total = $(e).parent().parent().prev().find(".title-num");
 
@@ -77,15 +85,59 @@ $(".optionBox > .button").each((i,e) => {
 		if($(e).toggleClass("selected").hasClass("selected")) {
 			//	Add option
 			total.text((i,e) => e*1+1);
+			selectedCountryArray.push($(e).attr('id'));
 		}
 		else {
 			//	Remove option
 			total.text((i,e) => e*1-1);
+			selectedCountryArray.remove($(e).attr('id'));
+
 		}
 		//	handle box opacity
 		$(e).parent().toggleClass("boxActive");
 	});
 });
+*/
+
+function addActionToOptionBox() {
+	//	Handle selector status toggle
+	$(".optionBox > .button").each((i,e) => {
+
+		$(e).unbind('click');
+
+		$(e).click(()=>{
+
+
+			let optionKey = $(e).prev().text();	//Get the string of the option which was selected
+			let total = $(e).parent().parent().prev().find(".title-num");
+			let optionBoxId = $(e).parent().parent().attr("id");
+
+			//	handle selector, add or remove
+			if($(e).toggleClass("selected").hasClass("selected")) {
+				//	Add option
+				total.text((i,e) => e*1+1);
+
+				if(optionBoxId == 'city') {
+					selectedCityArray.push($(e).attr('id'));
+				} else if(optionBoxId == 'country') {
+					selectedCountryArray.push($(e).attr('id'));
+
+				}
+			}
+			else {
+				//	Remove option
+				total.text((i,e) => e*1-1);
+				if(optionBoxId == 'city') {
+					selectedCityArray.remove($(e).attr('id'));
+				} else if (optionBoxId == 'country') {
+					selectedCountryArray.remove($(e).attr('id'));
+				}
+			}
+			//	handle box opacity
+			$(e).parent().toggleClass("boxActive");
+		});
+	});
+}
 
 //	Handle menu toggle
 $(".menu > .option > .title").each((i,e) => {
@@ -101,6 +153,27 @@ $(".menu > .option > .title").each((i,e) => {
 			//	Handle list panel
 			$(".main > .itemList > .active").removeClass("active");
 			$(".main > .itemList").children().eq(i).toggleClass("active");
+
+
+			if (i==1) {
+				$.get("/home/order/getCityByCountryId?id=" + selectedCountryArray.join(",") ,function(data,status){
+					$(e).next().children().remove();
+					$(e).next().append(data);
+					addActionToOptionBox();
+				});
+			} else if (i==0) {
+
+				$(".menu > .option > .title").eq(1).find(".title-num").text("0");
+				selectedCityArray.empty();
+			} else if (i==2) {
+				$.get("/home/order/getProductByCityId?id=" + selectedCityArray.join(",") ,function(data,status){
+					$(".main > .itemList").children().eq(i).children().remove();
+					$(".main > .itemList").children().eq(i).append(data);
+					addActionToListPool();
+				});
+			}
+
+
 			// let pathName = $(e).find(".title-label").text().slice(2);
 			// if(i==2) {
 			// 	$(".main > .itemList").removeClass("emptyList");
@@ -164,32 +237,35 @@ $(".content > .num-selector > .button").each((i,e) => {
 	});
 });
 
-//	Handle add and remove event of Spot item
+
+
+
+function addActionToListPool() {
+	//	Handle add and remove event of Spot item
 // ------------------------------------------------------
 	//	- bind Add event
-$(".itemList .add").each((i,e) => {
-	let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">THE VIEW PLACE ONE</div><div class="title">伦敦威斯敏思特大教堂<span class="note">英国伦敦</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
-	$(e).click(() => {
-		//	Make sure the add event won't response again
-		if($(".menu > .active > .optionPool").find("#spotKey-"+i).length > 0) {
-			alert("已添加!");
-		}
-		else {
-			// alert("none");
-			$(".menu > .active > .optionPool").append(spotItemDom);
-			//	- bind Remove event
-			$(".menu > .option > .optionPool > .spot-item > .button").each((ii,ee) => {
-				$(ee).unbind('click');
-				$(ee).click(() => {
-					$(ee).parent().remove();
+	$(".itemList .add").each((i,e) => {
+		let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">THE VIEW PLACE ONE</div><div class="title">伦敦威斯敏思特大教堂<span class="note">英国伦敦</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
+		$(e).click(() => {
+			//	Make sure the add event won't response again
+			if($(".menu > .active > .optionPool").find("#spotKey-"+i).length > 0) {
+				alert("已添加!");
+			}
+			else {
+				// alert("none");
+				$(".menu > .active > .optionPool").append(spotItemDom);
+				//	- bind Remove event
+				$(".menu > .option > .optionPool > .spot-item > .button").each((ii,ee) => {
+					$(ee).unbind('click');
+					$(ee).click(() => {
+						$(ee).parent().remove();
+					});
 				});
-			});
-
-		}
-
-		return false;	//Stop Propagation
+			}
+			return false;	//Stop Propagation
+		});
 	});
-});
+}
 
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
 //  >   FUNCTION NAME   :   material,

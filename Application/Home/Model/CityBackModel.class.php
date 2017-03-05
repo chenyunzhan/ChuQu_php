@@ -24,7 +24,7 @@ class CityBackModel extends Model
      */
     public function lists(){
 
-        return $this->limit(12)->select();
+        return $this->distinct(true)->field('topicid, country')->select();
     }
 
 
