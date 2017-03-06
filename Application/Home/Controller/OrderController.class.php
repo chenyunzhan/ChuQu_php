@@ -44,25 +44,23 @@ class OrderController extends Controller
 
 
         $where['CityID'] = array('in',$id);
+        $where['Classification'] = array('like','%成人%');
 
-//        SELECT
-//	product_copy.id,
-//	productticket_copy.id,
-//	product_copy.ProductName,
-//	product_copy.Category,
-//	product_copy.Country,
-//	product_copy.City,
-//	productticket_copy.Price,
-//	productticket_copy.Classification
-//FROM
-//	`product_copy`
-//LEFT JOIN productticket_copy ON product_copy.productname = productticket_copy.productname
 
 
         $user = M('product_copy');
-        $list = $user->join('RIGHT JOIN productticket_copy ON product_copy.productname = productticket_copy.productname')->select();
+        $list = $user->join('RIGHT JOIN productticket_copy ON product_copy.productname = productticket_copy.productname')->field('
+        product_copy.id as id1,
+        product_copy.name,
+        productticket_copy.id as id2,
+        product_copy.ProductName,
+        product_copy.Category,
+        product_copy.Country,
+        product_copy.City,
+        productticket_copy.Price,
+        productticket_copy.Classification')->where($where)->select();
 
-        $data = M('product_copy')->where($where)->select();
+//        $data = M('product_copy')->where($where)->select();
 
         echo json_encode($list);//json_encode方式是必须的
 

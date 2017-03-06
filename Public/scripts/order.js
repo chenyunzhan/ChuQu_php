@@ -170,7 +170,14 @@ $(".menu > .option > .title").each((i,e) => {
 					$(".main > .itemList").children().eq(i).children().remove();
 					allProductArray = $.parseJSON(data);
 					$.each($.parseJSON(data),function(index,val){
+						var temp1 = val.price.split('.')[0];
+						var temp2 = val.price.split('.')[1];
 
+						if(temp2 == undefined) {
+							temp2 = '00';
+						} else if (temp2 < 10) {
+							temp2 =  temp2 + 0;
+						}
 
 						$(".main > .itemList").children().eq(i).append(
 							'<div class="pool-item">'+
@@ -179,7 +186,7 @@ $(".menu > .option > .title").each((i,e) => {
 							'<div class="item-label note">'+ val.category +'</div>'+
 							'<div class="item-label city">'+ val.country + '   ' + val.city +'</div>'+
 							'<div class="item-bottom">'+
-							'<div class="cost">￥80<span style="font-size:12px">.00</span></div>'+
+							'<div class="cost">￥'+temp1+'<span style="font-size:12px">.'+ temp2 + '</span></div>'+
 							'<div class="add">添加</div>'+
 							'</div>'+
 							'</div>'
@@ -264,10 +271,20 @@ function addActionToListPool() {
 	//	- bind Add event
 	$(".itemList .add").each((i,e) => {
 
+
 		//let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">THE VIEW PLACE ONE</div><div class="title">伦敦威斯敏思特大教堂<span class="note">英国伦敦</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
 
 		let product = allProductArray[i];
-		let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">'+ product.category +'</div><div class="title">'+product.productname+'<span class="note">'+ product.country + '   '+product.city +'</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
+
+		var temp1 = product.price.split('.')[0];
+		var temp2 = product.price.split('.')[1];
+
+		if(temp2 == undefined) {
+			temp2 = '00';
+		} else if (temp2 < 10) {
+			temp2 =  temp2 + 0;
+		}
+		let spotItemDom = '<div class="spot-item" id="'+product.id2+'"><div class="title note">'+ product.category +'</div><div class="title">'+product.productname+'<span class="note">'+ product.country + '   '+product.city +'</span></div><div class="note">'+product.name+'</div><div class="cost">￥'+temp1+'<span style="font-size:14px">.'+temp2+'</span></div><div class="button">移除</div></div>'
 
 		$(e).click(() => {
 				//	Make sure the add event won't response again
@@ -277,11 +294,15 @@ function addActionToListPool() {
 				else {
 					// alert("none");
 					$(".menu > .active > .optionPool").append(spotItemDom);
+					selectedProductArray.push(product.id2);
+					$(".menu > .option > .title").eq(2).find(".title-num").text(selectedProductArray.length);
 					//	- bind Remove event
 					$(".menu > .option > .optionPool > .spot-item > .button").each((ii,ee) => {
 						$(ee).unbind('click');
 						$(ee).click(() => {
 							$(ee).parent().remove();
+							selectedProductArray.remove($(ee).parent().attr('id'));
+							$(".menu > .option > .title").eq(2).find(".title-num").text(selectedProductArray.length);
 						});
 					});
 				}
