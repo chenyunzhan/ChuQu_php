@@ -44,28 +44,40 @@ class OrderController extends Controller
 
 
         $where['CityID'] = array('in',$id);
+
+//        SELECT
+//	product_copy.id,
+//	productticket_copy.id,
+//	product_copy.ProductName,
+//	product_copy.Category,
+//	product_copy.Country,
+//	product_copy.City,
+//	productticket_copy.Price,
+//	productticket_copy.Classification
+//FROM
+//	`product_copy`
+//LEFT JOIN productticket_copy ON product_copy.productname = productticket_copy.productname
+
+
+        $user = M('product_copy');
+        $list = $user->join('RIGHT JOIN productticket_copy ON product_copy.productname = productticket_copy.productname')->select();
+
         $data = M('product_copy')->where($where)->select();
 
+        echo json_encode($list);//json_encode方式是必须的
 
-        foreach($data as $k=>$v){
-            echo '<div class="pool-item">';
-            echo '<div class="item-image"></div>';
-
-
-            echo '<div class="label">'.$v["ccity"].'</div>';
-
-
-
-            echo '<div class="item-label title">'.$v["productname"].'</div>';
-            echo '<div class="item-label note">'.$v["category"].'</div>';
-            echo '<div class="item-label city">'.$v["country"].' '.$v["city"].'</div>';
-            echo '<div class="item-bottom">';
-            echo '<div class="cost">￥80<span style="font-size:12px">.00</span></div>';
-            echo '<div class="add">添加</div>';
-            echo '</div>';
-            echo '</div>';
-
-        }
+//        foreach($data as $k=>$v){
+//            echo '<div class="pool-item">';
+//            echo '<div class="item-image"></div>';
+//            echo '<div class="item-label title">'.$v["productname"].'</div>';
+//            echo '<div class="item-label note">'.$v["category"].'</div>';
+//            echo '<div class="item-label city">'.$v["country"].' '.$v["city"].'</div>';
+//            echo '<div class="item-bottom">';
+//            echo '<div class="cost">￥80<span style="font-size:12px">.00</span></div>';
+//            echo '<div class="add">添加</div>';
+//            echo '</div>';
+//            echo '</div>';
+//        }
 
 
 

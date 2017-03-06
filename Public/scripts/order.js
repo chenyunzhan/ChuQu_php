@@ -168,7 +168,25 @@ $(".menu > .option > .title").each((i,e) => {
 			} else if (i==2) {
 				$.get("/home/order/getProductByCityId?id=" + selectedCityArray.join(",") ,function(data,status){
 					$(".main > .itemList").children().eq(i).children().remove();
-					$(".main > .itemList").children().eq(i).append(data);
+					allProductArray = $.parseJSON(data);
+					$.each($.parseJSON(data),function(index,val){
+
+
+						$(".main > .itemList").children().eq(i).append(
+							'<div class="pool-item">'+
+							'<div class="item-image"></div>'+
+							'<div class="item-label title">'+ val.productname +'</div>'+
+							'<div class="item-label note">'+ val.category +'</div>'+
+							'<div class="item-label city">'+ val.country + '   ' + val.city +'</div>'+
+							'<div class="item-bottom">'+
+							'<div class="cost">￥80<span style="font-size:12px">.00</span></div>'+
+							'<div class="add">添加</div>'+
+							'</div>'+
+							'</div>'
+						);
+						//$("#city").append('<option value='+val.region_id+' >'+val.region_name+'</option>');
+					})
+
 					addActionToListPool();
 				});
 			}
@@ -245,26 +263,31 @@ function addActionToListPool() {
 // ------------------------------------------------------
 	//	- bind Add event
 	$(".itemList .add").each((i,e) => {
-		let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">THE VIEW PLACE ONE</div><div class="title">伦敦威斯敏思特大教堂<span class="note">英国伦敦</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
+
+		//let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">THE VIEW PLACE ONE</div><div class="title">伦敦威斯敏思特大教堂<span class="note">英国伦敦</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
+
+		let product = allProductArray[i];
+		let spotItemDom = '<div class="spot-item" id="spotKey-'+i+'"><div class="title note">'+ product.category +'</div><div class="title">'+product.productname+'<span class="note">'+ product.country + '   '+product.city +'</span></div><div class="note">威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.</div><div class="cost">￥80<span style="font-size:14px">.00</span></div><div class="button">移除</div></div>'
+
 		$(e).click(() => {
-			//	Make sure the add event won't response again
-			if($(".menu > .active > .optionPool").find("#spotKey-"+i).length > 0) {
-				alert("已添加!");
-			}
-			else {
-				// alert("none");
-				$(".menu > .active > .optionPool").append(spotItemDom);
-				//	- bind Remove event
-				$(".menu > .option > .optionPool > .spot-item > .button").each((ii,ee) => {
-					$(ee).unbind('click');
-					$(ee).click(() => {
-						$(ee).parent().remove();
+				//	Make sure the add event won't response again
+				if($(".menu > .active > .optionPool").find("#spotKey-"+i).length > 0) {
+					alert("已添加!");
+				}
+				else {
+					// alert("none");
+					$(".menu > .active > .optionPool").append(spotItemDom);
+					//	- bind Remove event
+					$(".menu > .option > .optionPool > .spot-item > .button").each((ii,ee) => {
+						$(ee).unbind('click');
+						$(ee).click(() => {
+							$(ee).parent().remove();
+						});
 					});
-				});
-			}
-			return false;	//Stop Propagation
+				}
+				return false;	//Stop Propagation
+			});
 		});
-	});
 }
 
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
