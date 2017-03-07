@@ -241,6 +241,11 @@ $(".itemList > .detail").find(".cancel").each((i,e) => {
 	});
 });
 
+$(".main-bottom-buttons > .booking").click(() => {
+	location.href = "/home/order/preAddOrder?id=" + selectedProductArray.join(',');
+});
+
+
 
 $(function() {	//	Datepicker
 	$( ".datepicker" ).datepicker({
@@ -284,7 +289,7 @@ function addActionToListPool() {
 		} else if (temp2 < 10) {
 			temp2 =  temp2 + 0;
 		}
-		let spotItemDom = '<div class="spot-item" id="'+product.id2+'"><div class="title note">'+ product.category +'</div><div class="title">'+product.productname+'<span class="note">'+ product.country + '   '+product.city +'</span></div><div class="note">'+product.name+'</div><div class="cost">￥'+temp1+'<span style="font-size:14px">.'+temp2+'</span></div><div class="button">移除</div></div>'
+		let spotItemDom = '<div class="spot-item" id="'+product.id1+'"><div class="title note">'+ product.category +'</div><div class="title">'+product.productname+'<span class="note">'+ product.country + '   '+product.city +'</span></div><div class="note">'+product.name+'</div><div class="cost">￥'+temp1+'<span style="font-size:14px">.'+temp2+'</span></div><div class="button">移除</div></div>'
 
 		$(e).click(() => {
 				//	Make sure the add event won't response again
@@ -294,7 +299,7 @@ function addActionToListPool() {
 				else {
 					// alert("none");
 					$(".menu > .active > .optionPool").append(spotItemDom);
-					selectedProductArray.push(product.id2);
+					selectedProductArray.push(product.id1);
 					$(".menu > .option > .title").eq(2).find(".title-num").text(selectedProductArray.length);
 					//	- bind Remove event
 					$(".menu > .option > .optionPool > .spot-item > .button").each((ii,ee) => {

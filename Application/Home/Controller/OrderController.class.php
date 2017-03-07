@@ -81,6 +81,29 @@ class OrderController extends Controller
 
     }
 
+    public function preAddOrder($id = 0) {
+        $where['product_copy.id'] = array('in',$id);
+        $where['Classification'] = array('like','%成人%');
+
+
+
+        $user = M('product_copy');
+        $lists = $user->join('RIGHT JOIN productticket_copy ON product_copy.productname = productticket_copy.productname')->field('
+        product_copy.id as id1,
+        product_copy.name,
+        productticket_copy.id as id2,
+        product_copy.ProductName,
+        product_copy.Category,
+        product_copy.Country,
+        product_copy.City,
+        productticket_copy.Price,
+        productticket_copy.Classification')->where($where)->select();
+
+        $this->assign('lists',$lists);//列表
+        $this->display();
+
+    }
+
 
     public function data(){
         $t = D('FarmListView');

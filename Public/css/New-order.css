@@ -1,0 +1,381 @@
+body {background-image: url(http://www.chuqv.com/Public/img/backgroundimg.png);
+}
+#sheader {
+    width: 922px;;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2em;
+
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-start;
+
+	color: white;
+	text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+	#sheader > font:before {
+		content: "门票预订 >";
+		font-size: 18px;
+		text-shadow: 0 0 10px rgb(51, 51, 51);
+		margin-right: 10px;
+	}
+
+	#sheader > font:after {
+		content: "> 在线支付 > 购买成功";
+		font-size: 18px;
+		color: rgba(255, 255, 255, .6);
+		text-shadow: 0 0 10px rgb(50, 50, 50);
+		margin-left: 10px;
+	}
+
+.main {
+    position: relative;
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+	margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+    color: white;
+    overflow: hidden;
+	display: flex;
+	border-radius: 2px;
+}
+
+.SCROLL {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.SCROLL::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+	width: 4px;
+}
+.SCROLL::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+}
+
+
+/* Left View */
+.main > .orders {
+	width: 300px;
+	border-radius: 2px 0 0 2px;
+	padding-bottom: 20px;
+	background-color: rgba(255, 255, 255, .1);
+
+}
+
+	.orders > .order {
+		width: 280px;
+		min-height: 100px;
+		margin: 10px 0 0 10px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: white;
+		border-radius: 2px;
+	}
+
+		.order > .titleBar {
+			height: 64px;
+			background-color: rgba(255, 255, 255, .1);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			padding-left: 10px;
+			border-radius: 2px 2px 0 0;
+			cursor: pointer;
+
+		}
+			.titleBar > .zh {
+				font-size: 18px;
+			}
+			.titleBar > .en {
+				font-size: 14px;
+				color: rgba(255, 255, 255, .6);
+			}
+
+		.order > .titleLabel {
+			font-size: 14px;
+			color: rgba(255, 255, 255, .4);
+			margin: 10px;
+		}
+
+		.order > .typeSelector {
+			display: flex;
+			justify-content: space-around;
+		}
+			.typeSelector > .typeOption {
+				flex: 120px 0 1;
+				height: 34px;
+				font-size: 14px;
+				cursor: pointer;
+				background-color: rgba(255, 255, 255, .2);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-style: solid;
+				border-width: 1px;
+				border-color: rgba(255, 255, 255, 0);
+				border-radius: 2px;
+			}
+			.typeSelector > .selected {
+				border-color: rgba(255, 255, 255, 1);
+			}
+
+		.order > .datePicker {
+			height: 36px;
+			width: 258px;
+			margin-left: 10px;
+			border-radius: 2px;
+			background-color: rgba(255, 255, 255, .1);
+			padding: 0;
+			border-style: none;
+			color: white;
+			text-align: center;
+			font-size: 14px;
+
+		}
+		.order > .num-selector {
+			width: 110px;
+			height: 30px;
+			display: flex;
+			margin: 0 0 20px 12px;
+			/* Make sure the text of buttons won't be selected during user click it*/
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-o-user-select: none;
+		}
+			.num-selector > * {
+				border-style: solid;
+				border-width: 1px;
+				border-color: rgba(255, 255, 255, .4);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.num-selector > .button:first-child {
+				border-radius: 4px 0 0 4px;
+			}
+			.num-selector > .button:last-child {
+				border-radius: 0 4px 4px 0;
+			}
+			.num-selector > .number {
+				flex: 0 0 50px;
+				border-width: 1px 0;
+			}
+			.num-selector > .button {
+				flex: 3 1 auto;
+				cursor: pointer;
+				font-size: 22px;
+				color: rgba(255, 255, 255, .4);
+			}
+		.order > .bottomBar {
+			height: 60px;
+			background-color: rgba(255, 255, 255, .1);
+			border-radius: 0 0 2px 2px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+			.bottomBar > *:first-child {
+				margin-left: 16px;
+				font-size: 14px;
+			}
+			.bottomBar > *:last-child {
+				margin-right: 10px;
+			}
+
+
+
+/* Rigth View */
+.main > .userinfo {
+	/* Fill space of main view */
+	flex: auto 1 0;
+	position: relative;
+	border-radius: 0 2px 2px 0;
+}
+	.userinfo > .infoPool {
+		height: 406px;
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+		.infoPool .TBLINE {
+			border-style: solid;
+			border-width: 0 0 1px 0;
+			border-color: rgba(255, 255, 255, .2);
+		}
+		.infoPool > .headBar {
+			height: 66px;
+			display: flex;
+			align-items: center;
+			padding-left: 30px;
+
+		}
+			.headBar > .title {
+				font-size: 18px;
+				/*text-shadow: 0 0 5px rgba(0,0,0,.5);*/
+			}
+				.title > *:last-child {
+					font-size: 14px;
+					color: rgba(255, 255, 255, .4);
+					margin-left: 10px;
+				}
+
+
+		.infoPool > .optChildBox {
+			padding: 0 30px;
+		}
+			.optChildBox > .usrOptCell {
+				padding: 20px 0;
+				display: flex;
+				font-size: 14px;
+				align-items: center;
+			}
+				.usrOptCell > .usrOptLabel {
+					margin-right: 30px;
+				}
+				.usrOptCell > .usrOptItem {
+					width: 78px;
+					height: 38px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 0 10px 0 0;
+					background-color: rgba(255, 255, 255, .2);
+					border-style: solid;
+					border-width: 1px;
+					border-radius: 2px;
+					cursor: pointer;
+					/* default sytle */
+					color: rgba(255, 255, 255, .4);
+					border-color: rgba(255, 255, 255, 0);
+				}
+				.usrOptCell > .usrOptItemSELECTED {
+					color: rgba(255, 255, 255, 1);
+					border-color: rgba(255, 255, 255, 1);
+				}
+			.optChildBox > .optModel {
+				padding: 20px 0;
+				display: flex;
+			}
+				.optModel > .inputCmpnt {
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+				}
+				.optModel > .inputCmpnt:first-child{padding-right: 10px;}
+				.optModel > .inputCmpnt:last-child{padding-left: 10px;}
+					.inputCmpnt > input, .IDselector {
+						height: 40px;
+						outline-color: rgba(255, 255, 255, 1);
+						/*outline-width: 1px;*/
+						border-style: none;
+						border-radius: 2px;
+						background-color: rgba(255, 255, 255, .2);
+						font-size: 14px;
+						color: white;
+						padding: 0 0 0 10px;
+					}
+					.inputCmpnt > .note {
+						font-size: 12px;
+						color: rgba(255, 255, 255, .4);
+						margin-top: 10px;
+					}
+					.inputCmpnt > .optSelector {
+						display: flex;
+						height: 40px;
+						border-radius: 2px;
+						background-color: rgba(255, 255, 255, .2);
+						font-size: 18px;
+						color: white;
+					}
+						.optSelector > .opt {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							flex: 1;
+							cursor: pointer;
+						}
+						.optSelector > .opt:first-child{border-radius: 2px 0 0 2px;}
+						.optSelector > .opt:last-child{border-radius: 0 2px 2px 0;}
+						.optSelector > .ENA {
+							background-color: rgba(255, 255, 255, .2);
+						}
+
+				.optModel > .userNote {
+					/*height: 100px;*/
+					flex: auto 1 0;
+					outline-color: rgba(255, 255, 255, 1);
+					/*outline-width: 1px;*/
+					border-style: none;
+					border-radius: 2px;
+					background-color: rgba(255, 255, 255, .1);
+					font-size: 14px;
+					color: white;
+					padding: 0 0 0 10px;
+					resize: none;
+				}
+
+				.optModel > .selCircle {
+					width: 10px;
+					height: 10px;
+					border-style: solid;
+					border-width: 1px;
+					border-color: rgba(255, 255, 255, .4);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					align-self: center;
+					cursor: pointer;
+				}
+					.selCircle > .status {
+						width: 8px;
+						height: 8px;
+						border-radius: 100%;
+					}
+					.selCircle > .enable {
+						background-color: rgba(255, 255, 255, .4);
+					}
+				.optModel > .childTitle {
+					font-size: 14px;
+					align-self: center;
+					margin-left: 10px;
+					color: rgba(255, 255, 255, .4);
+				}
+
+	.userinfo > .bottom-cost {
+		height: 53px;
+		border-style: solid;
+		border-width: 1px 0 0 0;
+		border-color: rgba(255, 255, 255, .1);
+		background-color: rgba(255, 255, 255, .1);
+		border-radius: 0 0 2px 0;
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+		.bottom-cost > .totalLabel {
+			display: flex;
+			align-items: baseline;
+			flex: auto 1 0;
+			padding-left: 30px;
+			align-self: center;
+		}
+		.bottom-cost > .postButton {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 140px;
+			font-size: 18px;
+			background-color: #61ad34;
+			border-radius: 0 0 2px 0;
+			cursor: pointer;
+		}
