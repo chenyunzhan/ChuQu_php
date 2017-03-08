@@ -72,77 +72,38 @@
     <div class="main">
         <div class="orders SCROLL">
             <!-- Pool XXX -->
-            <div class="order">
-                <div class="titleBar">
-                    <div class="zh">法国巴黎梦帕纳斯大楼</div>
-                    <div class="en">Tour Montparnasse</div>
-                </div>
-                <div class="titleLabel">购票类型</div>
-                <div class="typeSelector">
-                    <div class="typeOption selected">成人票</div>
-                    <div class="typeOption">儿童票</div>
-                </div>
-                <div class="titleLabel">使用日期</div>
-                <input class="datePicker">
-                <div class="titleLabel">购票数量</div>
-                <div class="num-selector">
-                    <div class="button">&minus;</div>
-                    <div class="number">1</div>
-                    <div class="button">&plus;</div>
-                </div>
-                <div class="bottomBar">
-                    <div class="label">总价</div>
-                    <span><span style="font-size:14px">￥ </span><span style="font-size:18px">320</span></span>
-                </div>
-            </div>
 
-            <div class="order">
-                <div class="titleBar">
-                    <div class="zh">法国巴黎梦帕纳斯大楼</div>
-                    <div class="en">Tour Montparnasse</div>
-                </div>
-                <div class="titleLabel">购票类型</div>
-                <div class="typeSelector">
-                    <div class="typeOption">成人票</div>
-                    <div class="typeOption selected">儿童票</div>
-                </div>
-                <div class="titleLabel">使用日期</div>
-                <input class="datePicker">
-                <div class="titleLabel">购票数量</div>
-                <div class="num-selector">
-                    <div class="button">&minus;</div>
-                    <div class="number">1</div>
-                    <div class="button">&plus;</div>
-                </div>
-                <div class="bottomBar">
-                    <div class="label">总价</div>
-                    <span><span style="font-size:14px">￥ </span><span style="font-size:18px">320</span></span>
-                </div>
-            </div>
 
-            <div class="order">
-                <div class="titleBar">
-                    <div class="zh">法国巴黎梦帕纳斯大楼</div>
-                    <div class="en">Tour Montparnasse</div>
+            <volist name="lists" id="vo">
+
+                <div class="order">
+                    <div class="titleBar">
+                        <div class="zh">{$vo.productname}</div>
+                        <div class="en">Tour Montparnasse</div>
+                    </div>
+                    <div class="titleLabel">购票类型</div>
+                    <div class="typeSelector">
+                        <div class="typeOption selected">成人票</div>
+                        <div class="typeOption">儿童票</div>
+                    </div>
+                    <div class="titleLabel">使用日期</div>
+                    <input class="datePicker">
+                    <div class="titleLabel">购票数量</div>
+                    <div class="num-selector">
+                        <div class="button">&minus;</div>
+                        <div class="number">1</div>
+                        <div class="button">&plus;</div>
+                    </div>
+                    <div class="bottomBar">
+                        <div class="label">总价</div>
+                        <span><span style="font-size:14px">￥ </span><span style="font-size:18px">{$vo.price}</span></span>
+                    </div>
+
+
+                    <?php $totalPrice += $vo.price; ?>
                 </div>
-                <div class="titleLabel">购票类型</div>
-                <div class="typeSelector">
-                    <div class="typeOption">成人票</div>
-                    <div class="typeOption selected">儿童票</div>
-                </div>
-                <div class="titleLabel">使用日期</div>
-                <input class="datePicker">
-                <div class="titleLabel">购票数量</div>
-                <div class="num-selector">
-                    <div class="button">&minus;</div>
-                    <div class="number">1</div>
-                    <div class="button">&plus;</div>
-                </div>
-                <div class="bottomBar">
-                    <div class="label">总价</div>
-                    <span><span style="font-size:14px">￥ </span><span style="font-size:18px">320</span></span>
-                </div>
-            </div>
+
+            </volist>
 
             <!-- Pool XXX -->
         </div>
@@ -530,7 +491,7 @@
             <div class="bottom-cost">
                 <div class="totalLabel">
                     <span style="font-size:14px; color: rgba(255,255,255,.6); margin-right:10px;">Total</span>
-                    <span style="font-size:18px">51,110</span>
+                    <span style="font-size:18px">{$totalPrice}</span>
                     <span style="font-size:14px; color: rgba(255,255,255,.8); margin-left:5px;">¥</span>
                 </div>
                 <div class="postButton">提交订单</div>
@@ -565,6 +526,13 @@
 <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
 <script src="{$Think.const.JS_PATH}/jquery.datetimepicker.full.js"></script>
 <script src="{$Think.const.JS_PATH}/New-order.js"></script>
+
+
+<script type="text/javascript" language="javascript">
+
+    var totalPrice = new Array();
+
+
 
 </script>
 </body>

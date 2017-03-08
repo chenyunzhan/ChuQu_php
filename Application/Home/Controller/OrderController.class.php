@@ -99,7 +99,15 @@ class OrderController extends Controller
         productticket_copy.Price,
         productticket_copy.Classification')->where($where)->select();
 
+        $totalPrice = 0;
+
+        foreach ($lists as $v) {
+            $totalPrice += $v['price'];
+        }
+
         $this->assign('lists',$lists);//列表
+        $this->assign('totalPrice',$totalPrice);//列表
+
         $this->display();
 
     }
