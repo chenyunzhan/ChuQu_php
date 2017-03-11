@@ -11,6 +11,11 @@ use Think\Controller;
 
 class OrderController extends Controller
 {
+
+    public function index() {
+        echo phpinfo();
+    }
+
     public function order(){
 
         $lists = D("city_back")->lists();
@@ -110,6 +115,14 @@ class OrderController extends Controller
 
         $this->display();
 
+    }
+
+
+    public function doAddOrder() {
+        $code     = I('code');
+        $username = I('username');
+
+        echo $code;
     }
 
 

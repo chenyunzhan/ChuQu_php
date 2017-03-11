@@ -172,6 +172,31 @@ $(".usrOptItem").each((i,e) => {
 	});
 });
 
+$(".bottom-cost > .postButton").click(() => {
+
+	var productIdArray = new Array();
+
+	$(".order > .titleBar").each(function(){
+		var productId=$(this).attr("id");
+		productIdArray.push(productId);
+	});
+
+	var productIds = (productIdArray.join("|"));
+
+
+	var username = $("input[name='username']");
+	var password = $("input[name='password']");
+
+	$.post("/home/order/doAddOrder",{username:username.val(), password:password.val(), code:'aaaa'}, function(data){
+			if(data.status == 1){
+				window.location.href = data.url;
+			}
+			$("#errM").html(data.info);
+		}, "json");
+});
+
+
+
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
 //  >   FUNCTION NAME   :   material,
 //  >   FUNCTION        :   MATERIAL STYLE
