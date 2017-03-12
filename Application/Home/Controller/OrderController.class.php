@@ -126,6 +126,12 @@ class OrderController extends Controller
     }
 
 
+    public function doAddTraveller() {
+        $sex = I('sex');
+        echo I;
+    }
+
+
     public function data(){
         $t = D('FarmListView');
         $item_per_page = $this->pagesize;  //每页的条数

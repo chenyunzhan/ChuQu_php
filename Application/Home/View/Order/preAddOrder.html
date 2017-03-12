@@ -119,18 +119,26 @@
                 <div class="optChildBox">
                     <div class="usrOptCell TBLINE">
                         <div class="usrOptLabel">常用旅客</div>
-                        <div class="usrOptItem usrOptItemSELECTED">用户名</div>
-                        <div class="usrOptItem">用户名</div>
-                        <div class="usrOptItem">用户名</div>
+
+                        <div id="10000" class="usrOptItem usrOptItemSELECTED">用户名</div>
+
+
+                        <volist name="lists" id="vo">
+                            <if condition="$key gt 0">
+                                <div id="{$key+10000}" class="usrOptItem">用户名</div>
+                            </if>
+                        </volist>
+
+
                     </div>
 
                     <div class="optModel TBLINE">
                         <div class="inputCmpnt">
-                            <input type="text" placeholder="中文姓">
+                            <input name="name1CN" type="text" placeholder="中文姓">
                             <div class="note">例如李明填李 (同证件)</div>
                         </div>
                         <div class="inputCmpnt">
-                            <input type="text" placeholder="中文名">
+                            <input name="name2CN" type="text" placeholder="中文名">
                             <div class="note">例如李明填明 (同证件)</div>
                         </div>
                     </div>
@@ -146,18 +154,18 @@
                             <div class="note">请选择证件类型并输入您的证件号码</div>
                         </div>
                         <div class="inputCmpnt">
-                            <input type="text" placeholder="证件号码">
+                            <input name="IDNumber" type="text" placeholder="证件号码">
                             <div class="note"></div>
                         </div>
                     </div>
 
                     <div class="optModel TBLINE">
                         <div class="inputCmpnt">
-                            <input type="text" placeholder="拼音姓">
+                            <input name="name1PY" type="text" placeholder="拼音姓">
                             <div class="note">例如李明填 LI (同证件)</div>
                         </div>
                         <div class="inputCmpnt">
-                            <input type="text" placeholder="拼音名">
+                            <input name="name2PY" type="text" placeholder="拼音名">
                             <div class="note">例如李明填 MING (同证件)</div>
                         </div>
                     </div>
@@ -171,7 +179,7 @@
                             <div class="note">性别</div>
                         </div>
                         <div class="inputCmpnt">
-                            <input type="text" placeholder="证件号码">
+                            <input name="country" type="text" placeholder="证件号码">
                             <div class="note">填写国家名称</div>
                         </div>
                     </div>
@@ -181,6 +189,7 @@
                             <div class="status enable"></div>
                         </div>
                         <span class="childTitle">保存为常用旅客</span>
+                        <div class="button">保存</div>
                     </div>
 
                 </div>
@@ -234,258 +243,6 @@
             </div>
             <!-- XXX Pool over -->
 
-            <!-- XXX subPool of users information -->
-            <div class="infoPool SCROLL">
-                <div class="headBar TBLINE">
-                    <div class="title">
-                        旅客信息2
-                        <span class="note">请确保您填写的信息真实准确, 否则会影响您的顺利出行</span>
-                    </div>
-                </div>
-                <div class="optChildBox">
-                    <div class="usrOptCell TBLINE">
-                        <div class="usrOptLabel">常用旅客</div>
-                        <div class="usrOptItem">用户名</div>
-                        <div class="usrOptItem usrOptItemSELECTED">用户名</div>
-                        <div class="usrOptItem">用户名</div>
-
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="中文姓">
-                            <div class="note">例如李明填李 (同证件)</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="中文名">
-                            <div class="note">例如李明填明 (同证件)</div>
-                        </div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <!-- <input type="text" placeholder="证件类型"> -->
-                            <select class="IDselector">
-                                <option>身份证</option>
-                                <option>护照</option>
-                            </select>
-
-                            <div class="note">请选择证件类型并输入您的证件号码</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="证件号码">
-                            <div class="note"></div>
-                        </div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="拼音姓">
-                            <div class="note">例如李明填 LI (同证件)</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="拼音名">
-                            <div class="note">例如李明填 MING (同证件)</div>
-                        </div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <div class="optSelector">
-                                <div class="opt ENA">♂</div>
-                                <div class="opt">♀</div>
-                            </div>
-                            <div class="note">性别</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="证件号码">
-                            <div class="note">填写国家名称</div>
-                        </div>
-                    </div>
-
-                    <div class="optModel">
-                        <div class="selCircle">
-                            <div class="status enable"></div>
-                        </div>
-                        <span class="childTitle">保存为常用旅客</span>
-                    </div>
-
-                </div>
-
-                <div class="headBar TBLINE">
-                    <div class="title">
-                        联系人信息
-                        <span class="note">请确保您填写的信息真实准确, 否则会影响您的顺利出行</span>
-                    </div>
-                </div>
-                <div class="optChildBox">
-                    <div class="optModel">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="姓名">
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="微信号">
-                        </div>
-                    </div>
-                    <div class="optModel TBLINE" style="padding-top:0">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="电话号码">
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="邮箱地址">
-                        </div>
-                    </div>
-
-                    <div class="optModel">
-                        <div class="selCircle">
-                            <div class="status enable"></div>
-                        </div>
-                        <span class="childTitle">绑定常用联系人</span>
-                    </div>
-
-                </div>
-
-                <div class="headBar TBLINE">
-                    <div class="title">
-                        备注信息
-                        <span class="note">如有其他需求, 请在此说明</span>
-                    </div>
-                </div>
-                <div class="optChildBox">
-                    <div class="optModel">
-                        <textarea class="userNote" rows="8" cols="80" placeholder="是否携带儿童等"></textarea>
-                    </div>
-                </div>
-
-
-            </div>
-            <!-- XXX Pool over -->
-
-            <!-- XXX subPool of users information -->
-            <div class="infoPool SCROLL">
-                <div class="headBar TBLINE">
-                    <div class="title">
-                        旅客信息3
-                        <span class="note">请确保您填写的信息真实准确, 否则会影响您的顺利出行</span>
-                    </div>
-                </div>
-                <div class="optChildBox">
-                    <div class="usrOptCell TBLINE">
-                        <div class="usrOptLabel">常用旅客</div>
-                        <div class="usrOptItem">用户名</div>
-                        <div class="usrOptItem">用户名</div>
-                        <div class="usrOptItem usrOptItemSELECTED">用户名</div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="中文姓">
-                            <div class="note">例如李明填李 (同证件)</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="中文名">
-                            <div class="note">例如李明填明 (同证件)</div>
-                        </div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <!-- <input type="text" placeholder="证件类型"> -->
-                            <select class="IDselector">
-                                <option>身份证</option>
-                                <option>护照</option>
-                            </select>
-
-                            <div class="note">请选择证件类型并输入您的证件号码</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="证件号码">
-                            <div class="note"></div>
-                        </div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="拼音姓">
-                            <div class="note">例如李明填 LI (同证件)</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="拼音名">
-                            <div class="note">例如李明填 MING (同证件)</div>
-                        </div>
-                    </div>
-
-                    <div class="optModel TBLINE">
-                        <div class="inputCmpnt">
-                            <div class="optSelector">
-                                <div class="opt ENA">♂</div>
-                                <div class="opt">♀</div>
-                            </div>
-                            <div class="note">性别</div>
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="证件号码">
-                            <div class="note">填写国家名称</div>
-                        </div>
-                    </div>
-
-                    <div class="optModel">
-                        <div class="selCircle">
-                            <div class="status enable"></div>
-                        </div>
-                        <span class="childTitle">保存为常用旅客</span>
-                    </div>
-
-                </div>
-
-                <div class="headBar TBLINE">
-                    <div class="title">
-                        联系人信息
-                        <span class="note">请确保您填写的信息真实准确, 否则会影响您的顺利出行</span>
-                    </div>
-                </div>
-                <div class="optChildBox">
-                    <div class="optModel">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="姓名">
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="微信号">
-                        </div>
-                    </div>
-                    <div class="optModel TBLINE" style="padding-top:0">
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="电话号码">
-                        </div>
-                        <div class="inputCmpnt">
-                            <input type="text" placeholder="邮箱地址">
-                        </div>
-                    </div>
-
-                    <div class="optModel">
-                        <div class="selCircle">
-                            <div class="status enable"></div>
-                        </div>
-                        <span class="childTitle">绑定常用联系人</span>
-                    </div>
-
-                </div>
-
-                <div class="headBar TBLINE">
-                    <div class="title">
-                        备注信息
-                        <span class="note">如有其他需求, 请在此说明</span>
-                    </div>
-                </div>
-                <div class="optChildBox">
-                    <div class="optModel">
-                        <textarea class="userNote" rows="8" cols="80" placeholder="是否携带儿童等"></textarea>
-                    </div>
-                </div>
-
-
-            </div>
-            <!-- XXX Pool over -->
 
 
             <div class="bottom-cost">

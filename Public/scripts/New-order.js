@@ -137,6 +137,14 @@ $(".order > .titleBar").each((i,e) => {
 $(".order > .titleBar").eq(0).click();
 
 function pagesSwitch(i) {
+
+
+	$lastUser = $(".usrOptCell > .usrOptItemSELECTED");
+
+	alert(userArray)
+	alert($lastUser.attr("id"));
+
+
 	let selectedPage = $(".userinfo").find(".infoPool").eq(i);
 	let oldPage = $(".userinfo").find(".infoPool").eq(currentOrder);
 	selectedPage.css({"display":"block"});
@@ -166,7 +174,21 @@ function pagesSwitch(i) {
 
 // User Name selector of userinformation page
 let TotalUsrNum = $(".orders > .order").length;
+var userArray = new Array();
+for (var i=0;i<TotalUsrNum;i++)
+{
+	var userMap={
+		key1:'abc',
+		key2:'def'
+	};
+
+	userArray.push(userMap);
+}
+
 $(".usrOptItem").each((i,e) => {
+
+
+
 	$(e).click(() => {
 		pagesSwitch(i%TotalUsrNum);
 	});
@@ -194,6 +216,31 @@ $(".bottom-cost > .postButton").click(() => {
 			$("#errM").html(data.info);
 		}, "json");
 });
+
+$(".optModel > .button").click(() => {
+	var name1CN = $("input[name='name1CN']");
+	var name2CN = $("input[name='name2CN']");
+	var name1PY = $("input[name='name1PY']");
+	var name2PY = $("input[name='name2PY']");
+	var IDNumber = $("input[name='IDNumber']");
+	var country = $("input[name='country']");
+	var IDType = $(".IDselector");
+	var sexDiv = $(".optSelector > .ENA");
+	var sex = '男';
+	if(sexDiv.text()=='♂') {
+		sex = '男';
+	} else {
+		sex = '女';
+	}
+
+	$.post("/home/order/doAddTraveller",{name1CN:name1CN.val(), name2CN:name2CN.val(), name1PY:name1PY.val(), name2PY:name2PY.val(), IDNumber:IDNumber.val(), country:country.val(), IDType:IDType.val(), sex:sex}, function(data){
+		if(data.status == 1){
+			window.location.href = data.url;
+		}
+		$("#errM").html(data.info);
+	}, "json");
+});
+
 
 
 

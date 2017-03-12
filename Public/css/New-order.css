@@ -343,10 +343,23 @@ body {background-image: url(http://www.chuqv.com/Public/img/backgroundimg.png);
 						background-color: rgba(255, 255, 255, .4);
 					}
 				.optModel > .childTitle {
+					flex:auto;
 					font-size: 14px;
 					align-self: center;
 					margin-left: 10px;
 					color: rgba(255, 255, 255, .4);
+				}
+				.optModel > .button {
+					float:right;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 100px;
+					height: 30px;
+					font-size: 18px;
+					background-color: #61ad34;
+					border-radius: 0 0 2px 0;
+					cursor: pointer;
 				}
 
 	.userinfo > .bottom-cost {
