@@ -119,8 +119,9 @@ class OrderController extends Controller
 
 
     public function doAddOrder() {
-        $code     = I('code');
-        $username = I('username');
+        $users     = I('users');
+        $totalPrice = I('totalPrice');
+        $productIds = I('productIds');
 
         echo $code;
     }

@@ -136,32 +136,112 @@ $(".order > .titleBar").each((i,e) => {
 });
 $(".order > .titleBar").eq(0).click();
 
+
+
 function pagesSwitch(i) {
 
 
+    //好像不怎么对
+    let selectedPage = $(".userinfo").find(".infoPool");
+    selectedPage.css({"display":"block"});
+
+
+    //保存旧页面
 	$lastUser = $(".usrOptCell > .usrOptItemSELECTED");
 
-	alert(userArray)
-	alert($lastUser.attr("id"));
+    var name1CN = $("input[name='name1CN']");
+    var name2CN = $("input[name='name2CN']");
+    var name1PY = $("input[name='name1PY']");
+    var name2PY = $("input[name='name2PY']");
+    var IDNumber = $("input[name='IDNumber']");
+    var country = $("input[name='country']");
+    var IDType = $(".IDselector");
+    var sexDiv = $(".optSelector > .ENA");
+    var sex = '男';
+    if(sexDiv.text()=='♂') {
+        sex = '男';
+    } else {
+        sex = '女';
+    }
 
 
-	let selectedPage = $(".userinfo").find(".infoPool").eq(i);
-	let oldPage = $(".userinfo").find(".infoPool").eq(currentOrder);
-	selectedPage.css({"display":"block"});
+	var userMap={
+        name1CN:name1CN.val(),
+        name2CN:name2CN.val(),
+        name1PY:name1PY.val(),
+        name2PY:name2PY.val(),
+        IDNumber:IDNumber.val(),
+        country:country.val(),
+        IDType:IDType.val(),
+        sex:sex
+	};
 
-	if(i<currentOrder) {
-		// Prev order
-		oldPage.css({"animation":"fadeOut .3s both"});
-		selectedPage.css({"animation":"fadeInDown .3s both"});
-		oldPage.css({"display":"none"});
+	userArray[$lastUser.attr("id")%10000] = userMap;
 
-	} else if(i>currentOrder) {
-		// Next order
-		oldPage.css({"animation":"fadeOutUp .3s both"});
-		selectedPage.css({"animation":"fadeInUp .3s both"});
-		oldPage.css({"display":"none"});
+
+
+
+	//给新页面赋值
+	var selectedUserMap = userArray[i];
+
+
+	if (selectedUserMap == undefined) {
+		selectedUserMap = {
+            name1CN:"",
+            name2CN:"",
+            name1PY:"",
+            name2PY:"",
+            IDNumber:"",
+            country:"",
+            IDType:"身份证",
+            sex:"男"
+		};
 	}
-	currentOrder = i;
+	name1CN.val(selectedUserMap.name1CN);
+	name2CN.val(selectedUserMap.name2CN);
+    name1PY.val(selectedUserMap.name1PY);
+    name2PY.val(selectedUserMap.name2PY);
+    IDType.val(selectedUserMap.IDType);
+    IDNumber.val(selectedUserMap.IDNumber);
+    country.val(selectedUserMap.country);
+
+
+    $(".optSelector > .opt").each((i,e) => {
+    	$(e).removeClass("ENA");
+		if(selectedUserMap.sex == "男") {
+			if(i==0) {
+				$(e).addClass("ENA");
+			}
+		} else {
+			if(i==1) {
+				$(e).addClass("ENA");
+			}
+		}
+    });
+
+    if(userMap.name2CN.length>0 && userMap.name1CN.length>0) {
+        $(".usrOptCell > .usrOptItemSELECTED").text(userMap.name1CN+userMap.name2CN);
+    }
+    $(".usrOptCell > .usrOptItemSELECTED").removeClass("usrOptItemSELECTED");
+    $(".usrOptCell > .usrOptItem").eq(i).addClass("usrOptItemSELECTED");
+
+
+
+	// if(i<currentOrder) {
+	// 	// Prev order
+	// 	oldPage.css({"animation":"fadeOut .3s both"});
+	// 	selectedPage.css({"animation":"fadeInDown .3s both"});
+	// 	oldPage.css({"display":"none"});
+    //
+	// } else if(i>currentOrder) {
+	// 	// Next order
+	// 	oldPage.css({"animation":"fadeOutUp .3s both"});
+	// 	selectedPage.css({"animation":"fadeInUp .3s both"});
+	// 	oldPage.css({"display":"none"});
+	// }
+	// currentOrder = i;
+
+
 }
 
 // $(".usrOptCell > .usrOptItem").each((i,e) => {
@@ -174,16 +254,7 @@ function pagesSwitch(i) {
 
 // User Name selector of userinformation page
 let TotalUsrNum = $(".orders > .order").length;
-var userArray = new Array();
-for (var i=0;i<TotalUsrNum;i++)
-{
-	var userMap={
-		key1:'abc',
-		key2:'def'
-	};
 
-	userArray.push(userMap);
-}
 
 $(".usrOptItem").each((i,e) => {
 
@@ -205,11 +276,11 @@ $(".bottom-cost > .postButton").click(() => {
 
 	var productIds = (productIdArray.join("|"));
 
+	var totalPrice = $(".bottom-cost > .totalLabel").children().eq(1).text();
 
-	var username = $("input[name='username']");
-	var password = $("input[name='password']");
+	var users = userArray;
 
-	$.post("/home/order/doAddOrder",{username:username.val(), password:password.val(), code:'aaaa'}, function(data){
+	$.post("/home/order/doAddOrder",{productIds:productIds, totalPrice:totalPrice, users:users}, function(data){
 			if(data.status == 1){
 				window.location.href = data.url;
 			}
