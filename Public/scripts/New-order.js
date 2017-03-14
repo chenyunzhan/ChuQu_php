@@ -268,19 +268,46 @@ $(".usrOptItem").each((i,e) => {
 $(".bottom-cost > .postButton").click(() => {
 
 	var productIdArray = new Array();
+	var useDateArray = new Array();
+	var numArray = new Array();
 
-	$(".order > .titleBar").each(function(){
-		var productId=$(this).attr("id");
+	$(".order").each(function(){
+        var productId = $(this).children().eq(0).attr("id");
+        var useDate = $(this).children().eq(4).val();
+        var num = $(this).children().eq(6).children().eq(1).text();
 		productIdArray.push(productId);
+		useDateArray.push(useDate);
+		numArray.push(num);
 	});
 
+
 	var productIds = (productIdArray.join("|"));
+	var useDates = useDateArray.join("|");
+	var nums = numArray.join("|");
 
 	var totalPrice = $(".bottom-cost > .totalLabel").children().eq(1).text();
 
 	var users = userArray;
 
-	$.post("/home/order/doAddOrder",{productIds:productIds, totalPrice:totalPrice, users:users}, function(data){
+
+	var contactName = $("input[name='contactName']").val();
+	var contactWebChat = $("input[name='contactWebChat']").val();
+	var contactMobile = $("input[name='contactMobile']").val();
+	var contactMail = $("input[name='contactMail']").val();
+	var guestInfo = $(".optChildBox > .optModel > .userNote").val();
+
+	$.post("/home/order/doAddOrder",{
+        users:users,
+		productIds:productIds,
+		useDates:useDates,
+		nums:nums,
+		totalPrice:totalPrice,
+        contactName:contactName,
+        contactWebChat:contactWebChat,
+        contactMobile:contactMobile,
+        contactMail:contactMail,
+        guestInfo:guestInfo
+	}, function(data){
 			if(data.status == 1){
 				window.location.href = data.url;
 			}

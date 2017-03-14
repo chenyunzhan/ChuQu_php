@@ -119,11 +119,55 @@ class OrderController extends Controller
 
 
     public function doAddOrder() {
-        $users     = I('users');
+        $users     =  I('users');
         $totalPrice = I('totalPrice');
         $productIds = I('productIds');
+        $nums = I('nums');
+        $useDates = I('useDates');
 
-        echo $code;
+        $userIds = array();
+        foreach ($users as $user) {
+            $productGuest = M("productguest"); // 实例化User对象
+            $data['GuestCFirstName'] = $user['name1CN'];
+            $data['GuestCLastName'] = $user['name2CN'];
+            $data['GuestEFirstName'] = $user['name1PY'];
+            $data['GuestELastName'] = $user['name2PY'];
+            $data['GuestSex'] = $user['sex'];
+            $data['GuestNational'] = $user['country'];
+            $data['GuestCardType'] = $user['IDType'];
+            $data['GuestCardNum'] = $user['IDNumber'];
+            $result = $productGuest->add($data);
+            if($result){
+                // 如果主键是自动增长型 成功后返回值就是最新插入的值
+                $insertId = $result;
+                array_push($userIds,$insertId);
+            }
+        }
+
+        $userIdsStr =implode(',',$userIds);
+
+
+        $productOrder = M("productorder"); // 实例化User对象
+        $dataOrder['UserID'] = $userIdsStr;
+        $dataOrder['ProductID'] = $productIds;
+        $dataOrder['ProductNUM'] = $nums;
+        $dataOrder['DateTime'] = $useDates;
+        $dataOrder['ContactName'] = I('contactName');
+        $dataOrder['ContactMobile'] = I('contactMobile');
+        $dataOrder['ContactWebChat'] = I('contactWebChat');
+        $dataOrder['ContactMail'] = I('contactMail');
+        $dataOrder['GuestInfo'] = I('guestInfo');
+        $dataOrder['TotalPrice'] = $totalPrice;
+        $dataOrder['OrderDate'] = time();
+
+        $result = $productOrder->add($dataOrder);
+        if($result){
+            // 如果主键是自动增长型 成功后返回值就是最新插入的值
+            $insertId = $result;
+            echo $insertId;
+        }
+
+
     }
 
 
