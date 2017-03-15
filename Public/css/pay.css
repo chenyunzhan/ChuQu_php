@@ -1,0 +1,152 @@
+body {background-image: url(http://www.chuqv.com/Public/img/backgroundimg.png);
+}
+#sheader {
+    width: 922px;;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2em;
+
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-start;
+
+	color: white;
+	text-shadow: 0 0 10px rgb(51, 51, 51);
+}
+	#sheader > font:before {
+		content: "门票预订 > 填写订单 >";
+		font-size: 18px;
+		text-shadow: 0 0 10px rgb(51, 51, 51);
+		margin-right: 10px;
+	}
+
+	#sheader > font:after {
+		content: "> 购买成功";
+		font-size: 18px;
+		color: rgba(255, 255, 255, .6);
+		text-shadow: 0 0 10px rgb(50, 50, 50);
+		margin-left: 10px;
+	}
+
+.main {
+    position: relative;
+    width: 964px;
+    height: 460px;
+    margin-top: 15px;
+	margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 10px 10px 100px rgba(0, 0, 0, .2);
+    color: white;
+    overflow: hidden;
+	display: flex;
+	border-radius: 2px;
+	flex-direction: column;
+}
+
+.SCROLL {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.SCROLL::-webkit-scrollbar {
+    background-color: rgba(0, 0, 0, 0);
+	width: 4px;
+}
+.SCROLL::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+}
+
+.main > .titleBar {
+	height: 66px;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	border-color: rgba(255, 255, 255, .2);
+	padding: 35px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+	.titleBar > .titleLabel {
+		font-size: 24px;
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+		.titleLabel > span:last-child {
+			font-size: 18px;
+		}
+
+	.titleBar > .note {
+		font-size: 18px;
+		color: rgba(255, 255, 255, .4);
+	}
+.main > .payments {
+	padding: 0 40px;
+	display: flex;
+	flex-direction: column;
+	height: 268px;
+}
+	.payments > .title {
+		font-size: 18px;
+		color: rgba(255, 255, 255, .4);
+		padding: 16px 0;
+	}
+	.payments > .options {
+		flex: auto 1 0;
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+		.options > .option {
+			display: flex;
+			align-items: center;
+			margin: 0 20px 10px 0;
+		}
+			.option > .switch {
+				width: 10px;
+				height: 10px;
+				border-style: solid;
+				border-width: 1px;
+				border-color: white;
+				margin-right: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+				.switch > .status {
+					width: 8px;
+					height: 8px;
+					border-radius: 100%;
+					cursor: pointer;
+				}
+				.switch > .SELECTED {
+					background-color: white;
+				}
+			.option > .optionLogo {
+				width: 170px;
+				height: 61px;
+			}
+			.option > .logo_Alipay {
+				background-image: url(../img/payment/alipay.png);
+			}
+
+.main > .bottomBar {
+	height: 54px;
+	background-color: rgba(255, 255, 255, .2);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 40px;
+}
+	.bottomBar > .button {
+		width: 140px;
+		font-size: 18px;
+		background-color: #61ad34;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-self: stretch;
+		cursor: pointer;
+	}

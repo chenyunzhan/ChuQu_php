@@ -308,9 +308,13 @@ $(".bottom-cost > .postButton").click(() => {
         contactMail:contactMail,
         guestInfo:guestInfo
 	}, function(data){
-			if(data.status == 1){
+
+
+			if(data.status=="ok")
+			{
 				window.location.href = data.url;
 			}
+
 			$("#errM").html(data.info);
 		}, "json");
 });
@@ -331,12 +335,18 @@ $(".optModel > .button").click(() => {
 		sex = '女';
 	}
 
+
 	$.post("/home/order/doAddTraveller",{name1CN:name1CN.val(), name2CN:name2CN.val(), name1PY:name1PY.val(), name2PY:name2PY.val(), IDNumber:IDNumber.val(), country:country.val(), IDType:IDType.val(), sex:sex}, function(data){
-		if(data.status == 1){
+
+
+		alert('aaaaaaaaaaaa');
+
+		if(data.status=="ok")
+        {
 			window.location.href = data.url;
-		}
+        }
 		$("#errM").html(data.info);
-	}, "json");
+	});
 });
 
 

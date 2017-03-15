@@ -164,10 +164,19 @@ class OrderController extends Controller
         if($result){
             // 如果主键是自动增长型 成功后返回值就是最新插入的值
             $insertId = $result;
-            echo $insertId;
+
+
+//            header('Content-type:text/json');     //这句是重点，它告诉接收数据的对象此页面输出的是json数据；
+//            echo '{\"status\":\"ok\",\"orderID\":\"21\"}';
+            echo json_encode(array('status' =>'ok', 'url' => "pay?orderId=".$insertId));
+
         }
 
 
+    }
+
+    public function pay() {
+        $this->display();
     }
 
 
