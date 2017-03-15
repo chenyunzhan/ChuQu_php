@@ -122,6 +122,7 @@ class OrderController extends Controller
         $users     =  I('users');
         $totalPrice = I('totalPrice');
         $productIds = I('productIds');
+        $productNames = I('productNames');
         $nums = I('nums');
         $useDates = I('useDates');
 
@@ -150,6 +151,7 @@ class OrderController extends Controller
         $productOrder = M("productorder"); // 实例化User对象
         $dataOrder['UserID'] = $userIdsStr;
         $dataOrder['ProductID'] = $productIds;
+        $dataOrder['ProductNAME'] = $productNames;
         $dataOrder['ProductNUM'] = $nums;
         $dataOrder['DateTime'] = $useDates;
         $dataOrder['ContactName'] = I('contactName');
@@ -175,7 +177,23 @@ class OrderController extends Controller
 
     }
 
-    public function pay() {
+    public function pay($orderId = 0) {
+
+        $data =   M("productorder")->where("id=%d",array($orderId))->select();
+        $this->assign('order',$data[0]);//列表
+        $dateTimeArray = explode('|',$data[0]['datetime']);
+        $numArray = explode('|',$data[0]['productnum']);
+        $nameArray = explode('|',$data[0]['productname']);
+
+
+        $orderSummaryArray = array();
+        for ($i = 0; $i < sizeof($dateTimeArray); $i++) {
+            $orderSummary =$nameArray[$i].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$dateTimeArray[$i].'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$numArray[$i].'张';
+            array_push($orderSummaryArray,$orderSummary);
+        }
+
+        $this->assign('orderSummaryArray',$orderSummaryArray);//列表
+
         $this->display();
     }
 

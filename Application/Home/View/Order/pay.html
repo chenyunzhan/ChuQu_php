@@ -71,10 +71,13 @@
             <div class="main">
 				<div class="titleBar">
 					<div class="titleLabel">
-						<span>订单已生成 ! 订单号 : CHUQV2071203119</span>
-						<span><span style="color:rgba(255,255,255,.6);font-size:14px">待支付</span><span style="font-size:24px;margin:0 3px 0 10px">51,110</span><span style="color:rgba(255,255,255,.8)">￥</span></span>
+						<span>订单已生成 ! 订单号 : {$order.id}</span>
+						<span><span style="color:rgba(255,255,255,.6);font-size:14px">待支付</span><span style="font-size:24px;margin:0 3px 0 10px">{$order.totalprice}</span><span style="color:rgba(255,255,255,.8)">￥</span></span>
 					</div>
-					<div class="note">法国巴黎蒙帕斯大楼门票03-12日2张</div>
+
+                    <volist name="orderSummaryArray" id="vo">
+                        <div class="note">{$vo}</div>
+                    </volist>
 				</div>
 				<div class="payments SCROLL">
 					<div class="title">选择支付方式</div>
@@ -91,7 +94,7 @@
 					</div>
 				</div>
 				<div class="bottomBar">
-					<span><span style="color:rgba(255,255,255,.6)">待支付</span><span style="font-size:24px;margin:0 3px 0 10px">51,110</span><span style="color:rgba(255,255,255,.8);font-size:18px">￥</span></span>
+					<span><span style="color:rgba(255,255,255,.6)">待支付</span><span style="font-size:24px;margin:0 3px 0 10px">{$order.totalprice}</span><span style="color:rgba(255,255,255,.8);font-size:18px">￥</span></span>
 					<div class="button">确认支付</div>
 				</div>
             </div>

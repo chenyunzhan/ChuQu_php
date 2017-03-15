@@ -268,13 +268,16 @@ $(".usrOptItem").each((i,e) => {
 $(".bottom-cost > .postButton").click(() => {
 
 	var productIdArray = new Array();
+	var productNameArray = new Array();
 	var useDateArray = new Array();
 	var numArray = new Array();
 
 	$(".order").each(function(){
+		var productName = $(this).children().eq(0).children().eq(0).text();
         var productId = $(this).children().eq(0).attr("id");
         var useDate = $(this).children().eq(4).val();
         var num = $(this).children().eq(6).children().eq(1).text();
+		productNameArray.push(productName);
 		productIdArray.push(productId);
 		useDateArray.push(useDate);
 		numArray.push(num);
@@ -282,6 +285,7 @@ $(".bottom-cost > .postButton").click(() => {
 
 
 	var productIds = (productIdArray.join("|"));
+	var productNames = (productNameArray.join("|"));
 	var useDates = useDateArray.join("|");
 	var nums = numArray.join("|");
 
@@ -299,6 +303,7 @@ $(".bottom-cost > .postButton").click(() => {
 	$.post("/home/order/doAddOrder",{
         users:users,
 		productIds:productIds,
+		productNames:productNames,
 		useDates:useDates,
 		nums:nums,
 		totalPrice:totalPrice,
