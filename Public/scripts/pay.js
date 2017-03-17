@@ -86,6 +86,29 @@ $(".switch > .status").each((i,e) => {
 });
 $(".switch > .status").eq(0).click();	// Default Option
 
+
+$(".bottomBar > .button").click(() => {
+
+    var totalPrice = $(".titleBar > .titleLabel").children().eq(1).children().eq(1).text();
+    var orderId = $.trim($(".titleBar > .titleLabel").children().eq(0).text().split(':')[1]);
+    var orderName = "初去网门票";
+
+    $.post("/home/pay/doPay",{
+        WIDtotal_fee:totalPrice,
+        WIDout_trade_no:orderId,
+        WIDsubject:orderName
+    }, function(data){
+
+        if(data.status=="ok")
+        {
+            window.location.href = data.url;
+        }
+
+        $("#errM").html(data.info);
+    }, "json");
+
+});
+
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
 //  >   FUNCTION NAME   :   material,
 //  >   FUNCTION        :   MATERIAL STYLE
