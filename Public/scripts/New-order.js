@@ -137,6 +137,40 @@ $(".order > .titleBar").each((i,e) => {
 $(".order > .titleBar").eq(0).click();
 
 
+function refreshUserArray() {
+	//保存旧页面
+	$lastUser = $(".usrOptCell > .usrOptItemSELECTED");
+
+	var name1CN = $("input[name='name1CN']");
+	var name2CN = $("input[name='name2CN']");
+	var name1PY = $("input[name='name1PY']");
+	var name2PY = $("input[name='name2PY']");
+	var IDNumber = $("input[name='IDNumber']");
+	var country = $("input[name='country']");
+	var IDType = $(".IDselector");
+	var sexDiv = $(".optSelector > .ENA");
+	var sex = '男';
+	if(sexDiv.text()=='♂') {
+		sex = '男';
+	} else {
+		sex = '女';
+	}
+
+
+	var userMap={
+		name1CN:name1CN.val(),
+		name2CN:name2CN.val(),
+		name1PY:name1PY.val(),
+		name2PY:name2PY.val(),
+		IDNumber:IDNumber.val(),
+		country:country.val(),
+		IDType:IDType.val(),
+		sex:sex
+	};
+
+	userArray[$lastUser.attr("id")%10000] = userMap;
+}
+
 
 function pagesSwitch(i) {
 
@@ -266,6 +300,8 @@ $(".usrOptItem").each((i,e) => {
 });
 
 $(".bottom-cost > .postButton").click(() => {
+
+	refreshUserArray();
 
 	var productIdArray = new Array();
 	var productNameArray = new Array();

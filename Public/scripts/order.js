@@ -156,6 +156,15 @@ $(".menu > .option > .title").each((i,e) => {
 
 
 			if (i==1) {
+
+				$(".menu > .option > .title").eq(1).find(".title-num").text("0");
+				$(".menu > .option > .title").eq(2).find(".title-num").text("0");
+
+				selectedCityArray = [];
+				selectedProductArray = [];
+
+				$(".menu > .option > .optionPool").eq(2).children(".spot-item").remove();
+
 				$.get("/home/order/getCityByCountryId?id=" + selectedCountryArray.join(",") ,function(data,status){
 					$(e).next().children().remove();
 					$(e).next().append(data);
@@ -164,7 +173,13 @@ $(".menu > .option > .title").each((i,e) => {
 			} else if (i==0) {
 
 				$(".menu > .option > .title").eq(1).find(".title-num").text("0");
-				selectedCityArray.empty();
+				$(".menu > .option > .title").eq(2).find(".title-num").text("0");
+
+				selectedCityArray = [];
+				selectedProductArray = [];
+
+				$(".menu > .option > .optionPool").eq(2).children(".spot-item").remove();
+
 			} else if (i==2) {
 				$.get("/home/order/getProductByCityId?id=" + selectedCityArray.join(",") ,function(data,status){
 					$(".main > .itemList").children().eq(i).children().remove();
@@ -175,7 +190,7 @@ $(".menu > .option > .title").each((i,e) => {
 
 						if(temp2 == undefined) {
 							temp2 = '00';
-						} else if (temp2 < 10) {
+						} else if (temp2.length==1 && temp2 < 10) {
 							temp2 =  temp2 + 0;
 						}
 
@@ -286,7 +301,7 @@ function addActionToListPool() {
 
 		if(temp2 == undefined) {
 			temp2 = '00';
-		} else if (temp2 < 10) {
+		} else if (temp2.length==1 && temp2 < 10) {
 			temp2 =  temp2 + 0;
 		}
 		let spotItemDom = '<div class="spot-item" id="'+product.id1+'"><div class="title note">'+ product.category +'</div><div class="title">'+product.productname+'<span class="note">'+ product.country + '   '+product.city +'</span></div><div class="note">'+product.name+'</div><div class="cost">￥'+temp1+'<span style="font-size:14px">.'+temp2+'</span></div><div class="button">移除</div></div>'
