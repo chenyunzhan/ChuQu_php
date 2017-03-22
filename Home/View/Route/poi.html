@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=decive-width, initial-scale=1.0,user-scalable=no, minimal-ui"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/poi.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/Loader.css"/>
+        
+        <title>初去-兴趣点</title>
+    </head>
+    <div id="loading">
+        <div class="loading-logo"></div>
+        <div class="spinner">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+
+
+        
+    </div>
+    <body id="screen" onload="loading(1)"> 
+        <div id="blurGlass">
+		 <!--引入头部页面-->
+		<include file="./Home/Inclu/header.html"/>
+
+        <div id="sheader">
+            <font size="7">兴趣点</font>
+            POI
+        </div>        
+
+        <div id="main">
+            <div class="main_table" id="table-left">
+                <div class="table-left-wall" id="left-wall-1">
+                    <div class="table-left-titles" id="left-title-1">重 要</div>
+                    <div class="poi-box-1">
+                        
+                        <div class="poi-box-aim-1" id="poi-box-aim-0">
+                        </div>
+                        
+                        <div class="poi-box-aim-1" id="poi-box-aim-1">
+                        </div>
+                        
+                        <div class="poi-box-aim-1" id="poi-box-aim-2">  
+                        </div>
+                        
+                                
+
+                        
+                    </div>
+
+                    <div class="table-left-wall-note-1"><p>初去将优先为你安排重要兴趣点</p><p>让旅行更有侧重</p></div>
+
+                    
+                </div>
+                <div class="table-left-wall" id="left-wall-2">
+                    <div class="table-left-titles" id="left-title-2">次 要</div>
+                    <div class="poi-box-2">
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-3">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-4">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-5">    
+                        </div>
+
+                        <div class="poi-box-aim-2" id="poi-box-aim-6">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-7">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-8">    
+                        </div>                        
+                    </div>
+
+                    <div class="table-left-wall-note-2"><p>以次要补充重要</p><p>旅游内容更全面</p></div>                    
+                </div>
+                <div class="table-left-wall" id="left-wall-3">
+                    <div class="table-left-titles" id="left-title-3">计划外</div>
+                    <div class="poi-box-2-2">
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-9">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-10">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-11">    
+                        </div>
+                        <div class="poi-box-aim-2" id="poi-box-aim-12">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-13">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-14">    
+                        </div>
+                        <div class="poi-box-aim-2" id="poi-box-aim-15">
+                        </div>
+                        
+                        <div class="poi-box-aim-2" id="poi-box-aim-16">    
+                        </div>
+                    </div>
+
+                    <div class="table-left-wall-note-3"><p>填补闲暇时间</p><p>进一步完善优化旅行方案</p></div>                    
+                </div>
+                <a href="__ROOT__/index.php/home/route/howlong"><div class="goon">下一步</div></a>
+            </div>
+			<?php
+				// 进行原生的SQL查询
+				$Model = M();
+				$rst = array();
+				$rst = $Model->query('SELECT id, poi, poiClassId, poiClassName, recommend, hot FROM poi WHERE 1');
+				// var_dump($rst );
+				$info = array();
+				$info[0]['name'] = '推荐';
+				foreach($rst as $v){
+				
+					if($v["recommend"] == 1){
+						$info[0]['poiId'][] = $v['id'];
+						$info[0]['poiName'][] = $v['poi'];
+						$info[0]['hot'][] = $v['hot'];
+					}
+					
+					$poiClassId = $v['poiclassid'];
+					$info[$poiClassId]['name'] = $v['poiclassname'];
+					$info[$poiClassId]['poiId'][] = $v['id'];
+					$info[$poiClassId]['poiName'][] = $v['poi'];
+					$info[$poiClassId]['hot'][] = $v['hot'];
+				}
+			
+				// var_dump($info);
+			
+			
+			?>
+            <div class="main_table" id="table-right">
+                <div id="table-right-list">
+				 
+				
+				<!-- p1 -->
+				<!--推荐:list-page-0 -->
+				<!--其余:list-page-poiclassid -->
+			<?php
+				foreach($info as $poiClassId => $v){
+					if(empty($v['poiId'])) continue;
+					
+					echo '<div class="right-list-page" id="list-page-'.$poiClassId.'">';
+					
+					foreach($v['poiId'] as $k=>$pid){
+						if($poiClassId == 0) $pid = 's'.$pid;
+						echo '<div class="list-poi-aim"><div class="list-poi-aim-left">'.$v['poiName'][$k].'</div><div class="list-poi-aim-right"><div class="aim-right-del" id="del-right-'.$pid.'">+</div></div></div>';
+					}
+					
+					echo '</div>';
+					
+				}
+			?>
+		    
+					
+					<!-- <div class="right-list-page" id="list-page-1">
+						<div class="list-poi-aim">
+                            <div class="list-poi-aim-left">人文之旅</div>
+                            <div class="list-poi-aim-right"><div class="aim-right-del" id="del-right-s3">+</div></div>
+                        </div>
+                    </div> -->
+             
+
+
+					
+                </div>
+				
+				
+				
+                <div id="table-right-tag">
+					<!--推荐:right-tag-0 -->
+					<!--其余:right-tag-poiclassid -->
+					
+				<?php
+					foreach($info as $poiClassId=>$v){
+						// if($v['poiId'] !== 0 && empty($v['poiId'])) continue;
+						
+						echo '<div class="right-tags" id="right-tag-'.$poiClassId.'">'.$v['name'].'<div class="tags-left" id="tags-left-'.$poiClassId.'"></div><div class="tags-right" id="tags-right-'.$poiClassId.'"></div></div><div class="tags_line"></div>';
+						
+					}
+				?>
+                    <!-- <div class="right-tags" id="right-tag-1">
+                        推荐
+                        <div class="tags-left" id="tags-left-1"></div>
+                        <div class="tags-right" id="tags-right-1"></div>
+                    </div>
+					
+                    <div class="tags_line"></div> -->
+					
+                    
+					
+                                       
+                    <!-- <div class="right-tags" id="right-tag-6">
+                        娱乐
+                        <div class="tags-left" id="tags-left-6"></div>
+                        <div class="tags-right" id="tags-right-6"> </div>
+                    </div>
+                    <div class="tags_line"></div> -->
+					
+					
+                    <div class="right-shadow-full"></div>
+                </div>
+			
+            </div>
+            
+        </div>
+        
+        <footer id="footer">
+            <div class="footer-box-outside" id="box-o1">
+                <a href="destination.html">
+                    <div class="footer-box-inside" id="box-i1"></div>
+                </a>
+                <div class="footer-note" id="footer-note-1"></div>
+            </div>
+            <div class="footer-box-outside" id="box-o2">
+                <a href="poi.html">
+                    <div class="footer-box-inside" id="box-i2"></div>
+                </a>
+                <div class="footer-note" id="footer-note-2">选择兴趣点</div>
+            </div>        
+            <div class="footer-box-outside" id="box-o3">
+                <a href="howlong.html">
+                    <div class="footer-box-inside" id="box-i3"></div>
+                </a>
+                <div class="footer-note" id="footer-note-3"></div>
+            </div>
+        </footer>
+        </div>
+        <!--引入登录、注册页面-->
+		<include file="./Home/Inclu/log_reg.html"/>
+        <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>        
+        <script src="{$Think.const.JS_PATH}/poi.js"></script>
+		<script src="{$Think.const.JS_PATH}/log_reg.js"></script>
+                
+    </body>
+    
+    
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+<!--        <meta name="viewport" content="width=decive-width, initial-scale=1.0,user-scalable=no, minimal-ui"/>-->
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/order.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/jquery.datetimepicker.css"/>
+		<link rel="stylesheet" href="{$Think.const.CSS_PATH}/jquery-ui-1.10.1.css">
+		<link rel="stylesheet" href="{$Think.const.CSS_PATH}/melon.datepicker.css">
+
+        <title>出趣-门票预订-demo</title>
+    </head>
+    <body id="screen" onload="loading(2)">
+        <div id="blurGlass">
+            <header>
+                <nav>
+                    <ul>
+                        <li id="logo">
+                            <img src="{$Think.const.IMG_PATH}/order_logo_little.png">
+                        </li>
+                        <li class="right" id="login">
+<!--                            <a href="#" onclick="fullscreen()"><div id="sign"></div></a>-->
+                            <div class="userBar">
+                                <div class="userBar-top">
+                                    <div class="userBar-top-photo"></div>
+                                    <div class="userBar-any-label">Chuqv_test</div>
+                                </div>
+                                <div class="userBar-bottom">
+                                    <div class="userBar-bottom-icon"></div>
+                                    <div class="userBar-any-label">退出登录</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right" id="search">
+                            <div id="s">
+                                <input id="in"/>
+                                <div id="discover" role="button"></div>
+                            </div>
+                        </li>
+						<li class="top-navigator">
+							<div class="flash"></div>
+							<div class="nav-item">制定行程</div>
+							<div class="nav-item">我的行程</div>
+							<div class="nav-item">门票预订</div>
+						</li>
+						<!-- <a href="#" role="button"><li class="right" id="f3" onmouseover="fright()" onmouseout="fback()">门票预订</li></a>
+                        <a href="#" role="button"><li class="right" id="f2" onmouseover="fmid()" onmouseout="fback()">我的行程</li></a>
+                        <a href="#" role="button"><li class="right" id="f1" onmouseover="fleft()" onmouseout="fback()">制定行程<div id="flash"></div></li></a> -->
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="sheader">
+                <font size="7">门票预订</font>
+                Ticket booking
+            </div>
+            <div class="main">
+				<div class="menu">
+					<div class="option active">
+						<div class="title">
+							<div class="title-num">0</div>
+							<div class="title-label">选择国家</div>
+							<div class="title-note">可多选</div>
+							<!-- <div class="title-searchBox"></div> -->
+						</div>
+						<div class="optionPool" id="country">
+				<!-- Country Pool111 -->
+
+							<volist name="lists" id="vo">
+								<div class="optionBox">
+									<div class="label">{$vo.country}</div>
+									<div class="button" id="{$vo.topicid}"><div class="x">&times;</div></div>
+								</div>
+							</volist>
+
+						</div>
+					</div>
+					<div class="option">
+						<div class="title">
+							<div class="title-num">0</div>
+							<div class="title-label">选择城市</div>
+							<div class="title-note">可多选</div>
+							<!-- <div class="title-searchBox"></div> -->
+						</div>
+						<div id="city" class="optionPool">
+				<!-- City Pool -->
+
+						</div>
+					</div>
+
+					<div class="option">
+						<div class="title">
+							<div class="title-num">0</div>
+							<div class="title-label">已选择景点</div>
+							<!-- <div class="title-note">可多选</div> -->
+							<!-- <div class="title-searchBox"></div> -->
+						</div>
+						<div class="optionPool">
+							<!-- <div class="spot-item">
+								<div class="title note">THE VIEW PLACE ONE</div>
+								<div class="title">伦敦威斯敏思特大教堂<span class="note">英国伦敦</span></div>
+								<div class="note">
+									威斯敏斯特修道院又名威斯敏斯特教堂, 毗邻国会大厦, 既是英国国教的礼拜堂, 又是历代国王加冕及王室成员举行婚礼的地方.
+								</div>
+								<div class="cost">￥80<span style="font-size:14px">.00</span></div>
+								<div class="button">移除</div>
+							</div> -->
+
+				<!-- Spot Pool -->
+							<div class="main-bottom-buttons">
+								<div class="save">保存</div>
+								<div class="booking">预订</div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+				</div>
+				<div class="itemList emptyList">
+					<div class="emptyAlert active">
+						请选择预订门票国家
+					</div>
+					<div class="emptyAlert">
+						请选择预订门票城市
+					</div>
+					<div class="list-pool">
+						<div class="pool-item">
+							<div class="item-image"></div>
+							<div class="item-label title">THE VIEW PLACE ONE</div>
+							<div class="item-label note">景点a</div>
+							<div class="item-label city">英国 伦敦</div>
+							<div class="item-bottom">
+								<div class="cost">￥80<span style="font-size:12px">.00</span></div>
+								<div class="add">添加</div>
+							</div>
+						</div>
+						<div class="pool-item">
+							<div class="item-image"></div>
+							<div class="item-label title">THE VIEW PLACE ONE</div>
+							<div class="item-label note">景点a</div>
+							<div class="item-label city">英国 伦敦</div>
+							<div class="item-bottom">
+								<div class="cost">￥80<span style="font-size:12px">.00</span></div>
+								<div class="add">添加</div>
+							</div>
+						</div>
+						<div class="pool-item">
+							<div class="item-image"></div>
+							<div class="item-label title">THE VIEW PLACE ONE</div>
+							<div class="item-label note">景点a</div>
+							<div class="item-label city">英国 伦敦</div>
+							<div class="item-bottom">
+								<div class="cost">￥80<span style="font-size:12px">.00</span></div>
+								<div class="add">添加</div>
+							</div>
+						</div>
+						<div class="pool-item">
+							<div class="item-image"></div>
+							<div class="item-label title">THE VIEW PLACE ONE</div>
+							<div class="item-label note">景点a</div>
+							<div class="item-label city">英国 伦敦</div>
+							<div class="item-bottom">
+								<div class="cost">￥80<span style="font-size:12px">.00</span></div>
+								<div class="add">添加</div>
+							</div>
+						</div>
+						<div class="pool-item">
+							<div class="item-image"></div>
+							<div class="item-label title">THE VIEW PLACE ONE</div>
+							<div class="item-label note">景点a</div>
+							<div class="item-label city">英国 伦敦</div>
+							<div class="item-bottom">
+								<div class="cost">￥80<span style="font-size:12px">.00</span></div>
+								<div class="add">添加</div>
+							</div>
+						</div>
+<!-- Pool End -->
+					</div>
+					<div class="detail">
+						<div class="split">
+							<div class="photo"></div>
+							<div class="title en">THE VIEW PLACE ONE</div>
+							<div class="title zh">法国巴黎梦帕纳斯大楼</div>
+							<div class="cost">￥80<span style="font-size:14px">.00</span></div>
+							<div class="location">法国 巴黎</div>
+							<div class="detailBar">
+								<div>景点介绍</div>
+								<div class="content">
+									梦帕纳斯大楼(又称梦帕纳斯高楼)建于1972年, 共59层, 高209米, 是巴黎市区除埃菲尔铁塔外最高的建筑, 也是市区唯一的一座摩天大楼. 在大楼的第56层可以在最佳位置尽情享受全景巴黎和各种建筑物, 大楼的完美设计使得巴黎全景近在眼前!
+								</div>
+							</div>
+							<div class="detailBar">
+								<div>开放时间</div>
+								<div class="content">
+									1月1日
+								</div>
+							</div>
+						</div>
+						<div class="split">
+							<div class="bottom-buttons">
+								<div class="total"><span><span style="font-size:14px">￥</span>160<span style="font-size:14px">.00</span></span></div>
+								<div class="button cancel">返回</div>
+								<div class="button deal">立即预定</div>
+							</div>
+							<div class="content">
+								<div class="title-label">购票类型</div>
+								<div class="options">
+									<div class="option">成人票</div>
+									<div class="option">儿童票</div>
+								</div>
+								<div class="title-label">门票时间</div>
+								<div class="datepicker ll-skin-melon"></div>
+								<div class="title-label">门票数量</div>
+								<div class="num-selector">
+									<div class="button">&minus;</div>
+									<div class="number">1</div>
+									<div class="button">&plus;</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+            </div>
+        </div>
+        <div id="loginpage">
+            <div class="logincanvas" id="LoginCanvas">
+                <div class="logincanvas-logo">
+                    <div class="logincanvas-logo-img"></div>
+                </div>
+                <div class="logincanvas-note">游客？<u>立即注册</u></div>
+                <div class="logincanvas-loginbox">
+                    <div class="logincanvas-loginbox-icon userLogin"></div>
+                    <div class="logincanvas-loginbox-icon agentLogin"></div>
+                    <div class="logincanvas-loginbox-input">
+                        <div class="verify-bar">
+                            <div class="inner-box">
+                                <input class="v-input" type="text" placeholder="输入验证码" maxlength="6">
+                                <div class="v-get">发送验证码</div>
+                            </div>
+                        </div>
+                        <input id="logincanvas-loginbox-input-phonenum" type="text" placeholder="请输入手机号" maxlength="11">
+                        <input id="logincanvas-loginbox-input-password" type="password" placeholder="请输入密码">
+                    </div>
+                    <div class="logincanvas-loginbox-go">GO!</div>
+                </div>
+                <div class="logincanvas-button" id="LoginTurnOff"></div>
+            </div>
+        </div>
+        <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
+        <script src="{$Think.const.JS_PATH}/jquery.datetimepicker.full.js"></script>
+        <script src="{$Think.const.JS_PATH}/order.js"></script>
+		<script src="{$Think.const.JS_PATH}/jquery-ui-1.10.1.min.js"></script>
+
+		<script type="text/javascript" language="javascript">
+
+			Array.prototype.indexOf = function(val) {
+				for (var i = 0; i < this.length; i++) {
+					if (this[i] == val) return i;
+				}
+				return -1;
+			};
+
+
+			Array.prototype.remove = function(val) {
+				var index = this.indexOf(val);
+				if (index > -1) {
+					this.splice(index, 1);
+				}
+			};
+
+
+			var selectedCountryArray = new Array();
+			var selectedCityArray = new Array();
+			var allProductArray = new Array();
+			var selectedProductArray = new Array();
+
+		</script>
+
+    </body>
+
+
+</html>

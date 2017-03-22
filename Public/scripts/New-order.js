@@ -94,6 +94,19 @@ $(".typeSelector > .typeOption").each((i,e) => {
 		currentDom.removeClass("selected");
 		$(e).addClass("selected");
 
+
+		var pid = $(e).parent().parent().attr("id");
+        var type = $(e).text().substr(0,2);
+
+        $.get("/index.php/home/order/getProductByType?id="+pid+"&type="+type, function(data){
+
+            var ticket = $.parseJSON(data);
+            var price = ticket[0].price;
+            var num = $(e).parent().parent().children().eq(6).children().eq(1).text();
+            var totalSpan = $(e).parent().parent().find(".bottomBar").children().eq(1).children().eq(1);
+            totalSpan.text(price * num);
+        });
+
 	});
 });
 
@@ -116,6 +129,8 @@ $(".num-selector > .button").each((i,e) => {
 
 		var index = 0;
 
+		var totalPrice = 0;
+
 		for (var j=0;j<count;j++) {
 			if((i-j)%2 == 0) {
 				var button = $(".num-selector > .button").eq(j);
@@ -128,10 +143,13 @@ $(".num-selector > .button").each((i,e) => {
                     	ee = 1;
                 	total.text(untPrice*ee);
                 	index = ee -1 ;
+                	totalPrice += untPrice*ee;
                 	return ee;
             	});
 			}
 		}
+
+        $(".bottom-cost > .totalLabel").children().eq(1).text(totalPrice);
 
 
 		if (i%2==1) {
@@ -194,6 +212,15 @@ function refreshUserArray() {
 		sex = '女';
 	}
 
+    if (!checkNull(name1CN,"中文姓") || !checkNull(name2CN,"中文名") || !checkNull(name1PY,"拼音姓") || !checkNull(name2PY,"拼音名") || !checkNull(IDNumber,"身份证号") || !checkNull(country,"国家")) {
+        return false;
+    }
+
+    if(!checkID_Card(IDNumber.val())) {
+        return false;
+    }
+
+
 
 	var userMap={
 		name1CN:name1CN.val(),
@@ -207,6 +234,8 @@ function refreshUserArray() {
 	};
 
 	userArray[$lastUser.attr("id")%10000] = userMap;
+
+	return true;
 }
 
 
@@ -364,7 +393,11 @@ function userSwitch() {
 
 $(".bottom-cost > .postButton").click(() => {
 
-	refreshUserArray();
+	var isValidata = refreshUserArray();
+
+	if (!isValidata) {
+	    return false;
+    }
 
 	var productIdArray = new Array();
 	var productNameArray = new Array();
@@ -393,11 +426,20 @@ $(".bottom-cost > .postButton").click(() => {
 	var users = userArray;
 
 
-	var contactName = $("input[name='contactName']").val();
-	var contactWebChat = $("input[name='contactWebChat']").val();
-	var contactMobile = $("input[name='contactMobile']").val();
-	var contactMail = $("input[name='contactMail']").val();
-	var guestInfo = $(".optChildBox > .optModel > .userNote").val();
+	var contactName = $("input[name='contactName']");
+	var contactWebChat = $("input[name='contactWebChat']");
+	var contactMobile = $("input[name='contactMobile']");
+	var contactMail = $("input[name='contactMail']");
+	var guestInfo = $(".optChildBox > .optModel > .userNote");
+
+
+	if (!checkNull(contactName,"联系人姓名") || !checkNull(contactWebChat,"联系人微信号") || !checkNull(contactMobile,"联系人电话") || !checkNull(contactMail,"联系人邮件")) {
+	    return false;
+    }
+
+    if (!checkMail(contactMail.val()) || !checkMobile(contactMobile.val())) {
+        return false;
+    }
 
 	$.post("/home/order/doAddOrder",{
         users:users,
@@ -406,11 +448,11 @@ $(".bottom-cost > .postButton").click(() => {
 		useDates:useDates,
 		nums:nums,
 		totalPrice:totalPrice,
-        contactName:contactName,
-        contactWebChat:contactWebChat,
-        contactMobile:contactMobile,
-        contactMail:contactMail,
-        guestInfo:guestInfo
+        contactName:contactName.val(),
+        contactWebChat:contactWebChat.val(),
+        contactMobile:contactMobile.val(),
+        contactMail:contactMail.val(),
+        guestInfo:guestInfo.val()
 	}, function(data){
 
 
@@ -542,9 +584,8 @@ function toLowCase(){
 }
 //手机号码校验，长度为11位数字。
 function checkMobile(str) {
-    var Str=document.getElementById(str).value;
     RegularExp=/^[0-9]{11}$/
-    if (RegularExp.test(Str)) {
+    if (RegularExp.test(str)) {
         return true;
     }
     else {
@@ -555,9 +596,9 @@ function checkMobile(str) {
 //电子邮件校验
 function checkMail(str)
 {
-    var Str=document.getElementById(str).value;
+
     RegularExp = /[a-z0-9]*@[a-z0-9]*\.[a-z0-9]+/gi
-    if (RegularExp.test(Str))
+    if (RegularExp.test(str))
     {
         return true;
     }else{

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/howlong.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/nstSlider.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/jquery.datetimepicker.css"/>
+		 <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/Loader.css"/>
+		
+        <title>初去-玩多久</title>
+    </head>
+    <body id="screen" onload="loading(1)">
+        <div id="blurGlass">
+        <!--引入头部页面-->
+		<include file="./Home/Inclu/header.html"/>
+
+        <div id="sheader">
+            <font size="7">玩多久</font>
+            How long
+        </div>
+
+        <div id="main">
+            <div class="left-bar">
+                <div class="left-component">
+                    <div class="how-long-logo"></div>
+                    <div class="note-1">已经决定出发时间、进出城市、必须要玩的地方</div>
+                    <div class="note-2">请点击右边切换高级选项</div>
+                    <div class="slider-layout"><input class="single-slider" type="hidden" value="7,12"/></div>
+                    <a><div class="goon">立即生成</div></a>
+                </div>
+                <div class="left-component">
+                    <div class="options-view">
+                        <div class="option-bar option-bar-on">
+                            <div class="option-title">
+                                <div class="title-item">1</div>
+                                <div class="title-label">确切出发时间</div>
+                                <div class="title-tag"></div>
+                            </div>
+                            <div class="setting-bar">
+                                <div class="option-next">下一步</div>
+                                <div class="bar-line">
+                                    <div class="set-bar-icon"></div>
+                                    <div class="set-bar-label">出发日期</div>
+                                    <input class="date-time-picker" type="text" placeholder="选择出发日期">
+                                </div>
+                                <div class="bar-line">
+                                    <div class="set-bar-area"><div class="enable"></div></div>
+                                    <div class="set-bar-label">还未决定</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option-bar">
+                            <div class="option-title">
+                                <div class="title-item">2</div>
+                                <div class="title-label">必去的城市</div>
+                                <div class="city-selected-box">
+									
+                                </div>
+                                <div class="city-search" style="display:none">
+                                    <div class="icon"></div>
+                                    <input class="keyword-input" placeholder="请输入城市名称">
+                                    <div class="search-results"></div>
+                                </div>
+                            </div>
+                            <div class="city-selector">
+                                
+								
+                            </div>
+                            <div class="selected-list">
+                                
+                                
+                                <div class="option-next">下一步</div>
+                            </div>
+                        </div>
+                        <div class="option-bar">
+                            <div class="option-title">
+                                <div class="title-item">3</div>
+                                <div class="title-label">进出城市</div>
+                            </div>
+                            <div class="plan-item">
+                                <div class="icon"></div>
+                                <div class="label">行程第一站到达城市</div>
+                                <div class="city-search">
+                                    <div class="icon"></div>
+                                    <input class="keyword-input" placeholder="请输入城市名称">
+                                    <div class="search-results">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plan-item">
+                                <div class="icon"></div>
+                                <div class="label">行程最后到达的城市</div>
+                                <div class="city-search">
+                                    <div class="icon"></div>
+                                    <input class="keyword-input" placeholder="请输入城市名称">
+                                    <div class="search-results">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="options-post">
+                        <div class="post-button">立即生成</div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-bar">
+                <div class="navigator">
+                    <div class="icon-plan"></div>
+                    <div class="button-label">行程安排</div>
+                </div>
+                <div class="navigator">
+                    <div class="icon-options"></div>
+                    <div class="button-label">高级选项</div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        <footer id="footer">
+            <div class="footer-box-outside" id="box-o1">
+                <a href="destination.html">
+                    <div class="footer-box-inside" id="box-i1"></div>
+                </a>
+                <div class="footer-note" id="footer-note-1"></div>
+            </div>
+            <div class="footer-box-outside" id="box-o2">
+                <a href="poi.html">
+                    <div class="footer-box-inside" id="box-i2"></div>
+                </a>
+                <div class="footer-note" id="footer-note-2"></div>
+            </div>
+            <div class="footer-box-outside" id="box-o3">
+                <a href="howlong.html">
+                    <div class="footer-box-inside" id="box-i3"></div>
+                </a>
+                <div class="footer-note" id="footer-note-3">玩多久</div>
+            </div>
+        </footer>
+        </div>
+        <!--引入登录、注册页面-->
+		<include file="./Home/Inclu/log_reg.html"/>
+        <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
+        <script src="{$Think.const.JS_PATH}/jquery.datetimepicker.full.js"></script>
+        <script src="{$Think.const.JS_PATH}/howlong.js"></script>
+		<script src="{$Think.const.JS_PATH}/log_reg.js"></script>
+    </body>
+
+
+</html>

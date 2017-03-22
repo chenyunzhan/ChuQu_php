@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <!--        <meta name="viewport" content="width=decive-width, initial-scale=1.0,user-scalable=no, minimal-ui"/>-->
+    <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+    <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/New-order.css"/>
+    <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+    <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/jquery.datetimepicker.css"/>
+
+
+    <title>出趣-填写订单-demo</title>
+</head>
+<body id="screen" onload="loading(2)">
+<div id="blurGlass">
+    <header>
+        <nav>
+            <ul>
+                <li id="logo">
+                    <img src="{$Think.const.IMG_PATH}/logo_little.png">
+                </li>
+                <li class="right" id="login">
+                    <!--                            <a href="#" onclick="fullscreen()"><div id="sign"></div></a>-->
+                    <div class="userBar">
+                        <div class="userBar-top">
+                            <div class="userBar-top-photo"></div>
+                            <div class="userBar-any-label">Chuqv_test</div>
+                        </div>
+                        <div class="userBar-bottom">
+                            <div class="userBar-bottom-icon"></div>
+                            <div class="userBar-any-label">退出登录</div>
+                        </div>
+                    </div>
+                    <div class="msg unread">
+                        <div class="status"></div>
+                        <div class="detail-box">
+                            <div class="delta"></div>
+                            <div class="title">站内消息</div>
+                            <div class="content">
+                                <div class="message-bar">您的 [德法日9日双人行程] 方案已保存, 马上发布获得地接社报价!</div>
+                                <div class="split"></div>
+                                <div class="message-bar">来自 [环球GO] 对您的 [英葡法11日3人行程] 有了新的报价, 点击查看!</div>
+                                <div class="split"></div>
+                                <div class="message-bar">Hi~欢迎注册开启初趣之旅, 您可以立即制定行程或预订门票!</div>
+                                <div class="split"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="right" id="search">
+                    <div id="s">
+                        <input id="in"/>
+                        <div id="discover" role="button"></div>
+                    </div>
+                </li>
+                <li class="top-navigator">
+                    <div class="flash"></div>
+                    <div class="nav-item">制定行程</div>
+                    <div class="nav-item">我的行程</div>
+                    <div class="nav-item">门票预订</div>
+                </li>
+                <!-- <a href="#" role="button"><li class="right" id="f3" onmouseover="fright()" onmouseout="fback()">门票预订</li></a>
+                <a href="#" role="button"><li class="right" id="f2" onmouseover="fmid()" onmouseout="fback()">我的行程</li></a>
+                <a href="#" role="button"><li class="right" id="f1" onmouseover="fleft()" onmouseout="fback()">制定行程<div id="flash"></div></li></a> -->
+            </ul>
+        </nav>
+    </header>
+
+    <div id="sheader">
+        <font size="7">填写订单</font>
+    </div>
+    <div class="main">
+        <div class="orders SCROLL">
+            <!-- Pool XXX -->
+
+
+            <volist name="lists" id="vo">
+
+                <div id="{$vo.id1}" class="order">
+                    <div id="{$vo.id2}" class="titleBar">
+                        <div class="zh">{$vo.productname}</div>
+                        <div class="en">Tour Montparnasse</div>
+                    </div>
+                    <div class="titleLabel">购票类型</div>
+                    <div class="typeSelector">
+                        <div class="typeOption selected">成人票</div>
+                        <div class="typeOption">儿童票</div>
+                    </div>
+                    <div class="titleLabel">使用日期</div>
+                    <input class="datePicker">
+                    <div class="titleLabel">购票数量</div>
+                    <div class="num-selector">
+                        <div class="button">&minus;</div>
+                        <div class="number">1</div>
+                        <div class="button">&plus;</div>
+                    </div>
+                    <div class="bottomBar">
+                        <div class="label">总价</div>
+                        <span><span style="font-size:14px">￥ </span><span style="font-size:18px">{$vo.price}</span></span>
+                    </div>
+
+
+                    <?php $totalPrice += $vo.price; ?>
+                </div>
+
+            </volist>
+
+            <!-- Pool XXX -->
+        </div>
+        <div class="userinfo">
+            <!-- XXX subPool of users information -->
+            <div class="infoPool SCROLL">
+                <div class="headBar TBLINE">
+                    <div class="title">
+                        旅客信息
+                        <span class="note">请确保您填写的信息真实准确, 否则会影响您的顺利出行</span>
+                    </div>
+                </div>
+                <div class="optChildBox">
+                    <div class="usrOptCell TBLINE">
+                        <div class="usrOptLabel">常用旅客</div>
+
+                        <div id="10000" class="usrOptItem usrOptItemSELECTED">用户名</div>
+
+<!--
+                        <volist name="lists" id="vo">
+                            <if condition="$key gt 0">
+                                <div id="{$key+10000}" class="usrOptItem">用户名</div>
+                            </if>
+                        </volist>
+-->
+
+
+                    </div>
+
+                    <div class="optModel TBLINE">
+                        <div class="inputCmpnt">
+                            <input name="name1CN" type="text" placeholder="中文姓">
+                            <div class="note">例如李明填李 (同证件)</div>
+                        </div>
+                        <div class="inputCmpnt">
+                            <input name="name2CN" type="text" placeholder="中文名">
+                            <div class="note">例如李明填明 (同证件)</div>
+                        </div>
+                    </div>
+
+                    <div class="optModel TBLINE">
+                        <div class="inputCmpnt">
+                            <!-- <input type="text" placeholder="证件类型"> -->
+                            <select class="IDselector">
+                                <option>身份证</option>
+                                <option>护照</option>
+                            </select>
+
+                            <div class="note">请选择证件类型并输入您的证件号码</div>
+                        </div>
+                        <div class="inputCmpnt">
+                            <input name="IDNumber" type="text" placeholder="证件号码">
+                            <div class="note"></div>
+                        </div>
+                    </div>
+
+                    <div class="optModel TBLINE">
+                        <div class="inputCmpnt">
+                            <input name="name1PY" type="text" placeholder="拼音姓">
+                            <div class="note">例如李明填 LI (同证件)</div>
+                        </div>
+                        <div class="inputCmpnt">
+                            <input name="name2PY" type="text" placeholder="拼音名">
+                            <div class="note">例如李明填 MING (同证件)</div>
+                        </div>
+                    </div>
+
+                    <div class="optModel TBLINE">
+                        <div class="inputCmpnt">
+                            <div class="optSelector">
+                                <div class="opt ENA">♂</div>
+                                <div class="opt">♀</div>
+                            </div>
+                            <div class="note">性别</div>
+                        </div>
+                        <div class="inputCmpnt">
+                            <input name="country" type="text" placeholder="证件号码">
+                            <div class="note">填写国家名称</div>
+                        </div>
+                    </div>
+
+                    <div class="optModel">
+                        <div class="selCircle">
+                            <div class="status enable"></div>
+                        </div>
+                        <span class="childTitle">保存为常用旅客</span>
+                        <div class="button">保存</div>
+                    </div>
+
+                </div>
+
+                <div class="headBar TBLINE">
+                    <div class="title">
+                        联系人信息
+                        <span class="note">请确保您填写的信息真实准确, 否则会影响您的顺利出行</span>
+                    </div>
+                </div>
+                <div class="optChildBox">
+                    <div class="optModel">
+                        <div class="inputCmpnt">
+                            <input name="contactName" type="text" placeholder="姓名">
+                        </div>
+                        <div class="inputCmpnt">
+                            <input name="contactWebChat" type="text" placeholder="微信号">
+                        </div>
+                    </div>
+                    <div class="optModel TBLINE" style="padding-top:0">
+                        <div class="inputCmpnt">
+                            <input name="contactMobile" type="text" placeholder="电话号码">
+                        </div>
+                        <div class="inputCmpnt">
+                            <input name="contactMail" type="text" placeholder="邮箱地址">
+                        </div>
+                    </div>
+
+                    <div class="optModel">
+                        <div class="selCircle">
+                            <div class="status enable"></div>
+                        </div>
+                        <span class="childTitle">绑定常用联系人</span>
+                    </div>
+
+                </div>
+
+                <div class="headBar TBLINE">
+                    <div class="title">
+                        备注信息
+                        <span class="note">如有其他需求, 请在此说明</span>
+                    </div>
+                </div>
+                <div class="optChildBox">
+                    <div class="optModel">
+                        <textarea name="guestInfo" class="userNote" rows="8" cols="80" placeholder="是否携带儿童等"></textarea>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- XXX Pool over -->
+
+
+
+            <div class="bottom-cost">
+                <div class="totalLabel">
+                    <span style="font-size:14px; color: rgba(255,255,255,.6); margin-right:10px;">Total</span>
+                    <span style="font-size:18px">{$totalPrice}</span>
+                    <span style="font-size:14px; color: rgba(255,255,255,.8); margin-left:5px;">¥</span>
+                </div>
+                <div class="postButton">提交订单</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="loginpage">
+    <div class="logincanvas" id="LoginCanvas">
+        <div class="logincanvas-logo">
+            <div class="logincanvas-logo-img"></div>
+        </div>
+        <div class="logincanvas-note">游客？<u>立即注册</u></div>
+        <div class="logincanvas-loginbox">
+            <div class="logincanvas-loginbox-icon userLogin"></div>
+            <div class="logincanvas-loginbox-icon agentLogin"></div>
+            <div class="logincanvas-loginbox-input">
+                <div class="verify-bar">
+                    <div class="inner-box">
+                        <input class="v-input" type="text" placeholder="输入验证码" maxlength="6">
+                        <div class="v-get">发送验证码</div>
+                    </div>
+                </div>
+                <input id="logincanvas-loginbox-input-phonenum" type="text" placeholder="请输入手机号" maxlength="11">
+                <input id="logincanvas-loginbox-input-password" type="password" placeholder="请输入密码">
+            </div>
+            <div class="logincanvas-loginbox-go">GO!</div>
+        </div>
+        <div class="logincanvas-button" id="LoginTurnOff"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" language="javascript">
+
+    var totalPrice = new Array();
+    var userArray = new Array();
+
+</script>
+
+<script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
+<script src="{$Think.const.JS_PATH}/jquery.datetimepicker.full.js"></script>
+<script src="{$Think.const.JS_PATH}/New-order.js"></script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/inference.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/jquery.bigautocomplete.css"/>
+		 <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/Loader.css"/>
+		 
+        <title>初去-路线结果</title>
+    </head>
+    <body id="screen" onload="loading(1)">
+      <span id="ruler"></span>
+        <div id="blurGlass">
+        <!--引入头部页面-->
+		<include file="./Home/Inclu/header.html"/>
+
+        <div id="sheader">
+            <font size="7">路线结果</font>
+            Itinerary
+        </div>
+
+        <div id="main">
+            <div class="main-left">
+                <div class="title-main-left" id="title-main-left-index">
+                    <div class="title-name"></div>
+                    <div class="title-options-box">
+                        <div class="title-option">
+                            <div class="title-option-text" id="addoneday">＋增加一天</div>
+                        </div>
+                        <div class="title-options-scroll-box">
+                            <div class="title-option-button">
+                                <div class="title-option-text">加到第1天前</div>
+                            </div>
+                            <div class="title-option-button">
+                                <div class="title-option-text">加到第1天后</div>
+                            </div>
+                            <div class="title-option-button">
+                                <div class="title-option-text">加到第2天后</div>
+                            </div>
+                            <div class="title-option-button">
+                                <div class="title-option-text">加到第3天后</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="title-main-left" id="title-main-left-transportation">
+                    <div class="title-main-left-icon"></div>
+                    <div class="title-main-left-title"></div>
+                </div>
+                <div class="title-main-left" id="title-main-left-spot">
+                    <div class="title-main-left-title">规划你的自由路线</div>
+                </div>
+                <div class="title-main-left" id="title-main-left-city_edit">
+                    <div class="title-main-left-title">城市修改</div>
+                </div>
+                <div class="left-inference" id="inference-box">
+				
+                <!--路线主页面-->
+                </div>
+				<!--修改交通页面-->
+				
+                <div class="left-inference-transportation" id="inference-box-transportation">
+                    <div class="inference-transportation-section">
+                        <div class="inference-transportation-section-theme"></div>
+                        <div class="inference-transportation-section-option">
+                            <div class="inference-transportation-section-option-bys-plane" id="Transportation_Option_1">
+                                <div class="inference-transportation-section-option-by-plane-logo" id="Transportation_Option_Logo_1"></div>
+                            </div>
+                            <div class="inference-transportation-section-option-bys-train" id="Transportation_Option_2">
+                                <div class="inference-transportation-section-by-null-l" id="Transportation_Option_l_1"></div>
+                                <div class="inference-transportation-section-option-by-train-logo" id="Transportation_Option_Logo_2"></div>
+                            </div>
+                            <div class="inference-transportation-section-option-bys-ship" id="Transportation_Option_3">
+                                <div class="inference-transportation-section-by-null-l" id="Transportation_Option_l_2"></div>
+                                <div class="inference-transportation-section-option-by-ship-logo" id="Transportation_Option_Logo_3"></div>
+                            </div>
+                            <div class="inference-transportation-section-option-bys-car" id="Transportation_Option_4">
+                                <div class="inference-transportation-section-by-null-l" id="Transportation_Option_l_3"></div>
+                                <div class="inference-transportation-section-option-by-car-logo" id="Transportation_Option_Logo_4"></div>
+                            </div>
+                        </div>
+                        <div class="inference-transportation-section-information">
+                            <div class="inference-transportation-section-information-nav">
+                                <div class="inference-transportation-section-information-nav-option-1" id="transportation-nav-1">推荐</div>
+                                <div class="inference-transportation-section-information-nav-option-2" id="transportation-nav-2">历时最短</div>
+                                <div class="inference-transportation-section-information-nav-option-3" id="transportation-nav-3">价格最优</div>
+                                <div class="inference-transportation-section-information-nav-option-4" id="transportation-nav-4">路程最短</div>
+                            </div>
+                            <div id="transportation-appendLoc">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-left-transportation_button" id="transportation_button">
+                    <div class="main-left-transportation_button-cancel" id="transportation_button_cancel">取 消</div>
+                    <div class="main-left-transportation_button-finish" id="transportation_button_finish">完 成</div>
+                </div>
+				
+				<!--优化行程-->
+				
+                <div class="main-left-city_editor_button">
+                    <div class="main-left-city_editor_button-label">是否对行程进行优化</div>
+                    <div class="main-left-city_editor_button-cancel">保存</div>
+                    <div class="main-left-city_editor_button-finish">优化</div>
+                </div>
+
+                <div class="main-left-transportation_button" id="main_button">
+                    <div class="main-left-transportation_button-cancel" id="main_button_cancel">取 消</div>
+                    <div class="main-left-transportation_button-finish" id="main_button_finish">完 成</div>
+                </div>
+
+                <div class="left-inference-spot" id="inference-box-spot">
+                    <div class="inference-spot-theme"></div>
+                    <div class="inference-spot-list-left" id="spot-list-left">
+                        <div class="inference-spot-list-left-box" draggable="true">
+                            <div class="inference-spot-list-left-box-top">
+                                <div class="inference-spot-list-left-box-icon-move"></div>
+                                <div class="inference-spot-list-left-box-title">zell大街</div>
+                                <div class="inference-spot-list-left-box-icon-remove"></div>
+                                <div class="inference-spot-list-left-box-icon-note" id="spot-list-left-icon-note-1"></div>
+                            </div>
+                            <input class="inference-spot-list-left-box-middle" placeholder="输入景点备注">
+                            <div class="inference-spot-list-left-box-bottom">
+                                <div class="inference-spot-list-left-box-button">确定</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inference-spot-list-right">
+                        <div class="inference-spot-list-right-search">
+                            <input class="inference-spot-list-right-search-input">
+                            <div class="inference-spot-list-right-search-button"></div>
+                        </div>
+                        <div class="inference-spot-list-right-config-title">选择景点类型 &#8226;</div>
+                        <div class="inference-spot-list-right-config-list" id="spot-list-right">
+
+                            <div class="inference-spot-list-right-config-list-val">
+                                <div class="inference-spot-list-right-config-list-val-img"></div>
+                                <div class="inference-spot-list-right-config-list-val-right">
+                                    <div class="inference-spot-list-right-config-list-val-name">ZEIL大街</div>
+                                    <div class="inference-spot-list-right-config-list-val-note">购物</div>
+                                </div>
+                                <div class="inference-spot-list-right-config-list-val-button">
+                                    <div class="inference-spot-list-right-config-list-val-button-icon"></div>
+                                </div>
+                            </div>
+                            <div class="inference-spot-list-right-config-list-detail">
+                                <div class="inference-spot-list-right-config-list-detail-title">
+                                    <div class="inference-spot-list-right-config-list-detail-title-iconLoc"></div>
+                                    <div class="inference-spot-list-right-config-list-detail-title-note">景点地址</div>
+                                </div>
+                                <div class="inference-spot-list-right-config-list-detail-note">33,avenue du Maine .st 75755 PARIS</div>
+                                <div class="inference-spot-list-right-config-list-detail-title">
+                                    <div class="inference-spot-list-right-config-list-detail-title-iconTime"></div>
+                                    <div class="inference-spot-list-right-config-list-detail-title-note">开放时间</div>
+                                </div>
+                                <div class="inference-spot-list-right-config-list-detail-note">4月至9月 从9:30到23:30</div>
+                                <div class="inference-spot-list-right-config-list-detail-note">10月至3月 从9:30到23:00</div>
+                                <div class="inference-spot-list-right-config-list-detail-title">
+                                    <div class="inference-spot-list-right-config-list-detail-title-iconTicket"></div>
+                                    <div class="inference-spot-list-right-config-list-detail-title-note">景点门票</div>
+                                </div>
+                                <div class="inference-spot-list-right-config-list-detail-note">普通成人门票：50€</div>
+                                <div class="inference-spot-list-right-config-list-detail-note">爬上教堂尖塔需要支付3€</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="left-inference-city-editor">
+                  <div class="city-editor-title">
+                    <div class="city-editor-title-button" v-on:click="test" v-bind:style="buttonStyle">
+                      <div class="city-editor-title-button-icon" v-bind:style="buttonIconStyle"></div>
+                    </div>
+                    <div class="city-editor-title-infor">
+                      <!--1头部的标题-->
+					  <div class="city-editor-title-infor-label">
+                        <div class="city-editor-title-infor-label-text">欧洲自助游</div>
+                        <div class="city-editor-title-infor-label-text">5月20日——5月29日</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="city-editor-detail">
+
+					
+                  </div>
+				  
+                   
+
+                </div>
+
+
+            </div>
+            <div class="main-right">
+                <div class="title-main-right">
+                    <div class="title-right-path">地图 ></div>
+                </div>
+                <div id="map-canvas"></div>
+            </div>
+
+        </div>
+        </div>
+        <!--引入登录、注册页面-->
+		<include file="./Home/Inclu/log_reg.html"/>
+        <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
+        <script src="{$Think.const.JS_PATH}/jquery.bigautocomplete.js"></script>
+		<script src="http://ditu.google.cn/maps/api/js"></script>
+        <script src="{$Think.const.JS_PATH}/inference.js"></script>
+		<script src="{$Think.const.JS_PATH}/addInfer.js"></script>
+		<script src="{$Think.const.JS_PATH}/log_reg.js"></script>
+    </body>
+
+
+</html>

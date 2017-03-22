@@ -165,7 +165,7 @@ $(".menu > .option > .title").each((i,e) => {
 
 				$(".menu > .option > .optionPool").eq(2).children(".spot-item").remove();
 
-				$.get("/home/order/getCityByCountryId?id=" + selectedCountryArray.join(",") ,function(data,status){
+				$.get("/index.php/home/order/getCityByCountryId?id=" + selectedCountryArray.join(",") ,function(data,status){
 					$(e).next().children().remove();
 					$(e).next().append(data);
 					addActionToOptionBox();
@@ -181,7 +181,7 @@ $(".menu > .option > .title").each((i,e) => {
 				$(".menu > .option > .optionPool").eq(2).children(".spot-item").remove();
 
 			} else if (i==2) {
-				$.get("/home/order/getProductByCityId?id=" + selectedCityArray.join(",") ,function(data,status){
+				$.get("/index.php/home/order/getProductByCityId?id=" + selectedCityArray.join(",") ,function(data,status){
 					$(".main > .itemList").children().eq(i).children().remove();
 					allProductArray = $.parseJSON(data);
 					$.each($.parseJSON(data),function(index,val){
@@ -257,7 +257,7 @@ $(".itemList > .detail").find(".cancel").each((i,e) => {
 });
 
 $(".main-bottom-buttons > .booking").click(() => {
-	location.href = "/home/order/preAddOrder?id=" + selectedProductArray.join(',');
+	location.href = "/index.php/home/order/preAddOrder?id=" + selectedProductArray.join(',');
 });
 
 
@@ -327,8 +327,42 @@ function addActionToListPool() {
 					});
 				}
 				return false;	//Stop Propagation
-			});
 		});
+	});
+
+
+    //	Handle click event of items, turn to detail page
+    $(".list-pool > .pool-item").each((i,e) => {
+        $(e).click(() => {
+        $(".main > .itemList").find(".active").removeClass("active");
+		// $(".itemList > .list-pool").fadeOut(1000, ()=>{
+		// });
+		$(".itemList > .detail").addClass("active");
+
+		var detail = $(".itemList > .detail");
+
+		var product = allProductArray[i];
+
+		var temp1 = product.price.split('.')[0];
+		var temp2 = product.price.split('.')[1];
+
+		if(temp2 == undefined) {
+			temp2 = '00';
+		} else if (temp2.length==1 && temp2 < 10) {
+			temp2 =  temp2 + 0;
+		}
+
+    	detail.children().children(".title.zh").text(product.productname);
+		detail.children().children(".cost").html('￥'+ temp1 + '<span style="font-size:14px">.'+temp2+'</span>');
+		detail.children().children(".location").text(product.country + '  ' + product.city);
+		detail.children().children(".title.zh").text(allProductArray[i].productname);
+
+    // $(".main > .itemList > .active").hide().fadeIn(1000);
+
+		// $(e).parent().addClass("disable");
+		// $(e).parent().parent().find(".detail").addClass("show");
+		});
+	});
 }
 
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+<!--        <meta name="viewport" content="width=decive-width, initial-scale=1.0,user-scalable=no, minimal-ui"/>-->
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/main.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/pay.css"/>
+        <link rel="stylesheet" type="text/css" href="{$Think.const.CSS_PATH}/animation.css"/>
+
+
+        <title>出趣-在线支付-demo</title>
+    </head>
+    <body id="screen" onload="loading(2)">
+        <div id="blurGlass">
+            <header>
+                <nav>
+                    <ul>
+                        <li id="logo">
+                            <img src="{$Think.const.IMG_PATH}/logo_little.png">
+                        </li>
+                        <li class="right" id="login">
+<!--                            <a href="#" onclick="fullscreen()"><div id="sign"></div></a>-->
+                            <div class="userBar">
+                                <div class="userBar-top">
+                                    <div class="userBar-top-photo"></div>
+                                    <div class="userBar-any-label">Chuqv_test</div>
+                                </div>
+                                <div class="userBar-bottom">
+                                    <div class="userBar-bottom-icon"></div>
+                                    <div class="userBar-any-label">退出登录</div>
+                                </div>
+                            </div>
+							<div class="msg unread">
+								<div class="status"></div>
+								<div class="detail-box">
+									<div class="delta"></div>
+									<div class="title">站内消息</div>
+									<div class="content">
+										<div class="message-bar">您的 [德法日9日双人行程] 方案已保存, 马上发布获得地接社报价!</div>
+										<div class="split"></div>
+										<div class="message-bar">来自 [环球GO] 对您的 [英葡法11日3人行程] 有了新的报价, 点击查看!</div>
+										<div class="split"></div>
+										<div class="message-bar">Hi~欢迎注册开启初趣之旅, 您可以立即制定行程或预订门票!</div>
+										<div class="split"></div>
+									</div>
+								</div>
+							</div>
+                        </li>
+                        <li class="right" id="search">
+                            <div id="s">
+                                <input id="in"/>
+                                <div id="discover" role="button"></div>
+                            </div>
+                        </li>
+						<li class="top-navigator">
+							<div class="flash"></div>
+							<div class="nav-item">制定行程</div>
+							<div class="nav-item">我的行程</div>
+							<div class="nav-item">门票预订</div>
+						</li>
+						<!-- <a href="#" role="button"><li class="right" id="f3" onmouseover="fright()" onmouseout="fback()">门票预订</li></a>
+                        <a href="#" role="button"><li class="right" id="f2" onmouseover="fmid()" onmouseout="fback()">我的行程</li></a>
+                        <a href="#" role="button"><li class="right" id="f1" onmouseover="fleft()" onmouseout="fback()">制定行程<div id="flash"></div></li></a> -->
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="sheader">
+                <font size="7">在线支付</font>
+            </div>
+            <div class="main">
+				<div class="titleBar">
+					<div class="titleLabel">
+						<span>订单已生成 ! 订单号 : {$order.id}</span>
+						<span><span style="color:rgba(255,255,255,.6);font-size:14px">待支付</span><span style="font-size:24px;margin:0 3px 0 10px">{$order.totalprice}</span><span style="color:rgba(255,255,255,.8)">￥</span></span>
+					</div>
+
+                    <volist name="orderSummaryArray" id="vo">
+                        <div class="note">{$vo}</div>
+                    </volist>
+				</div>
+				<div class="payments SCROLL">
+					<div class="title">选择支付方式</div>
+					<div class="options">
+						<!-- Options Pool -->
+						<div class="option">
+							<div class="switch">
+								<div class="status"></div>
+							</div>
+							<div class="optionLogo logo_Alipay"></div>
+						</div>
+
+						<!-- Options Pool -->
+					</div>
+				</div>
+				<div class="bottomBar">
+					<span><span style="color:rgba(255,255,255,.6)">待支付</span><span style="font-size:24px;margin:0 3px 0 10px">{$order.totalprice}</span><span style="color:rgba(255,255,255,.8);font-size:18px">￥</span></span>
+					<div class="button">确认支付</div>
+				</div>
+            </div>
+        </div>
+        <div id="loginpage">
+            <div class="logincanvas" id="LoginCanvas">
+                <div class="logincanvas-logo">
+                    <div class="logincanvas-logo-img"></div>
+                </div>
+                <div class="logincanvas-note">游客？<u>立即注册</u></div>
+                <div class="logincanvas-loginbox">
+                    <div class="logincanvas-loginbox-icon userLogin"></div>
+                    <div class="logincanvas-loginbox-icon agentLogin"></div>
+                    <div class="logincanvas-loginbox-input">
+                        <div class="verify-bar">
+                            <div class="inner-box">
+                                <input class="v-input" type="text" placeholder="输入验证码" maxlength="6">
+                                <div class="v-get">发送验证码</div>
+                            </div>
+                        </div>
+                        <input id="logincanvas-loginbox-input-phonenum" type="text" placeholder="请输入手机号" maxlength="11">
+                        <input id="logincanvas-loginbox-input-password" type="password" placeholder="请输入密码">
+                    </div>
+                    <div class="logincanvas-loginbox-go">GO!</div>
+                </div>
+                <div class="logincanvas-button" id="LoginTurnOff"></div>
+            </div>
+        </div>
+        <script src="{$Think.const.JS_PATH}/jquery-2.1.4.min.js"></script>
+        <script src="{$Think.const.JS_PATH}/pay.js"></script>
+
+    </body>
+
+
+</html>
