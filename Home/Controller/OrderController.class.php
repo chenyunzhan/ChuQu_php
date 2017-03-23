@@ -111,9 +111,13 @@ class OrderController extends Controller
 
     }
 
-    public function preAddOrder($id = 0) {
+    public function preAddOrder($id = 0, $type='成人',$num='1',$useDate="01/01/2001") {
+
+        $type = "%".$type."%";
+
         $where['product_copy.id'] = array('in',$id);
-        $where['Classification'] = array('like','%成人%');
+        $where['Classification'] = array('like',$type);
+        $where['Price'] = array('gt',0);
 
 
 
@@ -131,12 +135,27 @@ class OrderController extends Controller
 
         $totalPrice = 0;
 
-        foreach ($lists as $v) {
+        foreach ($lists as &$v) {
             $totalPrice += $v['price'];
+            $v['price'] = $v['price']*$num;
+
+            $pos = strpos($v['classification'], "成人");
+            // 注意这里使用的是 ===。简单的 == 不能像我们期待的那样工作，
+            // 因为 'a' 是第 0 位置上的（第一个）字符。
+            if ($pos === true) {
+                $v['classification']="成人";
+            } else{
+                $v['classification']="儿童";
+            }
         }
 
+        $newUseDate = date('Y-m-d     星期w',strtotime($useDate)); //这个的输出是 2011-01-09
+
+
         $this->assign('lists',$lists);//列表
-        $this->assign('totalPrice',$totalPrice);//列表
+        $this->assign('totalPrice',$totalPrice*$num);
+        $this->assign('num',$num);
+        $this->assign('useDate',$newUseDate);
 
         $this->display();
 

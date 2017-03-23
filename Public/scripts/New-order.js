@@ -82,7 +82,8 @@ function Loginturnoff() {
 
 //	Handle datePicker
 $(".order > .datePicker").each((i,e) => {
-	$(e).datetimepicker({value: 'default', format:"Y-m-d     星期w", timepicker:false, scrollInput: false});//配置并初始化日期选择控件
+    var useDate = $(e).attr("id");
+	$(e).datetimepicker({value: useDate, format:"Y-m-d     星期w", timepicker:false, scrollInput: false});//配置并初始化日期选择控件
 	$.datetimepicker.setLocale('zh');
 });
 

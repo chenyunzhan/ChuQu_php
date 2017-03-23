@@ -261,6 +261,17 @@ $(".main-bottom-buttons > .booking").click(() => {
 });
 
 
+$(".button.deal").click(() => {
+
+	var id = $(".detail").attr("id");
+	var num = $(".detail").find(".number").text();
+	var type = $(".detail").find(".option.selected").text().substr(0,2);
+	var useDate = $(".detail").find(".datepicker").val();
+
+
+	location.href = "/index.php/home/order/preAddOrder?id="+id+"&num="+num+"&type="+type+"&useDate="+useDate;
+});
+
 
 $(function() {	//	Datepicker
 	$( ".datepicker" ).datepicker({
@@ -273,10 +284,21 @@ $(function() {	//	Datepicker
 $(".content > .num-selector > .button").each((i,e) => {
 	$(e).click(() => {
 		// alert(i?1:0);
+		var totalDiv = $(".bottom-buttons > .total");
 		$(e).parent().find(".number").text((ii,ee) => {
+			let untPrice = totalDiv.text().substr(1)/ee;
 			ee=ee*1+(i?1:-1);
-			if(ee<0)
-				ee = 0;
+			if(ee<1)
+				ee = 1;
+
+			var temp1 = ((untPrice*ee).toFixed(2)).split('.')[0];
+			var temp2 = ((untPrice*ee).toFixed(2)).split('.')[1];
+			if(temp2 == undefined) {
+				temp2 = '00';
+			} else if (temp2.length==1 && temp2 < 10) {
+				temp2 =  temp2 + 0;
+			}
+			totalDiv.html('<span><span style="font-size:14px">￥</span>'+temp1+'<span style="font-size:14px">.'+temp2+'</span>');
 			return ee;
 		});
 	});
@@ -352,11 +374,18 @@ function addActionToListPool() {
 			temp2 =  temp2 + 0;
 		}
 
+		let currentDom = detail.find(".selected");
+		currentDom.removeClass("selected");
+		detail.find(".options").children().eq(0).addClass("selected");
+
+
+		detail.attr("id",product.id1);
     	detail.children().children(".title.zh").text(product.productname);
 		detail.children().children(".cost").html('￥'+ temp1 + '<span style="font-size:14px">.'+temp2+'</span>');
 		detail.children().children(".location").text(product.country + '  ' + product.city);
 		detail.children().children(".title.zh").text(allProductArray[i].productname);
-
+    	detail.children().children(".bottom-buttons").children(".total").html('<span><span style="font-size:14px">￥</span>'+temp1+'<span style="font-size:14px">.'+temp2+'</span>');
+    	detail.find(".number").text("1");
     // $(".main > .itemList > .active").hide().fadeIn(1000);
 
 		// $(e).parent().addClass("disable");
@@ -364,6 +393,38 @@ function addActionToListPool() {
 		});
 	});
 }
+
+
+
+//	Handle type selector of order items
+$(".options > .option").each((i,e) => {
+    $(e).click(() => {
+		// Toggle Status
+		let currentDom = $(e).parent().find(".selected");
+		currentDom.removeClass("selected");
+		$(e).addClass("selected");
+
+
+		var pid = $(e).parent().parent().parent().parent().attr("id");
+		var type = $(e).text().substr(0,2);
+
+		$.get("/index.php/home/order/getProductByType?id="+pid+"&type="+type, function(data){
+
+			var ticket = $.parseJSON(data);
+			var price = ticket[0].price;
+			var num = $(e).parent().parent().children().eq(5).children().eq(1).text();
+			var temp1 = String(price*num).split('.')[0];
+            var temp2 = String(price*num).split('.')[1];
+            if(temp2 == undefined) {
+                temp2 = '00';
+            } else if (temp2.length==1 && temp2 < 10) {
+                temp2 =  temp2 + 0;
+            }
+            $(e).parent().parent().parent().children(".bottom-buttons").children(".total").html('<span><span style="font-size:14px">￥</span>'+temp1+'<span style="font-size:14px">.'+temp2+'</span>');
+		});
+
+	});
+});
 
 //=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
 //  >   FUNCTION NAME   :   material,

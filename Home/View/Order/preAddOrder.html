@@ -83,15 +83,20 @@
                     </div>
                     <div class="titleLabel">购票类型</div>
                     <div class="typeSelector">
-                        <div class="typeOption selected">成人票</div>
-                        <div class="typeOption">儿童票</div>
+                        <if condition="$vo.classification eq 儿童">
+                            <div class="typeOption">成人票</div>
+                            <div class="typeOption selected">儿童票</div>
+                         <else />
+                            <div class="typeOption selected">成人票</div>
+                            <div class="typeOption">儿童票</div>
+                        </if>
                     </div>
                     <div class="titleLabel">使用日期</div>
-                    <input class="datePicker">
+                    <input class="datePicker" id="{$useDate}">
                     <div class="titleLabel">购票数量</div>
                     <div class="num-selector">
                         <div class="button">&minus;</div>
-                        <div class="number">1</div>
+                        <div class="number">{$num}</div>
                         <div class="button">&plus;</div>
                     </div>
                     <div class="bottomBar">
@@ -121,6 +126,10 @@
                         <div class="usrOptLabel">常用旅客</div>
 
                         <div id="10000" class="usrOptItem usrOptItemSELECTED">用户名</div>
+
+                        <for start="1" end="$num">
+                            <div id="{$i+10000}" class="usrOptItem">用户名</div>
+                        </for>
 
 <!--
                         <volist name="lists" id="vo">
