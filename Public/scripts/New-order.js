@@ -106,6 +106,26 @@ $(".typeSelector > .typeOption").each((i,e) => {
             var num = $(e).parent().parent().children().eq(6).children().eq(1).text();
             var totalSpan = $(e).parent().parent().find(".bottomBar").children().eq(1).children().eq(1);
             totalSpan.text(price * num);
+
+
+            var totalPrice = 0;
+            //$(".order>.bottomBar").children().eq(1).children().eq(1).each((i,e)=>{
+            //    totalPrice += parseFloat($(e).text());
+            //});
+            //$(".order>.bottomBar").children().eq(1).children().eq(1).each(function() {
+            //    totalPrice += parseFloat($(e).text());
+            //});
+
+
+            $(".order>.bottomBar").each((ii,ee)=>{
+                var price = $(ee).children().eq(1).children().eq(1).text();
+                totalPrice += parseFloat(price);
+
+            });
+
+
+                $(".bottom-cost > .totalLabel").children().eq(1).text(totalPrice);
+
         });
 
 	});
@@ -357,13 +377,11 @@ function pagesSwitch(i) {
 
 }
 
-// $(".usrOptCell > .usrOptItem").each((i,e) => {
-// 	$(e).click(() => {
-// 		let currentDom = $(e).parent().find(".usrOptItem");
-// 		currentDom.removeClass("usrOptItemSELECTED");
-// 		$(e).addClass("usrOptItemSELECTED");
-// 	});
-// });
+ $(".usrOptCell > .usrOptItem").each((i,e) => {
+ 	$(e).click(() => {
+        pagesSwitch(i);
+ 	});
+ });
 
 // User Name selector of userinformation page
 // let TotalUsrNum = $(".orders > .order").length;

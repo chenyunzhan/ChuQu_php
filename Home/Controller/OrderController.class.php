@@ -139,16 +139,19 @@ class OrderController extends Controller
             $totalPrice += $v['price'];
             $v['price'] = $v['price']*$num;
 
-            $pos = strpos($v['classification'], "成人");
+            $pos = strpos("%**#".$v['classification'], "成人");
             // 注意这里使用的是 ===。简单的 == 不能像我们期待的那样工作，
             // 因为 'a' 是第 0 位置上的（第一个）字符。
-            if ($pos === true) {
+            if ($pos > 0) {
                 $v['classification']="成人";
             } else{
                 $v['classification']="儿童";
             }
         }
 
+        if($useDate=='01/01/2001'){
+            $useDate =date("Y-m-d");
+        }
         $newUseDate = date('Y-m-d     星期w',strtotime($useDate)); //这个的输出是 2011-01-09
 
 
